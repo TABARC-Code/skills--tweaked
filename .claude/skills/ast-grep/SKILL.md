@@ -1,6 +1,6 @@
 ---
 name: ast-grep
-description: Guide for writing ast-grep rules to perform structural code search and analysis. Use when users need to search codebases using Abstract Syntax Tree (AST) patterns, find specific code structures, or perform complex code queries that go beyond simple text search. This skill should be used when users ask to search for code patterns, find specific language constructs, or locate code with particular structural characteristics.
+description: Guide for writing ast-grep rules to perform structural code search and analysis. Use when users need to search codebases using Abstract Syntax Tree (AST) patterns, find specific code structures, or perform complex code queries that go beyond simple text search. This skill should be used when users ask to search for code patterns, find specific language constructs, or locate code with particular structural characteristics. Dewey 005.13.
 ---
 
 # ast-grep Code Search
@@ -321,3 +321,11 @@ Contains detailed documentation for ast-grep rule syntax:
 - `rule_reference.md`: Comprehensive ast-grep rule documentation covering atomic rules, relational rules, composite rules, and metavariables
 
 Load these references when detailed rule syntax information is needed.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

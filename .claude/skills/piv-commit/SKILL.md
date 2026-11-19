@@ -1,6 +1,6 @@
 ---
 name: piv-commit
-description: Creates a new git commit for all uncommitted changes with an atomic, conventionally-tagged message. Use when a task or feature is finished, when the user says commit this, save my work, make a commit, or wants a clean commit message, and whenever changes are ready to be committed even if they never name this skill.
+description: Creates a new git commit for all uncommitted changes with an atomic, conventionally-tagged message. Use when a task or feature is finished, when the user says commit this, save my work, make a commit, or wants a clean commit message, and whenever changes are ready to be committed even if they never name this skill. Dewey 005.8.
 ---
 
 # Commit: Create a New Commit
@@ -31,3 +31,28 @@ One short paragraph (3–6 sentences) describing the feature/fix/refactor that w
 Only include this section if any files under `.claude/` were modified or added (CLAUDE.md, `.claude/references/`, `.claude/skills/`, `.claude/agents/`, etc.).
 
 List each changed AI-layer file with a one-line note on what evolved and why. If nothing in `.claude/` changed, omit this section entirely.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-implement** · type: handoff · source: body
+  - This skill (weight 2): Commits what piv-implement left uncommitted.
+  - piv-implement: Hands finished work to piv-commit.
+- **piv-review-changes** · type: gate · source: description
+  - This skill (weight 2): Expects the pre-commit review to have run first.
+  - piv-review-changes: Runs before a commit as the pre-commit quality gate.
+- **piv-fix-review-findings** · type: handoff · source: body
+  - This skill (weight 2): Commits the fixes that piv-fix-review-findings made.
+  - piv-fix-review-findings: Passes the fixes to piv-commit.
+- **piv-implement-issue** · type: handoff · source: body
+  - This skill (weight 2): Commits changes made by piv-implement-issue.
+  - piv-implement-issue: Passes the regression-tested fix to piv-commit.
+- **piv-run-full-loop** · type: chain · source: body
+  - This skill (weight 2): Runs as the final commit stage of piv-run-full-loop.
+  - piv-run-full-loop: Ends the chain with a commit.
+- **rules-check-drift** · type: reference · source: body
+  - This skill (weight 1): Named alongside rules-check-drift for rules-file changes.
+  - rules-check-drift: Named alongside the commit step for rules-file changes.
+<!-- relationships:end -->

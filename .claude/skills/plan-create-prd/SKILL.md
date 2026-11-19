@@ -1,6 +1,6 @@
 ---
 name: plan-create-prd
-description: Interactive, problem-first PRD generator — interviews the user to surface the thesis (the problem, and WHY build it) and a falsifiable hypothesis, then writes a focused PRODUCT-level PRD (problem · evidence · hypothesis · users · MVP · success metrics · non-goals · open questions). Use at the start of a greenfield effort to discuss the product. A PRD is INTENT (what/why), never engineering decisions (how) — those are the `plan-architecture` skill's spec.
+description: Interactive, problem-first PRD generator — interviews the user to surface the thesis (the problem, and WHY build it) and a falsifiable hypothesis, then writes a focused PRODUCT-level PRD (problem · evidence · hypothesis · users · MVP · success metrics · non-goals · open questions). Use at the start of a greenfield effort to discuss the product. A PRD is INTENT (what/why), never engineering decisions (how) — those are the `plan-architecture` skill's spec. Dewey 658.4012.
 argument-hint: "[product idea] · [optional: paths to research / reference docs to ground in] (blank = start with questions)"
 ---
 
@@ -133,3 +133,25 @@ sections only, scannable:
 - **Solo builder?** Building *for yourself* → you're the user; prove or kill it on yourself fast, you can jump
   closer to a solution. Building *for someone else* → you can't introspect their needs; building it *right*
   beats building it. Either way: thinnest MVP + experiments is how you learn what "right" is.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-architecture** · type: handoff · source: description
+  - This skill (weight 2): Hands over the PRD as the starting point for the architecture discussion.
+  - plan-architecture: Reads the PRD and returns the architecture decisions the PRD leaves open.
+- **plan-create-stories** · type: handoff · source: body
+  - This skill (weight 2): Its phases and user stories are what plan-create-stories turns into tickets.
+  - plan-create-stories: Consumes a finished PRD and returns engineer-ready tickets.
+- **plan-with-priorities** · type: reference · source: body
+  - This skill (weight 1): Named as the next step once priorities are agreed.
+  - plan-with-priorities: Named as the next step once priorities are agreed.
+- **rules-create-global** · type: reference · source: body
+  - This skill (weight 1): Greenfield projects can pass the PRD into rules-create-global.
+  - rules-create-global: Derives the root rules file from a PRD when one is supplied.
+- **build-dark-factory** · type: dependency · source: body
+  - This skill (weight 3): Produces the PRD that build-dark-factory consumes.
+  - build-dark-factory: Needs a PRD from plan-create-prd before it can build.
+<!-- relationships:end -->

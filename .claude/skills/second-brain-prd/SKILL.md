@@ -1,6 +1,6 @@
 ---
 name: second-brain-prd
-description: Generate a personalized, phased PRD for building an AI second brain in TypeScript from a filled-out requirements template. Memory, hooks, hybrid search, integrations, skills, a proactive heartbeat, chat, security and deployment, in build order. Use when the user wants to build a second brain, has filled out the requirements template, or says "create my second brain PRD", "generate my PRD", "build my second brain plan" or "/second-brain-prd".
+description: Generate a personalized, phased PRD for building an AI second brain in TypeScript from a filled-out requirements template. Memory, hooks, hybrid search, integrations, skills, a proactive heartbeat, chat, security and deployment, in build order. Use when the user wants to build a second brain, has filled out the requirements template, or says "create my second brain PRD", "generate my PRD", "build my second brain plan" or "/second-brain-prd". Dewey 025.04.
 argument-hint: <path-to-requirements> [output-path]
 ---
 
@@ -151,3 +151,11 @@ The output PRD should have:
 - Map their security boundaries directly into Phase 8 guardrail rules
 - Use their memory categories to structure the vault folders in Phase 1
 - Their integration priority determines Phase 4 order
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

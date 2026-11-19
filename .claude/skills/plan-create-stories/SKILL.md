@@ -1,6 +1,6 @@
 ---
 name: plan-create-stories
-description: Decomposes a PRD into well-formed, engineer-ready tickets — Jira issues or GitHub issues. Use after a PRD exists, to turn its phases and user stories into a structured backlog. Works for a new codebase (MVP scope) or an existing one (epic scope).
+description: Decomposes a PRD into well-formed, engineer-ready tickets — Jira issues or GitHub issues. Use after a PRD exists, to turn its phases and user stories into a structured backlog. Works for a new codebase (MVP scope) or an existing one (epic scope). Dewey 658.4012.
 argument-hint: <prd-path> --platform <jira|github> [--project KEY] [--epic KEY] [--milestone NAME]
 ---
 
@@ -84,3 +84,16 @@ one click.
 - Never create tickets without the step-2 confirmation.
 - If a phase is too vague to decompose, stop and flag it — that's a PRD gap,
   not a ticket-writing problem.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-create-prd** · type: handoff · source: body
+  - This skill (weight 2): Consumes a finished PRD and returns engineer-ready tickets.
+  - plan-create-prd: Its phases and user stories are what plan-create-stories turns into tickets.
+- **plan-with-priorities** · type: reference · source: body
+  - This skill (weight 1): Named as the step to run when priorities are unclear.
+  - plan-with-priorities: Named as the step to run before backlog work when priorities are unclear.
+<!-- relationships:end -->

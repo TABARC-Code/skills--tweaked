@@ -1,6 +1,6 @@
 ---
 name: rules-create-global
-description: "Set up your project's global rules, a lean and well-structured root CLAUDE.md (plus a starter .claude/), following the course methodology. Greenfield: pass your PRD and/or architecture-spec path and it derives rules from your engineering decisions (a PRD alone is product context). Brownfield: leave it blank to derive from your primed codebase (run /prime-codebase first), or pass a codebase-analysis doc for a large repo. Use when initializing or re-deriving the AI Layer's rules, onboarding a codebase, or replacing a generic /init output. The customizable replacement for /init."
+description: "Set up your project's global rules, a lean and well-structured root CLAUDE.md (plus a starter .claude/), following the course methodology. Greenfield: pass your PRD and/or architecture-spec path and it derives rules from your engineering decisions (a PRD alone is product context). Brownfield: leave it blank to derive from your primed codebase (run /prime-codebase first), or pass a codebase-analysis doc for a large repo. Use when initializing or re-deriving the AI Layer's rules, onboarding a codebase, or replacing a generic /init output. The customizable replacement for /init. Dewey 006.3."
 argument-hint: "[prd-path] [architecture-path]  (greenfield; brownfield: blank + prime first, or pass a codebase-analysis)"
 arguments: [path1, path2]
 ---
@@ -167,3 +167,22 @@ evidence. Apply the per-line test: *would removing this cause a mistake? If not,
 - Greenfield: run after you've settled the architecture with `plan-architecture` (and after `plan-create-prd`, if
   you wrote a PRD for the product); pass those paths in as `$path1` (PRD) and `$path2` (architecture). Brownfield: run after
   `/prime-codebase`, or after a large-repo fan-out produces a `codebase-analysis.md` you pass in.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-create-prd** · type: reference · source: body
+  - This skill (weight 1): Derives the root rules file from a PRD when one is supplied.
+  - plan-create-prd: Greenfield projects can pass the PRD into rules-create-global.
+- **plan-architecture** · type: reference · source: body
+  - This skill (weight 1): Writes the root rules file from the decisions and specs it is given.
+  - plan-architecture: Architecture decisions feed the root rules file.
+- **rules-check-drift** · type: feedback · source: body
+  - This skill (weight 2): Writes the root rules file that rules-check-drift audits.
+  - rules-check-drift: Reports rules that are now false, so the root rules file can be corrected.
+- **prime-codebase** · type: reference · source: body
+  - This skill (weight 1): Derives the rules from codebase orientation.
+  - prime-codebase: Provides the orientation rules-create-global draws on.
+<!-- relationships:end -->

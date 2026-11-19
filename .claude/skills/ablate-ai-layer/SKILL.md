@@ -1,6 +1,6 @@
 ---
 name: ablate-ai-layer
-description: Measure whether a repository's AI instructions still earn their place, by running the same real task many times with the layer intact and with it stripped, then grading every rule against what actually changed. Runs both arms itself in throwaway git worktrees and never touches the working tree. Agent-agnostic across CLAUDE.md, AGENTS.md, .claude/, .agents/, .cursor/rules, .clinerules, .windsurfrules and copilot-instructions. Use when the user wants to prune, audit, clean up, shrink or "delete" their CLAUDE.md, AGENTS.md, cursor rules, agent instructions or AI layer; when they ask whether their rules are still needed, whether their context is bloated, or what to cut; or when they mention ablating, ablation, or testing their agent without its instructions.
+description: Measure whether a repository's AI instructions still earn their place, by running the same real task many times with the layer intact and with it stripped, then grading every rule against what actually changed. Runs both arms itself in throwaway git worktrees and never touches the working tree. Agent-agnostic across CLAUDE.md, AGENTS.md, .claude/, .agents/, .cursor/rules, .clinerules, .windsurfrules and copilot-instructions. Use when the user wants to prune, audit, clean up, shrink or "delete" their CLAUDE.md, AGENTS.md, cursor rules, agent instructions or AI layer; when they ask whether their rules are still needed, whether their context is bloated, or what to cut; or when they mention ablating, ablation, or testing their agent without its instructions. Dewey 006.3.
 ---
 
 # Ablate the AI layer
@@ -154,3 +154,11 @@ the old one.
 - `scripts/run_ablation.py`: runs both arms and collects the diffs. `--help` lists
   every flag. Never read either script into context; only their output.
 - `references/comparison.md`: the grading rubric. Read it before Step 5.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

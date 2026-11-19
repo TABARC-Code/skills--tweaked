@@ -1,6 +1,6 @@
 ---
 name: plan-with-priorities
-description: Plan a product or technical decision by eliciting the user's priorities before recommending options. Use when the user wants help deciding what to build or which approach to take, especially when the goals or tradeoffs are unclear. Supports small spikes when the user needs to try alternatives before choosing.
+description: Plan a product or technical decision by eliciting the user's priorities before recommending options. Use when the user wants help deciding what to build or which approach to take, especially when the goals or tradeoffs are unclear. Supports small spikes when the user needs to try alternatives before choosing. Dewey 658.403.
 ---
 
 # Plan With Priorities
@@ -71,3 +71,19 @@ This is a planning practice, not a validated method for eliminating bias. Asking
 - [Anthropic's study of agents and expert judgment](https://www.anthropic.com/research/agents-judgment-calls) motivates examining how recommendations influence defensible choices. It did not test this skill.
 - [Matt Pocock's Grill Me guide](https://www.aihero.dev/skills-grill-me) already warns against passive agreement during planning interviews.
 - [Research on cognitive forcing](https://arxiv.org/abs/2102.09692) supports testing deliberate reflection before relying on AI advice, while also finding usability costs. Its results are not a validation of this workflow.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-create-prd** · type: reference · source: body
+  - This skill (weight 1): Named as the next step once priorities are agreed.
+  - plan-create-prd: Named as the next step once priorities are agreed.
+- **plan-create-stories** · type: reference · source: body
+  - This skill (weight 1): Named as the step to run before backlog work when priorities are unclear.
+  - plan-create-stories: Named as the step to run when priorities are unclear.
+- **plan-architecture** · type: handoff · source: body
+  - This skill (weight 2): Once priorities are agreed, the approach goes to architecture.
+  - plan-architecture: Takes the agreed priorities as the frame for architecture decisions.
+<!-- relationships:end -->

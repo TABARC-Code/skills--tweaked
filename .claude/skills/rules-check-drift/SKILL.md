@@ -1,6 +1,6 @@
 ---
 name: rules-check-drift
-description: "Check whether your rules file (CLAUDE.md or AGENTS.md) still matches the codebase after recent changes — run before a merge, or fold into your code-review pass. Reports stale/now-false rules, drifted architecture-map entries, and any new invariant worth adding, each with the minimal edit. Advisory and anti-bloat: it keeps the rules file true, never longer than it needs to be."
+description: "Check whether your rules file (CLAUDE.md or AGENTS.md) still matches the codebase after recent changes — run before a merge, or fold into your code-review pass. Reports stale/now-false rules, drifted architecture-map entries, and any new invariant worth adding, each with the minimal edit. Advisory and anti-bloat: it keeps the rules file true, never longer than it needs to be. Dewey 006.3."
 argument-hint: "[optional diff range, e.g. main...HEAD]"
 ---
 
@@ -68,3 +68,22 @@ If nothing drifted: **"The rules file is still accurate for these changes — no
 - **Rules file only** (`CLAUDE.md` / `AGENTS.md`). Not README, not docs.
 - **Lean by default.** When in doubt, suggest nothing.
 - **Run it before every merge** (or as part of `/piv-review-changes`) so your rules never drift behind the code.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-architecture** · type: reference · source: body
+  - This skill (weight 1): Flags architecture-map entries that no longer match the code.
+  - plan-architecture: Architecture-map entries are checked for drift against the code.
+- **piv-commit** · type: reference · source: body
+  - This skill (weight 1): Named alongside the commit step for rules-file changes.
+  - piv-commit: Named alongside rules-check-drift for rules-file changes.
+- **piv-review-changes** · type: reference · source: body
+  - This skill (weight 1): Can be folded into the code-review pass.
+  - piv-review-changes: Can be extended with the rules-drift check.
+- **rules-create-global** · type: feedback · source: body
+  - This skill (weight 2): Reports rules that are now false, so the root rules file can be corrected.
+  - rules-create-global: Writes the root rules file that rules-check-drift audits.
+<!-- relationships:end -->

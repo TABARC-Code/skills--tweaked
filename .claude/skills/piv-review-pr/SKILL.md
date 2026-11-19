@@ -1,6 +1,6 @@
 ---
 name: piv-review-pr
-description: Full pull-request review — fetch the PR, run the project's validation, review the diff with fresh eyes (dispatching the code-reviewer agent), categorize issues by severity, post the review to GitHub (approve / request-changes / comment), and save a report. The agentic gate that runs on an open PR before a human approves. Use after piv-create-pr.
+description: Full pull-request review — fetch the PR, run the project's validation, review the diff with fresh eyes (dispatching the code-reviewer agent), categorize issues by severity, post the review to GitHub (approve / request-changes / comment), and save a report. The agentic gate that runs on an open PR before a human approves. Use after piv-create-pr. Dewey 005.14.
 argument-hint: "<pr-number | pr-url | branch> [--approve | --request-changes]"
 ---
 
@@ -91,3 +91,22 @@ next step is **`piv-fix-review-findings`** on the report, then re-run validation
 - This is the *agentic* gate; it does not replace the human — it gives the human a validated, triaged PR to
   approve. Going deeper means multiple review agents, tuning the reviewer to your stack, and a validation
   pyramid behind it.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-implement** · type: reference · source: body
+  - This skill (weight 1): Named as the review step for the pull request piv-implement opened.
+  - piv-implement: Named as the review step once the pull request exists.
+- **piv-create-pr** · type: handoff · source: body
+  - This skill (weight 2): Fetches and reviews a pull request created by piv-create-pr.
+  - piv-create-pr: The pull request it opens is the input to piv-review-pr.
+- **piv-fix-review-findings** · type: feedback · source: body
+  - This skill (weight 2): Sends review findings to be triaged and fixed.
+  - piv-fix-review-findings: Triages the findings a review posted and fixes the ones chosen.
+- **piv-validate** · type: gate · source: body
+  - This skill (weight 2): Runs the project's validation as part of the review.
+  - piv-validate: Provides the validation verdict the review relies on.
+<!-- relationships:end -->

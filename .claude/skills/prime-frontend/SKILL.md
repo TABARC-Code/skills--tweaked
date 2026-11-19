@@ -1,6 +1,6 @@
 ---
 name: prime-frontend
-description: Primes the agent with focused understanding of the frontend portion of the codebase — components, routing, state management, and styling — without loading unrelated backend code. Use at the start of a session when the work is scoped to UI or client-side features. Optionally pulls external task context from Jira issues and Confluence pages first.
+description: Primes the agent with focused understanding of the frontend portion of the codebase — components, routing, state management, and styling — without loading unrelated backend code. Use at the start of a session when the work is scoped to UI or client-side features. Optionally pulls external task context from Jira issues and Confluence pages first. Dewey 005.1.
 argument-hint: "[jira-issue-keys] [confluence-page-ids]"
 ---
 
@@ -97,3 +97,11 @@ Provide a concise summary covering:
 - Any immediate concerns (missing types, deprecated patterns, etc.)
 
 **Make this summary easy to scan - use bullet points and clear headers.**
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

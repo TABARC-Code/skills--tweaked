@@ -1,6 +1,6 @@
 ---
 name: hooks-create
-description: Author a working Claude Code hook from a plain-English description of what it should guarantee or do. You describe the behavior ("never let the agent edit my migrations", "don't stop until the tests pass", "log every command"); this skill picks the right lifecycle event, writes the hook script, and wires it into .claude/settings.json. Use when you want a deterministic guarantee or automation in your AI Layer and don't want to write the hook by hand. The meta-tool for the hooks primitive.
+description: Author a working Claude Code hook from a plain-English description of what it should guarantee or do. You describe the behavior ("never let the agent edit my migrations", "don't stop until the tests pass", "log every command"); this skill picks the right lifecycle event, writes the hook script, and wires it into .claude/settings.json. Use when you want a deterministic guarantee or automation in your AI Layer and don't want to write the hook by hand. The meta-tool for the hooks primitive. Dewey 005.8.
 argument-hint: [what-the-hook-should-do]
 ---
 
@@ -216,3 +216,11 @@ Then:
 - A blocking hook's *coverage* is only as good as its matcher - it guarantees the hook **runs**, but you decide
   what it catches. Be honest with the user about the edges (e.g. a `.env` matcher won't catch a base64'd read).
 - Keep hooks fast - they run on the matched event every time. Heavy work belongs in an async hook or a skill.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

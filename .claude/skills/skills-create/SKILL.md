@@ -1,6 +1,6 @@
 ---
 name: skills-create
-description: Author a new Claude Code skill the house way, or refactor a fat skill into a lean SKILL.md + references/. Use when you want to "create a skill", "write a new skill", "turn a prompt or command into a skill", "split a skill into references", "trim a SKILL.md", or invoke /skills-create. The meta-skill — a skill that builds skills.
+description: Author a new Claude Code skill the house way, or refactor a fat skill into a lean SKILL.md + references/. Use when you want to "create a skill", "write a new skill", "turn a prompt or command into a skill", "split a skill into references", "trim a SKILL.md", or invoke /skills-create. The meta-skill — a skill that builds skills. Dewey 005.120.
 argument-hint: "[create <name> | refactor <path/to/SKILL.md>]  (blank = ask which)"
 ---
 
@@ -92,3 +92,11 @@ Don't build a skill for a one-off, or for a tool whose owner already ships a goo
 - `references/refactoring-skills.md` — the full split-and-trim runbook, with a before/after.
 - `references/validation.md` — the validation gates (structure · description · body · disclosure · behavior · trigger test).
 - `templates/SKILL.template.md` — the lean SKILL.md skeleton to scaffold from.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

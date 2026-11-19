@@ -1,6 +1,6 @@
 ---
 name: plan-architecture
-description: Interactively explore HOW to approach an intent (a PRD, epic, brief, or free-form idea) and decide the high-level architecture — the approach, stack, libraries, data shape, and risks the intent left open. A working session with a CTO/staff-engineer advisor that asks questions, proposes 2–3 options with trade-offs, recommends a direction with reasoning, and flags what to de-risk with a spike. Produces a high-level architecture decision doc — a separate page linked to the epic in your tracker (Confluence/Jira), or folded into the PRD/epic, or a standalone doc — NOT a task-by-task implementation plan (that comes later, per ticket, with piv-plan-implementation).
+description: Interactively explore HOW to approach an intent (a PRD, epic, brief, or free-form idea) and decide the high-level architecture — the approach, stack, libraries, data shape, and risks the intent left open. A working session with a CTO/staff-engineer advisor that asks questions, proposes 2–3 options with trade-offs, recommends a direction with reasoning, and flags what to de-risk with a spike. Produces a high-level architecture decision doc — a separate page linked to the epic in your tracker (Confluence/Jira), or folded into the PRD/epic, or a standalone doc — NOT a task-by-task implementation plan (that comes later, per ticket, with piv-plan-implementation). Dewey 658.4012.
 argument-hint: "[path to PRD / epic / brief — or free-form idea] · [optional: paths to reference docs to ground in]"
 ---
 
@@ -159,3 +159,31 @@ natural next moves and let the user pick — **don't force a pipeline**:
 - ✅ **High-level, not a task plan** — no file-by-file edits or step lists (that's `piv-plan-implementation`).
 - ✅ **Risky / one-way calls get a spike**, not a guess.
 - ✅ **Stays anchored to the user's goals.**
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-create-prd** · type: handoff · source: description
+  - This skill (weight 2): Reads the PRD and returns the architecture decisions the PRD leaves open.
+  - plan-create-prd: Hands over the PRD as the starting point for the architecture discussion.
+- **piv-plan-implementation** · type: handoff · source: body
+  - This skill (weight 2): Architecture decisions are carried into the implementation plan.
+  - piv-plan-implementation: Asks for architecture decisions first when they are still open.
+- **piv-slice-epic** · type: handoff · source: body
+  - This skill (weight 2): Hands the architecture to epic slicing.
+  - piv-slice-epic: Takes an epic plus its architecture and slices it into tickets.
+- **prime-codebase** · type: reference · source: body
+  - This skill (weight 1): Expects codebase orientation before exploring architecture.
+  - prime-codebase: Run ahead of architecture work to load the context it needs.
+- **rules-check-drift** · type: reference · source: body
+  - This skill (weight 1): Architecture-map entries are checked for drift against the code.
+  - rules-check-drift: Flags architecture-map entries that no longer match the code.
+- **rules-create-global** · type: reference · source: body
+  - This skill (weight 1): Architecture decisions feed the root rules file.
+  - rules-create-global: Writes the root rules file from the decisions and specs it is given.
+- **plan-with-priorities** · type: handoff · source: body
+  - This skill (weight 2): Takes the agreed priorities as the frame for architecture decisions.
+  - plan-with-priorities: Once priorities are agreed, the approach goes to architecture.
+<!-- relationships:end -->

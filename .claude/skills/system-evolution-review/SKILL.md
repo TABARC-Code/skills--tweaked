@@ -1,6 +1,6 @@
 ---
 name: system-evolution-review
-description: Performs a meta-level review of how well an implementation followed its plan, classifying divergences and recommending AI-Layer improvements. Use after an execution report exists, or when the user asks why the process went wrong or wants a review of how the AI worked rather than the code. It finds bugs in the process, not the code.
+description: Performs a meta-level review of how well an implementation followed its plan, classifying divergences and recommending AI-Layer improvements. Use after an execution report exists, or when the user asks why the process went wrong or wants a review of how the AI worked rather than the code. It finds bugs in the process, not the code. Dewey 006.3.
 argument-hint: "[plan-file] [execution-report-file]"
 arguments: [plan, report]
 ---
@@ -190,3 +190,19 @@ Based on analysis, recommend specific actions:
 - **Focus on patterns:** One-off issues aren't actionable. Look for repeated problems.
 - **Action-oriented:** Every finding should have a concrete asset update suggestion
 - **Suggest improvements:** Don't just analyze - actually suggest the text to add to CLAUDE.md or skills
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **system-execution-report** · type: handoff · source: description
+  - This skill (weight 2): Reviews how the plan was followed, using the execution report.
+  - system-execution-report: The report is the input to the system review.
+- **piv-plan-implementation** · type: feedback · source: body
+  - This skill (weight 2): Recommends plan-level changes for the next run.
+  - piv-plan-implementation: Its plan is what the evolution review checks divergences against.
+- **piv-implement** · type: feedback · source: body
+  - This skill (weight 2): Recommends process changes for the implement step.
+  - piv-implement: Its divergences are what the evolution review classifies.
+<!-- relationships:end -->

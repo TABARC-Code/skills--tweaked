@@ -1,6 +1,6 @@
 ---
 name: piv-investigate-issue
-description: Investigate a GitHub issue — fan out parallel exploration, find the root cause (5 Whys, evidence-backed), and write a reviewable RCA artifact (then post a summary to the issue). The investigate step before piv-implement-issue. Use to diagnose a bug/issue before fixing it.
+description: Investigate a GitHub issue — fan out parallel exploration, find the root cause (5 Whys, evidence-backed), and write a reviewable RCA artifact (then post a summary to the issue). The investigate step before piv-implement-issue. Use to diagnose a bug/issue before fixing it. Dewey 005.1.
 argument-hint: [github-issue-id]
 ---
 
@@ -244,3 +244,13 @@ gh issue comment $ARGUMENTS --body "<title · the Assessment table (severity/com
 - **Already has a linked PR** → warn; confirm before continuing.
 - **Can't pin the root cause** → set **Confidence: LOW**, document the best hypothesis + what's uncertain, and flag it for a human before any fix.
 - **Scope too large** → suggest splitting into smaller issues; focus this RCA on the core problem and list the rest as out-of-scope.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-implement-issue** · type: handoff · source: body
+  - This skill (weight 2): Writes the root-cause artifact that piv-implement-issue consumes.
+  - piv-implement-issue: Implements the fix from an artifact written by piv-investigate-issue.
+<!-- relationships:end -->

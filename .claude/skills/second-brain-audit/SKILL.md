@@ -1,6 +1,6 @@
 ---
 name: second-brain-audit
-description: Audit any second brain, notes folder, or agent memory for facts that have quietly stopped being true, then fix the worst one so it stops recurring. Works on a wiki, a single notes file, daily notes, or a non-markdown tool, and adapts the fix to whichever it finds. Checks every current-sounding claim in whatever the agent loads each session against the freshest evidence, and separates contradicted claims from unsupported ones. Use when an assistant gives an outdated answer, when notes or memory files may be stale, when a vault needs checking for contradictions, or when someone asks how to stop a second brain from rotting, mentions memory rot, or asks about state versus event.
+description: Audit any second brain, notes folder, or agent memory for facts that have quietly stopped being true, then fix the worst one so it stops recurring. Works on a wiki, a single notes file, daily notes, or a non-markdown tool, and adapts the fix to whichever it finds. Checks every current-sounding claim in whatever the agent loads each session against the freshest evidence, and separates contradicted claims from unsupported ones. Use when an assistant gives an outdated answer, when notes or memory files may be stale, when a vault needs checking for contradictions, or when someone asks how to stop a second brain from rotting, mentions memory rot, or asks about state versus event. Dewey 025.04.
 argument-hint: "[path-to-notes-folder]"
 arguments: [notes]
 ---
@@ -346,3 +346,13 @@ audit's real value is identifying *which* of the two problems is in play.
 
 - `scripts/audit.py`: run it for the deterministic scan; `--help` lists all flags,
   `--json` returns structured findings. Never read it into context; only its output.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **second-brain-fix** · type: feedback · source: body
+  - This skill (weight 2): Leaves a findings file that second-brain-fix works through.
+  - second-brain-fix: Works through the findings an audit left, batch by batch.
+<!-- relationships:end -->

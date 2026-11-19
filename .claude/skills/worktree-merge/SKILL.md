@@ -1,6 +1,6 @@
 ---
 name: worktree-merge
-description: Integrate any number of feature branches from parallel worktrees through one safe integration branch, validating after each merge and running the project's full check suite before touching the main line. Use when parallel worktree development is done and the branches need to be merged, or when the user says "merge my worktrees", "integrate these branches", or invokes /worktree-merge.
+description: Integrate any number of feature branches from parallel worktrees through one safe integration branch, validating after each merge and running the project's full check suite before touching the main line. Use when parallel worktree development is done and the branches need to be merged, or when the user says "merge my worktrees", "integrate these branches", or invokes /worktree-merge. Dewey 005.8.
 argument-hint: "[branch ...]  (two or more branch names; blank = ask)"
 ---
 
@@ -63,3 +63,13 @@ linter). Do not hardcode `pytest`/`mypy`/`pyright` — use whatever this repo ac
 - The integration branch is disposable — the original branch only moves after every merge and the full suite pass.
 - Prefer opening a PR per branch when you're on a team; this skill is for fast local
   integration when you own the merge.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **worktree-create** · type: handoff · source: description
+  - This skill (weight 2): Merges branches created in parallel worktrees.
+  - worktree-create: The branches in these worktrees go to worktree-merge.
+<!-- relationships:end -->

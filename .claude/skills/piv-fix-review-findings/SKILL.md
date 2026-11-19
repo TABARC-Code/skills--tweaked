@@ -1,6 +1,6 @@
 ---
 name: piv-fix-review-findings
-description: Triage code-review findings (manual or AI), fix the ones you choose one at a time with tests, defer/log the rest, then validate — and if the work is on a PR, commit and push so the PR reflects the fixes. Use after a review has produced a list of issues or a review file.
+description: Triage code-review findings (manual or AI), fix the ones you choose one at a time with tests, defer/log the rest, then validate — and if the work is on a PR, commit and push so the PR reflects the fixes. Use after a review has produced a list of issues or a review file. Dewey 005.14.
 argument-hint: "[code-review-file-or-issues] [scope / what to fix now vs defer]"
 arguments: [review, scope]
 ---
@@ -51,3 +51,19 @@ sure the deferred items are logged as issues.
 
 A short report: what was **fixed** (with its test), what was **deferred/logged** (with issue refs), what needs a
 **manual look/test** — and, if on a PR, the **pushed commit** + confirmation the PR is updated.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-review-pr** · type: feedback · source: body
+  - This skill (weight 2): Triages the findings a review posted and fixes the ones chosen.
+  - piv-review-pr: Sends review findings to be triaged and fixed.
+- **piv-commit** · type: handoff · source: body
+  - This skill (weight 2): Passes the fixes to piv-commit.
+  - piv-commit: Commits the fixes that piv-fix-review-findings made.
+- **piv-validate** · type: gate · source: body
+  - This skill (weight 2): Validates after the chosen fixes are made.
+  - piv-validate: Gives the pass or fail verdict after fixes.
+<!-- relationships:end -->

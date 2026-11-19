@@ -1,6 +1,6 @@
 ---
 name: piv-slice-epic
-description: Slice an epic (with its architecture decisions) into PIV-sized tickets with a dependency graph, then create them in your tracker (Jira via the Atlassian MCP, or GitHub/Linear/local). Accepts the epic and its architecture as one doc or as an epic plus a separate linked architecture page. Turns a large strategic doc into the discrete units of work that the PIV loop consumes.
+description: Slice an epic (with its architecture decisions) into PIV-sized tickets with a dependency graph, then create them in your tracker (Jira via the Atlassian MCP, or GitHub/Linear/local). Accepts the epic and its architecture as one doc or as an epic plus a separate linked architecture page. Turns a large strategic doc into the discrete units of work that the PIV loop consumes. Dewey 658.4012.
 argument-hint: "[epic + its linked architecture page (paths or Confluence/Jira URLs); a PRD for greenfield]"
 ---
 
@@ -91,3 +91,22 @@ codebase orientation. **Priming is optional**; the per-ticket context above is w
 
 - Issue management is **tool-agnostic**: Jira (via Atlassian MCP), Linear, Notion, GitHub Issues, Archon's tasks — or just a folder of markdown files if you're solo. The tracker doesn't matter; the goal is to **split the work just enough that each loop has the highest chance of one-shot success, so you can automate the loop.**
 - Greenfield: the same slicing applies to MVP phases instead of epic tickets.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-architecture** · type: handoff · source: body
+  - This skill (weight 2): Takes an epic plus its architecture and slices it into tickets.
+  - plan-architecture: Hands the architecture to epic slicing.
+- **prime-codebase** · type: reference · source: body
+  - This skill (weight 1): Expects codebase orientation before slicing.
+  - prime-codebase: Run ahead of epic slicing to load the context it needs.
+- **piv-plan-implementation** · type: handoff · source: body
+  - This skill (weight 2): Each sliced ticket is handed to piv-plan-implementation.
+  - piv-plan-implementation: Plans one ticket that piv-slice-epic produced.
+- **worktree-create** · type: handoff · source: body
+  - This skill (weight 2): Sliced tickets can each get their own worktree.
+  - worktree-create: Creates a worktree for each ticket that piv-slice-epic produced.
+<!-- relationships:end -->

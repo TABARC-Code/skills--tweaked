@@ -1,6 +1,6 @@
 ---
 name: prime-backend
-description: Primes the agent with focused understanding of the backend portion of the codebase — API routes, services, data models, and database layer — without loading unrelated frontend code. Use at the start of a session when the work is scoped to API endpoints, business logic, or data access. Optionally pulls external task context from Jira issues and Confluence pages first.
+description: Primes the agent with focused understanding of the backend portion of the codebase — API routes, services, data models, and database layer — without loading unrelated frontend code. Use at the start of a session when the work is scoped to API endpoints, business logic, or data access. Optionally pulls external task context from Jira issues and Confluence pages first. Dewey 005.1.
 argument-hint: "[jira-issue-keys] [confluence-page-ids]"
 ---
 
@@ -104,3 +104,11 @@ Provide a concise summary covering:
 - Any immediate concerns (missing validation, unhandled errors, etc.)
 
 **Make this summary easy to scan - use bullet points and clear headers.**
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

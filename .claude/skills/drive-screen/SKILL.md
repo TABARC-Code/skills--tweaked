@@ -1,6 +1,6 @@
 ---
 name: drive-screen
-description: Take real control of the desktop - list and focus windows, type, paste, click, scroll, and screenshot - on Windows, macOS or Linux, and drive other coding-agent sessions running in terminals. Use when asked to set up the screen or the day, open and arrange a set of apps or repos, prepare or run a live demo before recording, test a desktop application that has no headless harness, launch or steer a Claude Code session in another window, or capture what is on screen as evidence. Triggers on "set up my screen", "get my demo ready", "drive the screen", "control my desktop", "open these repos and start", "test this desktop app", "run this on my machine and show me". Not for browser automation, which has its own headless tooling.
+description: Take real control of the desktop - list and focus windows, type, paste, click, scroll, and screenshot - on Windows, macOS or Linux, and drive other coding-agent sessions running in terminals. Use when asked to set up the screen or the day, open and arrange a set of apps or repos, prepare or run a live demo before recording, test a desktop application that has no headless harness, launch or steer a Claude Code session in another window, or capture what is on screen as evidence. Triggers on "set up my screen", "get my demo ready", "drive the screen", "control my desktop", "open these repos and start", "test this desktop app", "run this on my machine and show me". Not for browser automation, which has its own headless tooling. Dewey 004.16.
 ---
 
 # Drive the screen
@@ -359,3 +359,11 @@ whatever the compositor had. Move the window fully on-screen before reading it.
 
 To recover a text box in an unknown state: `esc` to dismiss dialogs, then `ctrl+a`
 and `delete`. Blind backspaces are a last resort and have made things worse.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

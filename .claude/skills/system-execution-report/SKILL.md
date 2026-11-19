@@ -1,6 +1,6 @@
 ---
 name: system-execution-report
-description: Generates a structured implementation report reflecting on a just-completed feature, covering what was done, what diverged, and what was hard. Use right after finishing an implementation, when the user asks for a write-up of how the build went or what changed from the plan, and as the input to a system review.
+description: Generates a structured implementation report reflecting on a just-completed feature, covering what was done, what diverged, and what was hard. Use right after finishing an implementation, when the user asks for a write-up of how the build went or what changed from the plan, and as the input to a system review. Dewey 006.3.
 ---
 
 # Execution Report
@@ -71,3 +71,13 @@ Based on this implementation, what should change for next time?
 - Plan skill improvements: [suggestions]
 - Execute skill improvements: [suggestions]
 - CLAUDE.md additions: [suggestions]
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **system-evolution-review** · type: handoff · source: description
+  - This skill (weight 2): The report is the input to the system review.
+  - system-evolution-review: Reviews how the plan was followed, using the execution report.
+<!-- relationships:end -->

@@ -1,6 +1,6 @@
 ---
 name: piv-implement
-description: Executes an implementation plan task-by-task with validation at every step. Use when a completed feature plan exists and the user wants it built, says implement it, build the plan, or start coding from the plan, even if they don't name this skill. Validate after each task rather than once at the end.
+description: Executes an implementation plan task-by-task with validation at every step. Use when a completed feature plan exists and the user wants it built, says implement it, build the plan, or start coding from the plan, even if they don't name this skill. Validate after each task rather than once at the end. Dewey 005.1.
 argument-hint: [path-to-plan]
 ---
 
@@ -127,3 +127,28 @@ decision the reviewer should not flag):
 - If you need to deviate from the plan, explain why
 - If tests fail, fix implementation until they pass
 - Don't skip validation steps
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-plan-implementation** · type: handoff · source: description
+  - This skill (weight 2): Executes an implementation plan from piv-plan-implementation.
+  - piv-plan-implementation: The implementation plan it writes is what piv-implement executes.
+- **piv-commit** · type: handoff · source: body
+  - This skill (weight 2): Hands finished work to piv-commit.
+  - piv-commit: Commits what piv-implement left uncommitted.
+- **piv-create-pr** · type: handoff · source: body
+  - This skill (weight 2): Hands the committed branch to piv-create-pr.
+  - piv-create-pr: Opens the pull request for a branch piv-implement produced.
+- **piv-review-pr** · type: reference · source: body
+  - This skill (weight 1): Named as the review step once the pull request exists.
+  - piv-review-pr: Named as the review step for the pull request piv-implement opened.
+- **piv-run-full-loop** · type: chain · source: body
+  - This skill (weight 2): Runs as the implementation stage of piv-run-full-loop.
+  - piv-run-full-loop: Runs implementation as the third stage of the chain.
+- **system-evolution-review** · type: feedback · source: body
+  - This skill (weight 2): Its divergences are what the evolution review classifies.
+  - system-evolution-review: Recommends process changes for the implement step.
+<!-- relationships:end -->

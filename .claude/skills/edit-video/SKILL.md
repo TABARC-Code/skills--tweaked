@@ -1,6 +1,6 @@
 ---
 name: edit-video
-description: Edit talking-head footage into a finished video with a script-driven pipeline the agent can verify without watching. Takes one recording or a folder of numbered clips, cuts it tight (no dead air, no breaths, no clipped words), places cut points with forced alignment instead of trusting Whisper timestamps, removes pauses and slips inside takes, hides jump cuts with punch-ins and split edits, adds scene-change transitions to screen recordings, burns in word-highlighted captions, builds motion-graphics B-roll with HyperFrames, inserts finished segments such as an ad read, and exports a loudness-normalised, sync-checked MP4 plus an .srt. Works for vertical Shorts, Reels and LinkedIn, 16:9 YouTube, course lessons and workshops. Use when the user says "edit this video", "cut these clips", "tighten this recording", "make a short from this", "add captions", "add B-roll" or "motion graphics", "stitch my screen recording", "insert this ad read", or runs /edit-video.
+description: Edit talking-head footage into a finished video with a script-driven pipeline the agent can verify without watching. Takes one recording or a folder of numbered clips, cuts it tight (no dead air, no breaths, no clipped words), places cut points with forced alignment instead of trusting Whisper timestamps, removes pauses and slips inside takes, hides jump cuts with punch-ins and split edits, adds scene-change transitions to screen recordings, burns in word-highlighted captions, builds motion-graphics B-roll with HyperFrames, inserts finished segments such as an ad read, and exports a loudness-normalised, sync-checked MP4 plus an .srt. Works for vertical Shorts, Reels and LinkedIn, 16:9 YouTube, course lessons and workshops. Use when the user says "edit this video", "cut these clips", "tighten this recording", "make a short from this", "add captions", "add B-roll" or "motion graphics", "stitch my screen recording", "insert this ad read", or runs /edit-video. Dewey 778.59.
 argument-hint: "<video file | folder of numbered clips>"
 ---
 
@@ -242,3 +242,11 @@ anything that only a human can judge (motion feel, sound) as theirs to check.
 - `references/lessons.md`: the lessons behind the rules, grouped by topic.
 - `references/openrouter.md`: the full pipeline: models per step, what each sends out, measured costs, traps.
 - `references/advanced/`: `motion-graphics-3d.md`, `dynamic-screen.md`, `audio-repair.md`.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

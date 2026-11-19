@@ -1,6 +1,6 @@
 ---
 name: piv-review-changes
-description: Performs a technical code review of recently changed files for bugs, security issues, and standards compliance, then writes a report. Use before committing as a pre-commit quality gate, and whenever the user asks for a review, a second look at their diff, or says review my changes, even if they don't name this skill.
+description: Performs a technical code review of recently changed files for bugs, security issues, and standards compliance, then writes a report. Use before committing as a pre-commit quality gate, and whenever the user asks for a review, a second look at their diff, or says review my changes, even if they don't name this skill. Dewey 005.14.
 ---
 
 # Code Review
@@ -112,3 +112,16 @@ If no issues found: "Code review passed. No technical issues detected."
 - Focus on real bugs, not style
 - Suggest fixes, don't just complain
 - Flag security issues as CRITICAL
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-commit** · type: gate · source: description
+  - This skill (weight 2): Runs before a commit as the pre-commit quality gate.
+  - piv-commit: Expects the pre-commit review to have run first.
+- **rules-check-drift** · type: reference · source: body
+  - This skill (weight 1): Can be extended with the rules-drift check.
+  - rules-check-drift: Can be folded into the code-review pass.
+<!-- relationships:end -->

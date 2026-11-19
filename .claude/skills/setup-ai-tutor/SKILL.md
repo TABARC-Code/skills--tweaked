@@ -1,6 +1,6 @@
 ---
 name: setup-ai-tutor
-description: Sets up and starts the AI Tutor project locally (environment file, dependencies, database, migrations, and dev server). Use when standing up the AI Tutor for the first time on a new machine or after a fresh clone. This is sample-project specific; adapt it when you install the AI Layer into your own project.
+description: Sets up and starts the AI Tutor project locally (environment file, dependencies, database, migrations, and dev server). Use when standing up the AI Tutor for the first time on a new machine or after a fresh clone. This is sample-project specific; adapt it when you install the AI Layer into your own project. Dewey 371.33.
 ---
 
 # Set Up the AI Tutor Locally
@@ -79,3 +79,11 @@ To stop services:
 
 - Port numbers and the exact `docker-compose` service name may differ — check `docker-compose.yml`,
   `.env.example`, and the project README for project-specific values before running.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

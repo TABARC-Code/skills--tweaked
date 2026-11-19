@@ -1,6 +1,6 @@
 ---
 name: worktree-create
-description: Create one or more git worktrees for parallel development, each on its own branch with gitignored config copied in, dependencies installed, and a health check, by fanning out a setup subagent per worktree. Use when starting isolated parallel work, running several PIV loops at once, or when the user says "set up worktrees", "create a worktree", "spin up parallel branches", or invokes /worktree-create.
+description: Create one or more git worktrees for parallel development, each on its own branch with gitignored config copied in, dependencies installed, and a health check, by fanning out a setup subagent per worktree. Use when starting isolated parallel work, running several PIV loops at once, or when the user says "set up worktrees", "create a worktree", "spin up parallel branches", or invokes /worktree-create. Dewey 005.8.
 argument-hint: "[branch ...]  (one or more branch names; blank = ask)"
 ---
 
@@ -67,3 +67,16 @@ If any worktree failed its health check, surface it clearly and do **not** repor
 
 - `references/worktree-setup.md` — the general, app-agnostic checklist of everything a fresh worktree needs, and
   how to detect each piece per project. Read it before detecting the setup.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-slice-epic** · type: handoff · source: body
+  - This skill (weight 2): Creates a worktree for each ticket that piv-slice-epic produced.
+  - piv-slice-epic: Sliced tickets can each get their own worktree.
+- **worktree-merge** · type: handoff · source: description
+  - This skill (weight 2): The branches in these worktrees go to worktree-merge.
+  - worktree-merge: Merges branches created in parallel worktrees.
+<!-- relationships:end -->

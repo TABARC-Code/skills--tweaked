@@ -1,6 +1,6 @@
 ---
 name: piv-validate
-description: Runs this project's full validation suite — tests, type checks, and linting across every part of the stack — then reports overall health. Use before committing, before opening a PR, or after finishing a chunk of work to confirm zero regressions.
+description: Runs this project's full validation suite — tests, type checks, and linting across every part of the stack — then reports overall health. Use before committing, before opening a PR, or after finishing a chunk of work to confirm zero regressions. Dewey 005.14.
 ---
 
 # Validate
@@ -88,3 +88,16 @@ this skill reports; fixing is a separate step.
   slow step, not to drop it from the checker.
 - A checker that cannot fail is worthless. Once your commands are wired in, break something on
   purpose and confirm this skill reports ❌.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-review-pr** · type: gate · source: body
+  - This skill (weight 2): Provides the validation verdict the review relies on.
+  - piv-review-pr: Runs the project's validation as part of the review.
+- **piv-fix-review-findings** · type: gate · source: body
+  - This skill (weight 2): Gives the pass or fail verdict after fixes.
+  - piv-fix-review-findings: Validates after the chosen fixes are made.
+<!-- relationships:end -->

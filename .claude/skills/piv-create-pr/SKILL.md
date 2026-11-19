@@ -1,6 +1,6 @@
 ---
 name: piv-create-pr
-description: Push the current feature branch and open a pull request, ready for review. Use after a ticket's implementation is committed on its own branch — it detects the base branch, pushes, opens the PR with a clear body (summary · what changed · validation status), and returns the URL to hand to a reviewer.
+description: Push the current feature branch and open a pull request, ready for review. Use after a ticket's implementation is committed on its own branch — it detects the base branch, pushes, opens the PR with a clear body (summary · what changed · validation status), and returns the URL to hand to a reviewer. Dewey 005.8.
 argument-hint: "[--base <branch>] (default: auto-detected)"
 ---
 
@@ -93,3 +93,16 @@ human approves."** This is the handoff point: the agent's loop ends at an open P
   review your own diff before moving on.
 - Sets up parallel work: one branch per ticket → one PR per ticket is exactly what makes worktree parallelism
   (running independent tickets at once) clean.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-implement** · type: handoff · source: body
+  - This skill (weight 2): Opens the pull request for a branch piv-implement produced.
+  - piv-implement: Hands the committed branch to piv-create-pr.
+- **piv-review-pr** · type: handoff · source: body
+  - This skill (weight 2): The pull request it opens is the input to piv-review-pr.
+  - piv-review-pr: Fetches and reviews a pull request created by piv-create-pr.
+<!-- relationships:end -->

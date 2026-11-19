@@ -1,7 +1,7 @@
 ---
 name: opportunity-scan
 argument-hint: "<a run's artifacts | a logs dir + window> [your steer] [agent docs url]"
-description: "Scan how you actually work with your coding agent and surface what to encode next. Point it at ONE run's artifacts to find what would have prevented a specific failure (the reactive loop — 'that went wrong, what should change in the AI layer?'), or at a window of session logs to find recurring patterns worth building (the proactive scan). Agent-agnostic. Outputs a shape-only HTML report. Use to evolve your system from real usage."
+description: "Scan how you actually work with your coding agent and surface what to encode next. Point it at ONE run's artifacts to find what would have prevented a specific failure (the reactive loop — 'that went wrong, what should change in the AI layer?'), or at a window of session logs to find recurring patterns worth building (the proactive scan). Agent-agnostic. Outputs a shape-only HTML report. Use to evolve your system from real usage. Dewey 006.3."
 ---
 
 # Opportunity Scan — find what to change, from what actually happened
@@ -122,3 +122,11 @@ step can't complete (docs or the target not found), stop and ask — never fabri
 **Scan one target per run.** If someone wants both the reactive and the proactive view, that's two runs and two
 reports — mixing "what broke in this loop" with "what I keep repeating across a month" produces a report that
 answers neither question well.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

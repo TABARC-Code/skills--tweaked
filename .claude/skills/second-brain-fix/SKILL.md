@@ -1,6 +1,6 @@
 ---
 name: second-brain-fix
-description: Work through the findings from a second-brain audit in batches, correcting stale facts and converting locations onto the state/event schema, driven by the markdown file of findings the audit left behind. Use after running second-brain-audit, when someone wants to fix the rest of their notes rather than one page, when they ask how to take the audit forward, when they have a list of contradicted or unsupported claims to work through, or when a notes folder needs converting in bulk rather than one page at a time.
+description: Work through the findings from a second-brain audit in batches, correcting stale facts and converting locations onto the state/event schema, driven by the markdown file of findings the audit left behind. Use after running second-brain-audit, when someone wants to fix the rest of their notes rather than one page, when they ask how to take the audit forward, when they have a list of contradicted or unsupported claims to work through, or when a notes folder needs converting in bulk rather than one page at a time. Dewey 025.04.
 argument-hint: "[path-to-audit-findings.md]"
 arguments: [audit-results]
 ---
@@ -256,3 +256,13 @@ quotes stale claims verbatim. Either keep that name or keep the file outside the
 Check whether `CLAUDE.md` (or `AGENTS.md`, or the system prompt) carries the state/event rule
 from the audit's phase 7. If it does not, add it before starting, and say why: fixing four
 hundred lines under a write path that can only append buys about a month.
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **second-brain-audit** · type: feedback · source: body
+  - This skill (weight 2): Works through the findings an audit left, batch by batch.
+  - second-brain-audit: Leaves a findings file that second-brain-fix works through.
+<!-- relationships:end -->

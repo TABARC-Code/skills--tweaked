@@ -1,6 +1,6 @@
 ---
 name: piv-implement-issue
-description: Implement the fix for a GitHub issue from its RCA artifact (created by piv-investigate-issue) — drift-check the plan, branch, implement, add regression tests, and validate. Use after the investigation artifact exists and you're ready to fix the issue.
+description: Implement the fix for a GitHub issue from its RCA artifact (created by piv-investigate-issue) — drift-check the plan, branch, implement, add regression tests, and validate. Use after the investigation artifact exists and you're ready to fix the issue. Dewey 005.1.
 argument-hint: [github-issue-id]
 allowed-tools: Read, Write, Edit, Bash(ruff:*), Bash(mypy:*), Bash(pytest:*), Bash(npm:*), Bash(bun:*)
 ---
@@ -241,3 +241,16 @@ gh issue close $ARGUMENTS --comment "Fixed and merged."
 - Follow project coding standards exactly
 - Ensure all validation passes before declaring complete
 - The commit message `Fixes #$ARGUMENTS` will link the commit to the GitHub issue
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-investigate-issue** · type: handoff · source: body
+  - This skill (weight 2): Implements the fix from an artifact written by piv-investigate-issue.
+  - piv-investigate-issue: Writes the root-cause artifact that piv-implement-issue consumes.
+- **piv-commit** · type: handoff · source: body
+  - This skill (weight 2): Passes the regression-tested fix to piv-commit.
+  - piv-commit: Commits changes made by piv-implement-issue.
+<!-- relationships:end -->

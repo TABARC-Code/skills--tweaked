@@ -1,6 +1,6 @@
 ---
 name: piv-run-full-loop
-description: Autonomously develops a complete feature from priming through planning, execution, and commit by chaining the four core PIV-loop skills. Use when you want a full hands-off feature build from a single description.
+description: Autonomously develops a complete feature from priming through planning, execution, and commit by chaining the four core PIV-loop skills. Use when you want a full hands-off feature build from a single description. Dewey 005.1.
 argument-hint: [feature-description]
 ---
 
@@ -74,3 +74,22 @@ After completing all 4 steps, provide:
 - Push to remote: `git push`
 - Create pull request (if applicable)
 - Continue with next feature
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **piv-plan-implementation** · type: chain · source: body
+  - This skill (weight 2): Runs planning as the second stage of the chain.
+  - piv-plan-implementation: Runs as the planning stage of piv-run-full-loop.
+- **piv-implement** · type: chain · source: body
+  - This skill (weight 2): Runs implementation as the third stage of the chain.
+  - piv-implement: Runs as the implementation stage of piv-run-full-loop.
+- **piv-commit** · type: chain · source: body
+  - This skill (weight 2): Ends the chain with a commit.
+  - piv-commit: Runs as the final commit stage of piv-run-full-loop.
+- **prime-codebase** · type: chain · source: body
+  - This skill (weight 2): Starts the chain by priming the codebase.
+  - prime-codebase: Runs as the first stage of piv-run-full-loop.
+<!-- relationships:end -->

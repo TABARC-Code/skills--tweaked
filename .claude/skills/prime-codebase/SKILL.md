@@ -1,6 +1,6 @@
 ---
 name: prime-codebase
-description: Primes the agent with deep codebase understanding by analyzing structure, documentation, and key files. Use when starting work on a codebase, at the beginning of a session, or when you need a fast orientation before planning or implementing. Optionally pulls external task context from Jira issues and Confluence pages first.
+description: Primes the agent with deep codebase understanding by analyzing structure, documentation, and key files. Use when starting work on a codebase, at the beginning of a session, or when you need a fast orientation before planning or implementing. Optionally pulls external task context from Jira issues and Confluence pages first. Dewey 005.1.
 argument-hint: "[jira-issue-keys] [confluence-page-ids]"
 ---
 
@@ -99,3 +99,25 @@ Provide a concise summary covering:
 - Any immediate observations or concerns
 
 **Make this summary easy to scan - use bullet points and clear headers.**
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-architecture** · type: reference · source: body
+  - This skill (weight 1): Run ahead of architecture work to load the context it needs.
+  - plan-architecture: Expects codebase orientation before exploring architecture.
+- **piv-plan-implementation** · type: dependency · source: description
+  - This skill (weight 3): Provides the orientation that planning relies on.
+  - piv-plan-implementation: Needs the codebase primed before deep analysis.
+- **piv-run-full-loop** · type: chain · source: body
+  - This skill (weight 2): Runs as the first stage of piv-run-full-loop.
+  - piv-run-full-loop: Starts the chain by priming the codebase.
+- **piv-slice-epic** · type: reference · source: body
+  - This skill (weight 1): Run ahead of epic slicing to load the context it needs.
+  - piv-slice-epic: Expects codebase orientation before slicing.
+- **rules-create-global** · type: reference · source: body
+  - This skill (weight 1): Provides the orientation rules-create-global draws on.
+  - rules-create-global: Derives the rules from codebase orientation.
+<!-- relationships:end -->

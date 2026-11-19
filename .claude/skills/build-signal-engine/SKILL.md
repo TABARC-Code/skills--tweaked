@@ -1,6 +1,6 @@
 ---
 name: build-signal-engine
-description: Build a personal signal engine from scratch - a system that reads every source someone cares about each day (changelogs and release notes, communities, feeds, videos, papers), makes a quick decision on every item, lets an LLM read only what survives, and delivers one short digest. Interviews the user first to pin down what they need to keep up with, the sources where it actually shows up, and the one question that decides what is worth their time, then builds it one stage at a time into their own repo, proving each stage on real data. Agnostic about the coding agent, the decision model and where the data comes from. Use when the user wants to keep up with AI or their field without doomscrolling, build an AI news digest, a daily briefing, a content engine, a research or competitor monitor, a changelog watcher, or "something that reads everything and tells me what matters"; and when they mention signal vs noise, an information diet, or falling behind.
+description: Build a personal signal engine from scratch - a system that reads every source someone cares about each day (changelogs and release notes, communities, feeds, videos, papers), makes a quick decision on every item, lets an LLM read only what survives, and delivers one short digest. Interviews the user first to pin down what they need to keep up with, the sources where it actually shows up, and the one question that decides what is worth their time, then builds it one stage at a time into their own repo, proving each stage on real data. Agnostic about the coding agent, the decision model and where the data comes from. Use when the user wants to keep up with AI or their field without doomscrolling, build an AI news digest, a daily briefing, a content engine, a research or competitor monitor, a changelog watcher, or "something that reads everything and tells me what matters"; and when they mention signal vs noise, an information diet, or falling behind. Dewey 025.04.
 argument-hint: "[optional: path/to/repo]"
 arguments: [repo]
 ---
@@ -220,3 +220,11 @@ or a sharper question. Then it runs on its own.
 - `templates/PROFILE.md` - the file the interview produces and every stage reads
 - `templates/item_schema.md` - the one item shape every source maps to
 - `templates/digest_prompt.md` - the starting reading prompt
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+No links declared yet. Add one in network/edges.json and rebuild.
+<!-- relationships:end -->

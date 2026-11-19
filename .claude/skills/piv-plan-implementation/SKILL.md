@@ -1,6 +1,6 @@
 ---
 name: piv-plan-implementation
-description: Creates a comprehensive, context-rich implementation plan through deep codebase analysis, a short clarifying interview, and external research. Accepts a tracker ticket (a Jira/Linear/GitHub key or URL, fetched from the tracker) or a free-form feature request. Use when you have a ticket or feature and need a one-pass-ready plan before writing any code.
+description: Creates a comprehensive, context-rich implementation plan through deep codebase analysis, a short clarifying interview, and external research. Accepts a tracker ticket (a Jira/Linear/GitHub key or URL, fetched from the tracker) or a free-form feature request. Use when you have a ticket or feature and need a one-pass-ready plan before writing any code. Dewey 005.1.
 argument-hint: "[ticket key/URL (fetched from your tracker), or a free-form feature description]"
 ---
 
@@ -509,3 +509,28 @@ After creating the Plan, provide:
 - Complexity assessment
 - Key implementation risks or considerations
 - Estimated confidence score for one-pass success
+
+<!-- relationships:start -->
+## Relationships
+
+Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
+
+- **plan-architecture** · type: handoff · source: body
+  - This skill (weight 2): Asks for architecture decisions first when they are still open.
+  - plan-architecture: Architecture decisions are carried into the implementation plan.
+- **prime-codebase** · type: dependency · source: description
+  - This skill (weight 3): Needs the codebase primed before deep analysis.
+  - prime-codebase: Provides the orientation that planning relies on.
+- **piv-implement** · type: handoff · source: description
+  - This skill (weight 2): The implementation plan it writes is what piv-implement executes.
+  - piv-implement: Executes an implementation plan from piv-plan-implementation.
+- **piv-run-full-loop** · type: chain · source: body
+  - This skill (weight 2): Runs as the planning stage of piv-run-full-loop.
+  - piv-run-full-loop: Runs planning as the second stage of the chain.
+- **piv-slice-epic** · type: handoff · source: body
+  - This skill (weight 2): Plans one ticket that piv-slice-epic produced.
+  - piv-slice-epic: Each sliced ticket is handed to piv-plan-implementation.
+- **system-evolution-review** · type: feedback · source: body
+  - This skill (weight 2): Its plan is what the evolution review checks divergences against.
+  - system-evolution-review: Recommends plan-level changes for the next run.
+<!-- relationships:end -->
