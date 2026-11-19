@@ -52,6 +52,10 @@ sure the deferred items are logged as issues.
 A short report: what was **fixed** (with its test), what was **deferred/logged** (with issue refs), what needs a
 **manual look/test** — and, if on a PR, the **pushed commit** + confirmation the PR is updated.
 
+## Error-proof the fix
+
+After each chosen fix, re-run the exact check that produced the finding and record the before and after result. A fix that looks right but has no before-and-after evidence is not done. If the same class of finding appears twice in one review, note it for the kaizen pass rather than fixing each instance by hand: a repeated defect usually points to a missing guard, not careless work.
+
 <!-- relationships:start -->
 ## Relationships
 
@@ -66,4 +70,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **piv-validate** · type: gate · source: body
   - This skill (weight 2): Validates after the chosen fixes are made.
   - piv-validate: Gives the pass or fail verdict after fixes.
+- **kaizen** · type: reference · source: body
+  - This skill (weight 1): Adds before-and-after evidence per fix, and sends repeated defects to kaizen.
+  - kaizen: Receives repeated review-finding defects from piv-fix-review-findings.
 <!-- relationships:end -->

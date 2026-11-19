@@ -33,6 +33,10 @@ Briefly reflect the priorities you heard before recommending, distinguishing any
 
 If the user explicitly delegates a decision or asks you to proceed without an interview, respect that. State the assumptions behind your recommendation and mark the decision as delegated. Keep any priorities or constraints they did supply separate from those assumptions; delegation does not make known facts uncertain. Do not present an inferred preference as something the user said. Routine, cheap, reversible decisions do not need this entire process.
 
+## Map the hidden constraints first
+
+Before comparing options, list who is affected, who decides, which incentives pull in different directions, and what nobody has said out loud. Ask about any of these you cannot answer. Recommendations made without this map tend to fail at the point where the constraints bite. This follows the structure-first step in perdita-mode.
+
 ## Then, compare and recommend
 
 Present two or three credible approaches at comparable detail, including keeping the current approach when it is viable. Explain the tradeoffs against the user's stated priorities, and distinguish technical evidence from value judgments. Do not manufacture an inferior alternative to make your favorite look inevitable.
@@ -86,7 +90,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **plan-architecture** · type: handoff · source: body
   - This skill (weight 2): Once priorities are agreed, the approach goes to architecture.
   - plan-architecture: Takes the agreed priorities as the frame for architecture decisions.
-- **perdita-mode** · type: reference · source: description
-  - This skill (weight 1): Elicits priorities before any recommendation when the goals are unclear.
-  - perdita-mode: Maps hidden structure first when the conflicts are unclear, before any recommendation.
+- **perdita-mode** · type: reference · source: body
+  - This skill (weight 1): Its structure-first step is applied before options are compared in plan-with-priorities.
+  - perdita-mode: Maps hidden constraints and incentives first, using the structure-first step in perdita-mode.
 <!-- relationships:end -->

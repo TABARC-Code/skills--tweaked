@@ -134,6 +134,10 @@ sections only, scannable:
   closer to a solution. Building *for someone else* → you can't introspect their needs; building it *right*
   beats building it. Either way: thinnest MVP + experiments is how you learn what "right" is.
 
+## Reader check
+
+Before you hand this over, test it on a reader who was not in the conversation. Write five questions a cold reader would realistically ask (what is this for, what is decided, what is still open, what do I do next, what would make this wrong). Answer each one using only the document. Any answer that needs the conversation means a gap: fix the document, not the reader. This follows the reader-testing stage in doc-coauthoring. If you can spawn a fresh-context subagent, use it, because your own reading is never cold.
+
 <!-- relationships:start -->
 ## Relationships
 
@@ -154,4 +158,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **build-dark-factory** · type: dependency · source: body
   - This skill (weight 3): Produces the PRD that build-dark-factory consumes.
   - build-dark-factory: Needs a PRD from plan-create-prd before it can build.
+- **doc-coauthoring** · type: reference · source: body
+  - This skill (weight 1): Runs a reader check on the PRD, using the reader-testing stage of doc-coauthoring.
+  - doc-coauthoring: Its reader-testing stage is reused by plan-create-prd.
 <!-- relationships:end -->

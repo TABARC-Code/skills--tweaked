@@ -221,4 +221,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **mycelium-organism-analysis** · type: reference · source: body
   - This skill (weight 1): Complements the mycelium lens by owning inference from indirect signal.
   - mycelium-organism-analysis: Complements the bat lens by owning the metabolic view of the same system.
+- **piv-investigate-issue** · type: reference · source: body
+  - This skill (weight 1): Its indirect-signal lens is applied when a root-cause analysis stops short.
+  - piv-investigate-issue: Uses the silence-and-signal lens when the evidence does not close the chain.
 <!-- relationships:end -->

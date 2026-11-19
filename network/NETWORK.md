@@ -12,9 +12,9 @@ Regenerate with `python3 network/build_network.py --write`, then `--check`, then
 
 ## Current state
 
-- 49 skills, 51 links (handoff 17, reference 15, feedback 9, gate 4, chain 4, dependency 2).
-- 14 links are inferred from descriptions only and are marked `source: description`.
-- Skills with no declared links yet: `ablate-ai-layer`, `agent-browser`, `ast-grep`, `build-signal-engine`, `doc-coauthoring`, `drive-screen`, `edit-video`, `hooks-create`, `prime-backend`, `prime-frontend`, `router`, `second-brain-prd`, `setup-ai-tutor`.
+- 49 skills, 68 links (reference 20, handoff 17, gate 16, feedback 9, chain 4, dependency 2).
+- 13 links are inferred from descriptions only and are marked `source: description`.
+- Skills with no declared links yet: `ablate-ai-layer`, `ast-grep`, `build-signal-engine`, `drive-screen`, `edit-video`, `hooks-create`, `router`, `second-brain-prd`, `setup-ai-tutor`.
 
 ## Dewey index
 
@@ -23,16 +23,16 @@ Codes are a proposed classification for this repo. Check them before relying on 
 | Dewey | Skill | Linked |
 |---|---|---|
 | 004.16 | `drive-screen` | no |
-| 004.678 | `agent-browser` | no |
+| 004.678 | `agent-browser` | yes |
 | 005.1 | `build-dark-factory` | yes |
 | 005.1 | `piv-implement` | yes |
 | 005.1 | `piv-implement-issue` | yes |
 | 005.1 | `piv-investigate-issue` | yes |
 | 005.1 | `piv-plan-implementation` | yes |
 | 005.1 | `piv-run-full-loop` | yes |
-| 005.1 | `prime-backend` | no |
+| 005.1 | `prime-backend` | yes |
 | 005.1 | `prime-codebase` | yes |
-| 005.1 | `prime-frontend` | no |
+| 005.1 | `prime-frontend` | yes |
 | 005.120 | `skills-create` | yes |
 | 005.13 | `ast-grep` | no |
 | 005.14 | `piv-fix-review-findings` | yes |
@@ -70,7 +70,7 @@ Codes are a proposed classification for this repo. Check them before relying on 
 | 658.403 | `plan-with-priorities` | yes |
 | 658.562 | `kaizen` | yes |
 | 778.59 | `edit-video` | no |
-| 808.066 | `doc-coauthoring` | no |
+| 808.066 | `doc-coauthoring` | yes |
 
 ## Thinking lenses
 

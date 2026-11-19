@@ -204,7 +204,7 @@ The spider's patience is structural. It waits until the web is clear — then ac
 
 Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
 
-- **plan-with-priorities** · type: reference · source: description
-  - This skill (weight 1): Maps hidden structure first when the conflicts are unclear, before any recommendation.
-  - plan-with-priorities: Elicits priorities before any recommendation when the goals are unclear.
+- **plan-with-priorities** · type: reference · source: body
+  - This skill (weight 1): Maps hidden constraints and incentives first, using the structure-first step in perdita-mode.
+  - plan-with-priorities: Its structure-first step is applied before options are compared in plan-with-priorities.
 <!-- relationships:end -->

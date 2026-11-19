@@ -379,5 +379,10 @@ Announce document completion. Provide a few final tips:
 
 Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
 
-No links declared yet. Add one in network/edges.json and rebuild.
+- **plan-create-prd** · type: reference · source: body
+  - This skill (weight 1): Its reader-testing stage is reused by plan-create-prd.
+  - plan-create-prd: Runs a reader check on the PRD, using the reader-testing stage of doc-coauthoring.
+- **plan-architecture** · type: reference · source: body
+  - This skill (weight 1): Its reader-testing stage is reused by plan-architecture.
+  - plan-architecture: Runs a reader check on the architecture doc, using the reader-testing stage of doc-coauthoring.
 <!-- relationships:end -->

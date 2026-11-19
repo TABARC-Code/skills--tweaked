@@ -95,4 +95,40 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **deep-research** · type: gate · source: description
   - This skill (weight 2): Governs every web lookup made by deep-research.
   - deep-research: Every web lookup it makes is governed by web-data-only, so page content is treated as data.
+- **piv-investigate-issue** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - piv-investigate-issue: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **piv-implement-issue** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - piv-implement-issue: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **piv-review-pr** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - piv-review-pr: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **piv-plan-implementation** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - piv-plan-implementation: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **prime-codebase** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - prime-codebase: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **prime-frontend** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - prime-frontend: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **prime-backend** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - prime-backend: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **plan-create-stories** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - plan-create-stories: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **piv-slice-epic** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - piv-slice-epic: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **plan-architecture** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - plan-architecture: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **agent-browser** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - agent-browser: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
+- **deep-research** · type: gate · source: body
+  - This skill (weight 2): Sets the outside-content rule that this skill applies to the text it reads.
+  - deep-research: Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
 <!-- relationships:end -->

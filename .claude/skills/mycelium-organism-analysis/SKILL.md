@@ -242,4 +242,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **bat-indirect-inference** · type: reference · source: body
   - This skill (weight 1): Complements the bat lens by owning the metabolic view of the same system.
   - bat-indirect-inference: Complements the mycelium lens by owning inference from indirect signal.
+- **piv-investigate-issue** · type: reference · source: body
+  - This skill (weight 1): Its dormancy and regrowth lens is applied to recurring root-cause analyses.
+  - piv-investigate-issue: Checks recurring issues for a cause that the earlier fix did not reach.
 <!-- relationships:end -->

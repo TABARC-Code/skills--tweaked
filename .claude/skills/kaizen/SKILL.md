@@ -742,4 +742,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **system-evolution-review** · type: feedback · source: description
   - This skill (weight 2): Passes process defects to the evolution review for classification.
   - system-evolution-review: Classifies process divergences that kaizen can turn into improvements.
+- **piv-fix-review-findings** · type: reference · source: body
+  - This skill (weight 1): Receives repeated review-finding defects from piv-fix-review-findings.
+  - piv-fix-review-findings: Adds before-and-after evidence per fix, and sends repeated defects to kaizen.
 <!-- relationships:end -->

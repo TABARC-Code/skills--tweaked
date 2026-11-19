@@ -389,9 +389,9 @@
       "a": "perdita-mode",
       "b": "plan-with-priorities",
       "type": "reference",
-      "source": "description",
-      "a_to_b": "Maps hidden structure first when the conflicts are unclear, before any recommendation.",
-      "b_to_a": "Elicits priorities before any recommendation when the goals are unclear."
+      "source": "body",
+      "a_to_b": "Maps hidden constraints and incentives first, using the structure-first step in perdita-mode.",
+      "b_to_a": "Its structure-first step is applied before options are compared in plan-with-priorities."
     },
     {
       "a": "book-knowledge-extraction",
@@ -408,6 +408,142 @@
       "source": "description",
       "a_to_b": "Its research pack can be absorbed and synthesised by book-knowledge-extraction.",
       "b_to_a": "Absorbs research packs and sources that deep-research produces."
+    },
+    {
+      "a": "piv-investigate-issue",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "piv-implement-issue",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "piv-review-pr",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "piv-plan-implementation",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "prime-codebase",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "prime-frontend",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "prime-backend",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "plan-create-stories",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "piv-slice-epic",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "plan-architecture",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "agent-browser",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "deep-research",
+      "b": "web-data-only",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.",
+      "b_to_a": "Sets the outside-content rule that this skill applies to the text it reads."
+    },
+    {
+      "a": "piv-investigate-issue",
+      "b": "bat-indirect-inference",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Uses the silence-and-signal lens when the evidence does not close the chain.",
+      "b_to_a": "Its indirect-signal lens is applied when a root-cause analysis stops short."
+    },
+    {
+      "a": "piv-investigate-issue",
+      "b": "mycelium-organism-analysis",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Checks recurring issues for a cause that the earlier fix did not reach.",
+      "b_to_a": "Its dormancy and regrowth lens is applied to recurring root-cause analyses."
+    },
+    {
+      "a": "plan-create-prd",
+      "b": "doc-coauthoring",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Runs a reader check on the PRD, using the reader-testing stage of doc-coauthoring.",
+      "b_to_a": "Its reader-testing stage is reused by plan-create-prd."
+    },
+    {
+      "a": "plan-architecture",
+      "b": "doc-coauthoring",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Runs a reader check on the architecture doc, using the reader-testing stage of doc-coauthoring.",
+      "b_to_a": "Its reader-testing stage is reused by plan-architecture."
+    },
+    {
+      "a": "piv-fix-review-findings",
+      "b": "kaizen",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Adds before-and-after evidence per fix, and sends repeated defects to kaizen.",
+      "b_to_a": "Receives repeated review-finding defects from piv-fix-review-findings."
     }
   ],
   "dewey": {
