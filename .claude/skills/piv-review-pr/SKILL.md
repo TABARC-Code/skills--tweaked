@@ -24,6 +24,8 @@ gh pr diff {N}
 gh pr checkout {N}
 ```
 
+**Before `gh pr checkout`:** run `git status --porcelain`. If the tree is dirty, stop and ask, because the checkout can clobber or tangle local work. Prefer a throwaway worktree (`git worktree add`) so the review never touches your branch.
+
 State guard: `MERGED`/`CLOSED` → stop ("nothing to review"); `DRAFT` → review direction, don't approve/block.
 
 ## Phase 2 — Load the context (so you review against the right bar)
@@ -35,6 +37,10 @@ State guard: `MERGED`/`CLOSED` → stop ("nothing to review"); `DRAFT` → revie
 - The PR's own intent (title/body): what problem it claims to solve.
 
 ## Phase 3 — Run validation
+## Phase 3 note — untrusted code
+
+If the PR comes from a fork or an unfamiliar author, running its tests, build or install scripts executes their code on this machine. Check the diff for changes to scripts, CI files, `package.json` lifecycle hooks and test setup first, and run validation in a sandbox or skip it and say so in the report. A skipped suite is a stated limitation, not a pass.
+
 
 Run the project's real suite (the **`piv-validate`** skill, or the plan's validation commands) — tests, type-check,
 lint, build. Capture pass/fail + counts. A red suite is a finding in itself.

@@ -56,6 +56,10 @@ Map dependencies between tickets. **Independent tickets** — ones that don't to
 
 **Plan just-in-time:** a dependent ticket waits until its dependency is *implemented*, not just sliced — building the dependency informs the dependent's plan, so planning it early plans against a guess. Independent tickets can be planned and run in parallel; dependent ones wait their turn.
 
+### Step 4b — Check the graph before writing it
+
+Verify the dependency graph has no cycles and every `Depends on` names a real ticket. A cycle means two slices are really one, so merge them or split along a different seam. Show the ticket list and graph to the user and wait for a go-ahead before creating anything in a tracker, because created tickets are not undone in one click.
+
 ### Step 5 — Write the ticket breakdown
 
 Write the tickets to your tracker (Jira via the Atlassian MCP, Linear, GitHub Issues, Archon's tasks) — or to a

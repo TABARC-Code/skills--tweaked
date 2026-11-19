@@ -2,7 +2,7 @@
 name: piv-implement-issue
 description: Implement the fix for a GitHub issue from its RCA artifact (created by piv-investigate-issue) — drift-check the plan, branch, implement, add regression tests, and validate. Use after the investigation artifact exists and you're ready to fix the issue. Dewey 005.1.
 argument-hint: [github-issue-id]
-allowed-tools: Read, Write, Edit, Bash(ruff:*), Bash(mypy:*), Bash(pytest:*), Bash(npm:*), Bash(bun:*)
+allowed-tools: Read, Write, Edit, Bash(git:*), Bash(gh:*), Bash(ruff:*), Bash(mypy:*), Bash(pytest:*), Bash(npm:*), Bash(bun:*)
 ---
 
 # Implement Issue Fix: GitHub Issue #$ARGUMENTS
@@ -33,6 +33,10 @@ gh issue view $ARGUMENTS
 - Review the proposed fix strategy
 - Note all files to modify
 - Review testing requirements
+
+### 1b. Check the RCA's confidence before touching code
+
+Read the **Confidence** row in the RCA. If it is **Low**, or the Root Cause section says the cause is not yet determined, **stop**. The investigation flagged this for a human before any fix, so a fix built on it is a guess. Report what is missing and ask whether to re-investigate or to proceed on the stated hypothesis. Medium is fine, but carry the stated unknowns into the report.
 
 ### 2. Verify Current State — and check for drift
 
@@ -118,6 +122,8 @@ Execute validation commands from RCA:
 - Fix the issues
 - Re-run validation
 - Don't proceed until all pass
+**Retry cap:** if the same check fails after three fix attempts, stop and report the failing output and what you tried. A third identical failure usually means the RCA's cause is wrong, and more patching hides that. Do not weaken or delete a test to get green.
+
 
 ### 6. Verify Fix
 

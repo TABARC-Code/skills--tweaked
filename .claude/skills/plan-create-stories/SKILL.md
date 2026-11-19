@@ -64,6 +64,10 @@ one click.
   `gh label create`).
 - Capture each created issue number/URL.
 
+### 3b. Make creation safe to re-run
+
+Creating 30 tickets is not atomic. Write each created key or URL to `docs/tickets/<prd-slug>.created.json` as it happens. Before creating a ticket, check that file and search the tracker for the same title under the same epic or label, and skip a match. If a run fails at ticket 17, the next run resumes at 18 instead of duplicating 1 to 17. Report skipped and failed tickets in the table.
+
 ### 4. Report
 - A table: ticket title → phase → created key/number/URL.
 - The PRD path the backlog was generated from.

@@ -41,6 +41,7 @@ List all tracked files:
 
 Show directory structure:
 On Linux, run: `tree -L 3 -I 'node_modules|__pycache__|.git|dist|build'`
+If `tree` is not installed, use `git ls-files | cut -d/ -f1-3 | sort -u`. On a very large repo, do not read the whole file list: take the top two directory levels and sample from there.
 
 ### 2. Read Core Documentation
 
