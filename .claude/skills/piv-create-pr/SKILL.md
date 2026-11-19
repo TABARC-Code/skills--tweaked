@@ -19,6 +19,8 @@ Don't hardcode `main`. Resolve it:
 
 ## Phase 1 — Validate git state
 
+Run `git fetch origin {base}` first, so "commits ahead" is measured against the real remote and not a stale copy.
+
 ```bash
 git branch --show-current
 git status --short
@@ -43,6 +45,7 @@ git log origin/{base}..HEAD --oneline
 - **Implementation report** (if `piv-implement` wrote one — `.claude/reports/<…>-report.md`): pull the summary,
   validation results, and **documented deviations** (these belong in the PR body — they tell the reviewer what
   was intentional).
+- **Report freshness:** if the implementation report is older than the latest commit, do not quote its validation results as current. Run validation again or write "not re-run since the last commit".
 - Linked ticket / issue: look for `ACC-…`, `#123`, `Fixes #…` in the commits/branch name.
 - PR template: if `.github/PULL_REQUEST_TEMPLATE.md` exists, fill it; else use the default below.
 

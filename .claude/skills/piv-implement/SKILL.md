@@ -30,6 +30,7 @@ won't be in this branch's PR.** If you're still on base, this step creates the b
 
 - Read the ENTIRE plan carefully
 - Understand all tasks and their dependencies
+- Read the plan's **Open Questions / Assumptions** and its confidence score. If a question blocks a task and is unresolved, stop and ask before starting that task. A plan with a low confidence score gets a stated plan-risk note in the report.
 - Note the validation commands to run
 - Review the testing strategy
 
@@ -75,7 +76,8 @@ Execute ALL validation commands from the plan in order:
 If any command fails:
 - Fix the issue
 - Re-run the command
-- Continue only when it passes
+- Continue only when it passes- **Retry cap:** the same check failing three times means stop and report the output and what you tried. Repeated failure usually means the plan is wrong, and more patching hides it. Never weaken or delete a test to get green. Set the report Status to PARTIAL if you stop.
+
 
 ### 5. Final Verification
 

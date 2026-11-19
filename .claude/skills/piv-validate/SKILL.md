@@ -23,6 +23,8 @@ Run every check this project has and report a single PASS/FAIL verdict.
 > 2. **Cross-platform.** Avoid POSIX-only idioms if anyone on the team is on Windows — `lsof`,
 >    `python3`, and background-then-`kill` are the common offenders.
 
+**Unconfigured means failed.** Before running anything, scan the command blocks below. If any still contains a placeholder such as `<your test command>` or a `REPLACE:` comment, do not report PASS. Report **Overall: NOT CONFIGURED**, list the sections still holding placeholders, and offer to detect the real commands from `package.json`, `pyproject.toml`, a `Makefile` or the CI workflow. A checker that has nothing to run must say so, because silence reads as green.
+
 Run the checks in order. Keep going after a failure so the report covers everything, and capture the
 output of any command that fails.
 

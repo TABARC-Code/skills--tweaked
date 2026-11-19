@@ -12,6 +12,17 @@ This skill chains the 4 core PIV-loop skills for autonomous feature development.
 
 ---
 
+## Gates between steps
+
+This chain runs without a human, so each step has to earn the next one. If a gate fails, stop, report the step that failed and why, and do not run later steps.
+
+- Before Step 1: if you are on the base branch with a dirty tree, stop. Commit or stash first.
+- After Step 2: read the plan's Open Questions and confidence score. Unresolved blocking questions, or a score below 7 out of 10, means stop and ask. Do not implement a guess.
+- After Step 3: read the implementation report. Status must be COMPLETE and validation must pass. PARTIAL means stop.
+- The final summary shows what actually happened. A step that did not run or did not pass is marked with a cross and a reason, never a tick.
+
+---
+
 ## Step 1: Prime - Load Codebase Context
 
 Execute the priming workflow to understand the codebase.
