@@ -86,4 +86,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **plan-architecture** · type: handoff · source: body
   - This skill (weight 2): Once priorities are agreed, the approach goes to architecture.
   - plan-architecture: Takes the agreed priorities as the frame for architecture decisions.
+- **perdita-mode** · type: reference · source: description
+  - This skill (weight 1): Elicits priorities before any recommendation when the goals are unclear.
+  - perdita-mode: Maps hidden structure first when the conflicts are unclear, before any recommendation.
 <!-- relationships:end -->

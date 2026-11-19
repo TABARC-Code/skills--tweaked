@@ -128,5 +128,7 @@ answers neither question well.
 
 Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
 
-No links declared yet. Add one in network/edges.json and rebuild.
+- **memory-dreaming-engine** · type: feedback · source: description
+  - This skill (weight 2): Surfaces what to encode next, with repeated-mistake evidence as an input.
+  - memory-dreaming-engine: Its evidence of repeated agent mistakes can feed what to encode next.
 <!-- relationships:end -->

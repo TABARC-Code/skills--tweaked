@@ -1,0 +1,107 @@
+# Extracted Knowledge Schema
+
+Use this YAML template after Phase 7 (compression and verification) to produce
+a structured knowledge record before skill conversion.
+
+```yaml
+extracted_knowledge:
+  source:
+    title: ""
+    author: ""
+    publication_date: ""
+    type: "book | chapter | guide | paper | notes | transcript | mixed"
+    discipline: ""
+    intended_audience: ""
+    reliability: "high | medium | low | uncertain"
+    extraction_mode: "fiction-craft | game-design | technical-academic | seo-marketing | generic"
+    extraction_depth: "surface | standard | deep | forensic"
+
+  structural_map:
+    chapters_or_sections: []
+    sequence_logic: ""
+    structural_turning_points: []
+
+  concepts:
+    - term: ""
+      definition: ""
+      support_level: "well-supported | asserted | contested | implied"
+      source_location: ""
+      skill_relevance: ""
+
+  claims:
+    - claim: ""
+      evidence: ""
+      assumption: ""
+      counterpoint: ""
+      confidence: "high | medium | low"
+      skill_relevance: ""
+
+  procedures:
+    - name: ""
+      type: "reusable | conditional | context-specific | deprecated | speculative"
+      steps: []
+      required_inputs: []
+      output: ""
+      failure_modes: []
+      confidence: "high | medium | low"
+
+  voice_and_register:
+    # Fiction and craft mode only
+    - register: ""
+      tone: ""
+      sentence_rhythm: ""
+      contra_lean: ""
+      tradition_lineage: ""
+
+  mechanic_and_system:
+    # Game design mode only
+    - mechanic_name: ""
+      decision_structure: ""
+      player_action: ""
+      testability: "falsifiable | asserted"
+      player_psychology: ""
+      genre_target: ""
+
+  transferable_skills:
+    - name: ""
+      parent_skill_target: ""
+      sub_skill_type: "inherited | required | optional | specialised | conditional | supportive | overriding | downstream | upstream"
+      relationship_candidates: []
+
+  knowledge_gaps:
+    - gap: ""
+      domain: ""
+      candidate_sources: []
+
+  contradictions:
+    - existing_skill: ""
+      contradiction: ""
+      classification: "factual | methodological | scope | emphasis"
+      resolution: "pending | source A governs | source B governs | tension retained"
+
+  provenance:
+    source_title: ""
+    source_author: ""
+    extraction_date: ""
+    extraction_depth: ""
+    extraction_confidence: ""
+    derived_skills: []
+    derived_sub_skills: []
+    gaps_identified: []
+    supersedes: []
+    superseded_by: ""
+    review_trigger: "When a second source on the same domain arrives, re-run collision check."
+
+  multi_source_synthesis:
+    # Complete only when two or more sources cover the same domain
+    collision_check:
+      agreement_points: []
+      conflict_points: []
+      complementary_points: []
+    conflict_classifications: []
+    precedence_decisions:
+      - procedure: ""
+        governing_source: ""
+        reason: ""
+    synthesis_layer: ""
+```

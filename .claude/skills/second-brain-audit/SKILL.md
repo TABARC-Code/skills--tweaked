@@ -355,4 +355,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **second-brain-fix** · type: feedback · source: body
   - This skill (weight 2): Leaves a findings file that second-brain-fix works through.
   - second-brain-fix: Works through the findings an audit left, batch by batch.
+- **memory-dreaming-engine** · type: reference · source: description
+  - This skill (weight 1): Covers the memory-rot problem from the audit side.
+  - memory-dreaming-engine: Covers the memory-rot problem from the review side.
 <!-- relationships:end -->

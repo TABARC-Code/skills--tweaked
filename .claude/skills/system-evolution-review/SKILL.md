@@ -205,4 +205,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **piv-implement** · type: feedback · source: body
   - This skill (weight 2): Recommends process changes for the implement step.
   - piv-implement: Its divergences are what the evolution review classifies.
+- **kaizen** · type: feedback · source: description
+  - This skill (weight 2): Classifies process divergences that kaizen can turn into improvements.
+  - kaizen: Passes process defects to the evolution review for classification.
 <!-- relationships:end -->

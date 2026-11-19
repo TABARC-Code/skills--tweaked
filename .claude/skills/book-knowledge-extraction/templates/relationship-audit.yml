@@ -1,0 +1,48 @@
+# Relationship Audit Template
+
+Complete after Phase 8 (repository integration and audit).
+
+```yaml
+relationship_audit:
+  audit_date: ""
+  skill_audited: ""
+  audit_status: "passed | failed | partial"
+
+  relationship_completeness:
+    direct_links_checked: 0
+    reciprocal_links_checked: 0
+    reciprocal_links_present: 0
+    reciprocal_completeness_rate: "0%"
+    chain_links_checked: 0
+    reverse_links_checked: 0
+    subskill_links_checked: 0
+
+  issues:
+    missing_reciprocals: []
+    missing_weights: []
+    missing_weight_reasons: []
+    vague_links_found: []
+    skipped_files: []
+    unverifiable_claims: []
+    sub_skill_independence_failures: []
+
+  metrics:
+    extraction_quality: "high | medium | low"
+    extraction_faults: []
+    procedures_directly_convertible: "N/A"
+    compression_ratio: "N/A"
+    knowledge_gaps_detected: []
+    contradictions_flagged: []
+
+  updates:
+    notes_updated: "true | false | not applicable"
+    indexes_updated: "true | false | not applicable"
+    manifests_updated: "true | false | not applicable"
+
+  limitations:
+    - ""
+
+  kaizen_passes_completed: 0
+  kaizen_improvements_applied: []
+  final_status: "pending | passed | failed | partial"
+```

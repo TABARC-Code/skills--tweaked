@@ -64,11 +64,17 @@ def add_dewey(text, code):
     if re.search(r"Dewey \d", lines[idx[0]]):
         return text
     raw = lines[idx[0]][len("description:"):].strip()
-    if raw.startswith('"') or raw.startswith("'"):
-        # Quoted scalar: re-emit as a double-quoted string so the Dewey code
+    if raw[:1] in ('"', "'", '>', '|'):
+        # Quoted or block scalar: re-emit as a double-quoted string so the Dewey code
         # stays inside the value and the YAML still parses.
-        value = yaml.safe_load("description: " + raw)["description"]
-        lines[idx[0]] = "description: " + json.dumps(value + f" Dewey {code}.", ensure_ascii=False)
+        # Block scalars (> or |) continue on indented lines; take them all.
+        end = idx[0] + 1
+        if raw[:1] in ('>', '|'):
+            while end < len(lines) and lines[end].startswith(" "):
+                end += 1
+        value = yaml.safe_load("\n".join(lines[idx[0]:end]))["description"]
+        lines[idx[0]:end] = ["description: " + json.dumps(value.strip() + f" Dewey {code}.", ensure_ascii=False)]
+        return "\n".join(lines)
     else:
         lines[idx[0]] = lines[idx[0]].rstrip() + f" Dewey {code}."
     return "\n".join(lines)

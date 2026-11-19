@@ -86,4 +86,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **rules-create-global** · type: feedback · source: body
   - This skill (weight 2): Reports rules that are now false, so the root rules file can be corrected.
   - rules-create-global: Writes the root rules file that rules-check-drift audits.
+- **memory-dreaming-engine** · type: feedback · source: description
+  - This skill (weight 2): Keeps the rules file true; dreaming proposes the bloat trims it cannot make itself.
+  - memory-dreaming-engine: Proposes evidence-backed trims when the rules file bloats or repeats mistakes.
 <!-- relationships:end -->

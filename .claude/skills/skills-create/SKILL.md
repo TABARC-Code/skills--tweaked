@@ -98,5 +98,7 @@ Don't build a skill for a one-off, or for a tool whose owner already ships a goo
 
 Bidirectional contracts. Generated from network/edges.json, so edit there, not here.
 
-No links declared yet. Add one in network/edges.json and rebuild.
+- **book-knowledge-extraction** · type: handoff · source: description
+  - This skill (weight 2): Authors the skill once book-knowledge-extraction has extracted the material.
+  - book-knowledge-extraction: Hands the skill build for an extracted book to skills-create.
 <!-- relationships:end -->
