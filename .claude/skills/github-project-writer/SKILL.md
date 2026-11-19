@@ -661,4 +661,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **skills-create** · type: handoff · source: body
   - This skill (weight 2): Writes the README and description for a skill that skills-create has built.
   - skills-create: Hands over to it for README.md and description.md when the skill goes on GitHub.
+- **humanizer** · type: handoff · source: body
+  - This skill (weight 2): Hands a draft that reads like generated prose over for pattern removal.
+  - humanizer: Takes README and description drafts that read as generated.
 <!-- relationships:end -->

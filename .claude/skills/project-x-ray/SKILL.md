@@ -1145,4 +1145,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **prime-codebase** · type: handoff · source: body
   - This skill (weight 2): Gives a forensic read where prime-codebase is only a quick prime.
   - prime-codebase: Hands over to it for an inherited or unfamiliar project.
+- **humanizer** · type: handoff · source: body
+  - This skill (weight 2): Passes report prose that needs humanising.
+  - humanizer: Cleans the prose of an x-ray report.
 <!-- relationships:end -->

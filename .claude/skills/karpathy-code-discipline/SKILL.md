@@ -342,11 +342,11 @@ Track failures per principle. If the same principle fails on three consecutive t
 **Return trigger:** revise surgical zone using spider's dependency map before writing code;
 revise simplicity assessment if spider finds systemic fragility in the minimal solution.
 
-### Karpathy → plain-wording pass (humanizer, if installed)
+### Karpathy → Humanizer
 
 **Sends:** code comments, commit messages, documentation text, any prose in the output.
 **Receives:** human-voiced prose, AI pattern removal, rhythm-varied output, concrete language.
-**Return trigger:** apply the humanizer skill's output if it is installed; otherwise rewrite AI-patterned comments by hand. Do not ship them.
+**Return trigger:** apply humanizer output; do not ship AI-patterned comments.
 
 ### Reverse Signals (companion → Karpathy)
 
@@ -355,7 +355,7 @@ revise simplicity assessment if spider finds systemic fragility in the minimal s
 | Perdita Mode | An overlooked factor invalidates a stated assumption | Re-enter Think Before from step 1 |
 | Bat Indirect Inference | A hidden constraint emerges that changes the implementation | Re-enter Think Before from step 2 |
 | Spider Web Analyst | Dependency map reveals a wider blast radius than declared | Re-enter Surgical, revise the zone |
-| Humanizer (if installed) | Code comments or docs have AI patterns reducing clarity | Rewrite prose before delivery |
+| Humanizer | Code comments or docs have AI patterns reducing clarity | Rewrite prose before delivery |
 
 <!-- relationships:start -->
 ## Relationships
@@ -377,4 +377,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **bat-indirect-inference** · type: reference · source: body
   - This skill (weight 1): Calls it to probe hidden constraints under ambiguity.
   - bat-indirect-inference: Supplies probing questions when a requirement is unclear.
+- **humanizer** · type: chain · source: body
+  - This skill (weight 2): Sends comments, commit messages and docs for an AI-pattern pass before delivery.
+  - humanizer: Cleans the prose that the coding discipline produces.
 <!-- relationships:end -->

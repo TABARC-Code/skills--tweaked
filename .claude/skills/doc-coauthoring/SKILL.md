@@ -338,6 +338,7 @@ Announce the doc has passed Reader Claude testing. Before completion:
 1. Recommend they do a final read-through themselves - they own this document and are responsible for its quality
 2. Suggest double-checking any facts, links, or technical details
 3. Ask them to verify it achieves the impact they wanted
+4. Offer a `humanizer` pass if the draft reads as generated prose, before it is shared
 
 Ask if they want one more review, or if the work is done.
 
@@ -385,4 +386,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **plan-architecture** · type: reference · source: body
   - This skill (weight 1): Its reader-testing stage is reused by plan-architecture.
   - plan-architecture: Runs a reader check on the architecture doc, using the reader-testing stage of doc-coauthoring.
+- **humanizer** · type: chain · source: body
+  - This skill (weight 2): Sends a finished draft for an AI-pattern pass before it is shared.
+  - humanizer: Edits co-authored documents so they read as human-written.
 <!-- relationships:end -->

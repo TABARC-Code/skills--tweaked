@@ -339,4 +339,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **plan-architecture** · type: reference · source: body
   - This skill (weight 1): Maps dependencies and weak strands ahead of an architecture decision.
   - plan-architecture: Runs it for systems with many moving parts before settling the approach.
+- **humanizer** · type: handoff · source: body
+  - This skill (weight 2): Passes finished analysis output meant for publication.
+  - humanizer: Cleans the prose of a completed analysis.
 <!-- relationships:end -->

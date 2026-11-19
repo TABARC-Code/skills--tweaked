@@ -688,6 +688,46 @@
       "source": "body",
       "a_to_b": "Calls it to probe hidden constraints under ambiguity.",
       "b_to_a": "Supplies probing questions when a requirement is unclear."
+    },
+    {
+      "a": "karpathy-code-discipline",
+      "b": "humanizer",
+      "type": "chain",
+      "source": "body",
+      "a_to_b": "Sends comments, commit messages and docs for an AI-pattern pass before delivery.",
+      "b_to_a": "Cleans the prose that the coding discipline produces."
+    },
+    {
+      "a": "github-project-writer",
+      "b": "humanizer",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Hands a draft that reads like generated prose over for pattern removal.",
+      "b_to_a": "Takes README and description drafts that read as generated."
+    },
+    {
+      "a": "spider-web-analyst",
+      "b": "humanizer",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Passes finished analysis output meant for publication.",
+      "b_to_a": "Cleans the prose of a completed analysis."
+    },
+    {
+      "a": "project-x-ray",
+      "b": "humanizer",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Passes report prose that needs humanising.",
+      "b_to_a": "Cleans the prose of an x-ray report."
+    },
+    {
+      "a": "doc-coauthoring",
+      "b": "humanizer",
+      "type": "chain",
+      "source": "body",
+      "a_to_b": "Sends a finished draft for an AI-pattern pass before it is shared.",
+      "b_to_a": "Edits co-authored documents so they read as human-written."
     }
   ],
   "dewey": {
@@ -748,6 +788,7 @@
     "spider-web-analyst": "595.44",
     "github-project-writer": "005.15",
     "project-x-ray": "005.1",
-    "skill-builder": "005.120"
+    "skill-builder": "005.120",
+    "humanizer": "808.02"
   }
 }
