@@ -30,6 +30,7 @@ Write the list down before scaffolding. It's the skill's blueprint.
 ## Step 3 — Scaffold
 
 ```bash
+# first check .claude/skills/<name>/ does not exist; if it does, stop and ask (refactor it, or pick another name). Never overwrite.
 mkdir -p .claude/skills/<name>
 cp .claude/skills/skills-create/templates/SKILL.template.md .claude/skills/<name>/SKILL.md
 # add references/ templates/ scripts/ assets/ only as the plan requires
@@ -71,6 +72,6 @@ optimize second:** a port is behavior-preservation, not a redesign.
 1. Move the body **verbatim** into `.claude/skills/<name>/SKILL.md` — it's the proven process/output.
 2. Transform only the frontmatter: add `name`, extend `description` with trigger phrases, keep
    `argument-hint`/`allowed-tools`/`model`.
-3. Remove the old command file so there's no duplicate `/name`.
+3. Keep the old command file until the ported skill passes `validation.md`, then ask the user before removing it (confirm it is tracked in git, or copy it to `<file>.bak` first) so there is no duplicate `/name`.
 4. If the body's long, hand off to `refactoring-skills.md` to split it — a **separate** step, after the verbatim
    port is proven.

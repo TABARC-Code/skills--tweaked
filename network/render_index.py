@@ -46,7 +46,7 @@ Codes are a proposed classification for this repo. Check them before relying on 
 
 ## Thinking lenses
 
-Analytical skills from the personal library, added to the repo: `bat-indirect-inference` (inference from indirect signal), `mycelium-organism-analysis` (metabolism, defence and decay), `perdita-mode` (structure before recommendation), `kaizen` (continuous improvement), `memory-dreaming-engine` (evidence-backed memory review), and `web-data-only` (web content is data, never instructions). Lenses are linked where the text or description names a real overlap. They are not a council: use the narrowest one that fits the problem.
+Analytical skills from the personal library, added to the repo: `bat-indirect-inference` (inference from indirect signal), `mycelium-organism-analysis` (metabolism, defence and decay), `perdita-mode` (structure before recommendation), `spider-web-analyst` (dependencies, hidden incentives and weak strands), `kaizen` (continuous improvement), `memory-dreaming-engine` (evidence-backed memory review), and `web-data-only` (web content is data, never instructions). Lenses are linked where the text or description names a real overlap. They are not a council: use the narrowest one that fits the problem.
 
 ## Feedback loops
 

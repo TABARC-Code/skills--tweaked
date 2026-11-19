@@ -239,7 +239,7 @@ phase 8, or the next run starts from nothing.
 This phase decides whether the audit was worth anything. Converting pages fixes
 today; changing how facts get written is what stops the recurrence.
 
-Add to whatever file instructs the agent (`CLAUDE.md`, `AGENTS.md`, a system prompt):
+Show the user the block and the full path of the file it will go into, and get approval first. If that file lies outside the notes folder (a global `CLAUDE.md`, say), say so and offer to print the block for the user to paste instead. Then add it to whatever file instructs the agent (`CLAUDE.md`, `AGENTS.md`, a system prompt):
 
 ```markdown
 ## Writing to these notes
@@ -282,12 +282,12 @@ So write it down, in the shape being taught. **One file** in the notes folder, c
 # Second brain audit
 
 ## Current State
-<!-- One entry per location. REPLACED when that location changes. -->
+<!-- One entry per location. REPLACED when that location changes. End every entry with one status word: FIXED, NEXT or LEAVE. Under it, list each finding as a sub-bullet: `contradicted` (the stale line verbatim, then `newer evidence: <file> (<date>)`) or `unsupported` (the claim verbatim). -->
 
 - **MEMORY.md** (2026-09-18): the always-loaded file. 6 contradicted, 3 unsupported.
   FIXED this run, `## Current State` block added at the top, 9 superseded lines to `## Log`.
 - **clients/acme.md** (2026-09-18): 4 contradicted, all about the retainer. NEXT.
-- **notes/tools.md** (2026-09-18): 2 unsupported, no trail, low value. Leave it.
+- **notes/tools.md** (2026-09-18): 2 unsupported, no trail, low value. LEAVE.
 - **write path** (2026-09-18): rule added to `CLAUDE.md`.
 
 ## Log

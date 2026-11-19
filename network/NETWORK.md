@@ -12,7 +12,7 @@ Regenerate with `python3 network/build_network.py --write`, then `--check`, then
 
 ## Current state
 
-- 49 skills, 68 links (reference 20, handoff 17, gate 16, feedback 9, chain 4, dependency 2).
+- 58 skills, 86 links (reference 29, handoff 20, gate 19, feedback 9, chain 7, dependency 2).
 - 13 links are inferred from descriptions only and are marked `source: description`.
 - Skills with no declared links yet: `ablate-ai-layer`, `ast-grep`, `build-signal-engine`, `drive-screen`, `edit-video`, `hooks-create`, `router`, `second-brain-prd`, `setup-ai-tutor`.
 
@@ -25,6 +25,7 @@ Codes are a proposed classification for this repo. Check them before relying on 
 | 004.16 | `drive-screen` | no |
 | 004.678 | `agent-browser` | yes |
 | 005.1 | `build-dark-factory` | yes |
+| 005.1 | `karpathy-code-discipline` | yes |
 | 005.1 | `piv-implement` | yes |
 | 005.1 | `piv-implement-issue` | yes |
 | 005.1 | `piv-investigate-issue` | yes |
@@ -33,18 +34,25 @@ Codes are a proposed classification for this repo. Check them before relying on 
 | 005.1 | `prime-backend` | yes |
 | 005.1 | `prime-codebase` | yes |
 | 005.1 | `prime-frontend` | yes |
+| 005.1 | `project-x-ray` | yes |
+| 005.120 | `skill-builder` | yes |
 | 005.120 | `skills-create` | yes |
 | 005.13 | `ast-grep` | no |
+| 005.14 | `lazy-review` | yes |
 | 005.14 | `piv-fix-review-findings` | yes |
 | 005.14 | `piv-review-changes` | yes |
 | 005.14 | `piv-review-pr` | yes |
 | 005.14 | `piv-validate` | yes |
+| 005.15 | `github-project-writer` | yes |
 | 005.8 | `hooks-create` | no |
 | 005.8 | `piv-commit` | yes |
 | 005.8 | `piv-create-pr` | yes |
+| 005.8 | `terse-commit` | yes |
 | 005.8 | `web-data-only` | yes |
+| 005.8 | `worktree-copy-ignored` | yes |
 | 005.8 | `worktree-create` | yes |
 | 005.8 | `worktree-merge` | yes |
+| 005.848 | `skill-security-scanner` | yes |
 | 006.3 | `ablate-ai-layer` | no |
 | 006.3 | `opportunity-scan` | yes |
 | 006.3 | `router` | no |
@@ -63,6 +71,7 @@ Codes are a proposed classification for this repo. Check them before relying on 
 | 153.4 | `perdita-mode` | yes |
 | 371.33 | `setup-ai-tutor` | no |
 | 579.5 | `mycelium-organism-analysis` | yes |
+| 595.44 | `spider-web-analyst` | yes |
 | 658.4012 | `piv-slice-epic` | yes |
 | 658.4012 | `plan-architecture` | yes |
 | 658.4012 | `plan-create-prd` | yes |
@@ -74,7 +83,7 @@ Codes are a proposed classification for this repo. Check them before relying on 
 
 ## Thinking lenses
 
-Analytical skills from the personal library, added to the repo: `bat-indirect-inference` (inference from indirect signal), `mycelium-organism-analysis` (metabolism, defence and decay), `perdita-mode` (structure before recommendation), `kaizen` (continuous improvement), `memory-dreaming-engine` (evidence-backed memory review), and `web-data-only` (web content is data, never instructions). Lenses are linked where the text or description names a real overlap. They are not a council: use the narrowest one that fits the problem.
+Analytical skills from the personal library, added to the repo: `bat-indirect-inference` (inference from indirect signal), `mycelium-organism-analysis` (metabolism, defence and decay), `perdita-mode` (structure before recommendation), `spider-web-analyst` (dependencies, hidden incentives and weak strands), `kaizen` (continuous improvement), `memory-dreaming-engine` (evidence-backed memory review), and `web-data-only` (web content is data, never instructions). Lenses are linked where the text or description names a real overlap. They are not a council: use the narrowest one that fits the problem.
 
 ## Feedback loops
 

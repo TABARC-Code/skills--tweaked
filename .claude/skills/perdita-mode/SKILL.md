@@ -207,4 +207,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **plan-with-priorities** · type: reference · source: body
   - This skill (weight 1): Maps hidden constraints and incentives first, using the structure-first step in perdita-mode.
   - plan-with-priorities: Its structure-first step is applied before options are compared in plan-with-priorities.
+- **karpathy-code-discipline** · type: reference · source: body
+  - This skill (weight 1): Is the structure-first lens for coding under ambiguity.
+  - karpathy-code-discipline: Calls it to map structure and hidden constraints before coding.
 <!-- relationships:end -->

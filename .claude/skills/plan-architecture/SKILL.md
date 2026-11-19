@@ -80,6 +80,8 @@ Work through these *with* the user — surface options, recommend with reasoning
 Recommend a direction for each, with the reasoning, and let the user make the call. Skip what doesn't apply — and
 say so, don't silently omit it.
 
+For a system with many moving parts, run `spider-web-analyst` before settling the approach: it maps dependencies, hidden incentives and the weak strands that decide where a design breaks.
+
 ## Spikes (for the risky / one-way calls)
 
 When a decision is uncertain or expensive to undo, recommend a **spike** instead of guessing:
@@ -98,7 +100,11 @@ Only after the calls are made. Pick where it lives. If the intent lives in a **t
 Jira epic), the strong default is a **separate page linked to the epic, both ways**: the epic stays pure intent,
 the architecture (the *how*) lives in its own decision page beside it, and each links to the other. Keeping them
 as two clean, linked sources is what lets `piv-slice-epic` and `piv-plan-implementation` read intent and
-architecture separately later. The options:
+architecture separately later.
+
+Before creating or editing anything in a tracker, state the destination (space, parent, title, links to add) and wait for explicit approval. Draft the document locally first. Create tickets or issues only after the user approves the list.
+
+The options:
 
 - **A separate linked page in your tracker** (recommended when the epic lives in Confluence/Jira): create a new
   page in the epic's space, as a child of the epic, and link it both ways (via the Atlassian MCP).
@@ -201,4 +207,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **doc-coauthoring** · type: reference · source: body
   - This skill (weight 1): Runs a reader check on the architecture doc, using the reader-testing stage of doc-coauthoring.
   - doc-coauthoring: Its reader-testing stage is reused by plan-architecture.
+- **spider-web-analyst** · type: reference · source: body
+  - This skill (weight 1): Runs it for systems with many moving parts before settling the approach.
+  - spider-web-analyst: Maps dependencies and weak strands ahead of an architecture decision.
 <!-- relationships:end -->

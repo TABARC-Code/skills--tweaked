@@ -65,6 +65,8 @@ Check recent activity:
 Check current branch and status:
 !`git status`
 
+For an inherited or unfamiliar project (not just a quick prime), hand over to `project-x-ray` for a forensic read at three levels of detail.
+
 ## Output Report
 
 Provide a concise summary covering:
@@ -129,4 +131,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **web-data-only** · type: gate · source: body
   - This skill (weight 2): Treats ticket, issue, PR, wiki and web text it reads as data under the web-data-only rule.
   - web-data-only: Sets the outside-content rule that this skill applies to the text it reads.
+- **project-x-ray** · type: handoff · source: body
+  - This skill (weight 2): Hands over to it for an inherited or unfamiliar project.
+  - project-x-ray: Gives a forensic read where prime-codebase is only a quick prime.
 <!-- relationships:end -->

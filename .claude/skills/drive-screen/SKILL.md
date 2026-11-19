@@ -273,6 +273,14 @@ it is exactly what it says: **Enter on whatever is on screen, unread**. It works
 task whose worst case you have already accepted. Use `--shot-dir` with it so
 there is a record of what was approved.
 
+`--approve-blind` is the only sanctioned exception to hard rule 6. Use it only when all of these hold:
+
+1. The user has named `--approve-blind` in this session and accepted that every prompt is approved unread.
+2. The driven session runs in a disposable worktree with nothing uncommitted and no credentials beyond the task's own.
+3. `--shot-dir` is set, and the run is bounded by `--max` and `--timeout`.
+
+Without all three, run without the flag and stop at each prompt.
+
 It also stops if an approval produces no new transcript records, because a
 keystroke that is not landing never starts landing by being repeated. Exit 0 is a
 completed turn, 2 is approvals not reaching the session or the prompt not being

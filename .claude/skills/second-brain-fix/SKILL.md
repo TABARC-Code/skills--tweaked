@@ -99,7 +99,7 @@ the write path, because at that size nobody is ever going to hand-tend the archi
 
 ## Step 1: build the batch list
 
-Read `$audit-results`. Take the `## Current State` entries that are not marked as fixed, plus
+Read `$audit-results`. Take the `## Current State` entries whose status is `NEXT` (skip `FIXED` and `LEAVE`), plus
 any pile the audit reported but did not enumerate. Group them into batches of roughly 5 to 15
 locations, keeping a folder together where you can.
 
@@ -174,8 +174,9 @@ For each, three outcomes:
 - **Still true** goes into `## Current State` with the date the user gives, and say plainly that
   the evidence was missing, not just misfiled.
 - **No longer true** gets replaced, old line verbatim to `## Log`.
-- **Cannot tell** comes out of the always-loaded file entirely. A confident wrong answer costs
-  more than a missing one.
+- **Cannot tell** moves, verbatim and with its own date, to `## Log` under a note
+  `(removed from Current State: unverified, <fix run date>)`, so it stops being loaded and stays recoverable.
+  A confident wrong answer costs more than a missing one. Record it in the findings file as waiting on the owner.
 
 If the user does not answer, leave every one of them exactly as it is. An unanswered question is
 not permission.
@@ -205,7 +206,7 @@ second one carries the warning. Check for that case explicitly after every batch
 you fixed, look for another key on the same page about the same subject with a later date.
 
 Never delete the line to resolve the conflict, and never pick a value yourself. Annotating is the
-whole move.
+whole move. Moving an unverifiable line to the Log is not deleting it.
 
 ## Step 5: write the results back
 
@@ -216,7 +217,8 @@ After each batch, edit `$audit-results`:
 - Record every line you annotated and left standing, so the next run can see what is still
   waiting on the owner rather than re-deriving it.
 - **Append** one entry to `## Log`: the date, which batch, how many lines replaced, how many
-  locations converted, and how many unsupported claims are still unanswered.
+  locations converted, how many unsupported claims are still unanswered, and the contradicted count still
+  outstanding in the always-loaded surface.
 
 Then commit the batch. The findings and the notes move together, so an interrupted run is
 resumable by reading one file.
@@ -224,7 +226,7 @@ resumable by reading one file.
 ## Step 6: re-audit and compare
 
 When the batches are done, run `/second-brain-audit` again and compare the contradicted count
-to the last `## Log` line. That number is the only evidence any of this worked.
+to the most recent `## Log` entry that carries a contradicted count. That number is the only evidence any of this worked.
 
 If the count did not move much, say so and say why rather than presenting the conversion as a
 result. Restructuring cannot reach a fact nobody ever wrote down, and when the count stays flat
@@ -254,7 +256,7 @@ quotes stale claims verbatim. Either keep that name or keep the file outside the
 ## If the write path has not changed yet
 
 Check whether `CLAUDE.md` (or `AGENTS.md`, or the system prompt) carries the state/event rule
-from the audit's phase 7. If it does not, add it before starting, and say why: fixing four
+from the audit's phase 7. If it does not, show the block from the audit's phase 7 and ask before adding it, only to a file inside this branch or git repo, and after the backup step. Say why: fixing four
 hundred lines under a write path that can only append buys about a month.
 
 <!-- relationships:start -->

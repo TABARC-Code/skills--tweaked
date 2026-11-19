@@ -13,6 +13,8 @@ Read the target `SKILL.md` and classify each block:
 
 ## Step 2 — Extract verbatim
 
+Confirm the target SKILL.md is committed or copied to `SKILL.md.bak` before moving any text.
+
 Move each extractable block into the target skill's own `references/` (or `templates/` for output shapes).
 **Don't reword anything that affects behavior** — a refactor preserves behavior; rewriting is a separate change.
 

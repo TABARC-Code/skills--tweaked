@@ -80,6 +80,11 @@ Both modes obey the same craft rules → read `references/skill-standards.md` fi
 > **The #1 refactor risk:** moving an *always-needed* output format into a lazily-loaded reference, so the agent
 > forgets to read it and the output silently changes. Always pair such an extraction with a mandatory-read line.
 
+## Neighbouring skills
+- `skill-builder` — for a skill system, a relationship network, Dewey classification or evals. This skill is the lighter route for one skill.
+- `skill-security-scanner` — run it at the validation step when any text in the skill came from outside the repo.
+- `github-project-writer` — when the skill is going on GitHub, use it to write the README.md and description.md.
+
 ## When to build a skill at all
 Build one when you **own a process** and want the agent to follow *your* way of it, repeatedly — the
 take-vs-build rule. A rough threshold: you've prompted the same thing ~3 times (the Rule of Three) → bank it as a skill.
@@ -101,4 +106,13 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **book-knowledge-extraction** · type: handoff · source: description
   - This skill (weight 2): Authors the skill once book-knowledge-extraction has extracted the material.
   - book-knowledge-extraction: Hands the skill build for an extracted book to skills-create.
+- **skill-builder** · type: reference · source: body
+  - This skill (weight 1): Points to it for skill systems, relationship networks, Dewey codes and evals.
+  - skill-builder: Is the heavier route; skills-create is the lighter route for a single skill.
+- **skill-security-scanner** · type: gate · source: body
+  - This skill (weight 2): Runs it at validation when any text in the skill came from outside the repo.
+  - skill-security-scanner: Is called at the validation step of skills-create.
+- **github-project-writer** · type: handoff · source: body
+  - This skill (weight 2): Hands over to it for README.md and description.md when the skill goes on GitHub.
+  - github-project-writer: Writes the README and description for a skill that skills-create has built.
 <!-- relationships:end -->

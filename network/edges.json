@@ -544,6 +544,150 @@
       "source": "body",
       "a_to_b": "Adds before-and-after evidence per fix, and sends repeated defects to kaizen.",
       "b_to_a": "Receives repeated review-finding defects from piv-fix-review-findings."
+    },
+    {
+      "a": "worktree-create",
+      "b": "worktree-copy-ignored",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Hands the copy of gitignored files to it when Worktrunk is installed.",
+      "b_to_a": "Is the preferred copy step for the worktrees that worktree-create stands up."
+    },
+    {
+      "a": "skills-create",
+      "b": "skill-builder",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Points to it for skill systems, relationship networks, Dewey codes and evals.",
+      "b_to_a": "Is the heavier route; skills-create is the lighter route for a single skill."
+    },
+    {
+      "a": "skills-create",
+      "b": "skill-security-scanner",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Runs it at validation when any text in the skill came from outside the repo.",
+      "b_to_a": "Is called at the validation step of skills-create."
+    },
+    {
+      "a": "skill-builder",
+      "b": "skill-security-scanner",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Runs it before delivering or publishing a skill.",
+      "b_to_a": "Is called by skill-builder before delivery or publication."
+    },
+    {
+      "a": "book-knowledge-extraction",
+      "b": "skill-security-scanner",
+      "type": "gate",
+      "source": "body",
+      "a_to_b": "Runs it on the skill built from a source before handing it over.",
+      "b_to_a": "Is called on skills built from outside source text."
+    },
+    {
+      "a": "piv-review-pr",
+      "b": "skill-security-scanner",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Runs it on SKILL.md files that a PR adds or changes.",
+      "b_to_a": "Is called when a PR adds or changes skill files."
+    },
+    {
+      "a": "skills-create",
+      "b": "github-project-writer",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Hands over to it for README.md and description.md when the skill goes on GitHub.",
+      "b_to_a": "Writes the README and description for a skill that skills-create has built."
+    },
+    {
+      "a": "piv-commit",
+      "b": "terse-commit",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Follows its subject and body rules for the commit message.",
+      "b_to_a": "Supplies the message rules that piv-commit applies."
+    },
+    {
+      "a": "piv-review-changes",
+      "b": "lazy-review",
+      "type": "chain",
+      "source": "body",
+      "a_to_b": "Runs it over the same diff for over-engineering.",
+      "b_to_a": "Adds the complexity pass to a pre-commit review."
+    },
+    {
+      "a": "lazy-review",
+      "b": "terse-commit",
+      "type": "chain",
+      "source": "body",
+      "a_to_b": "Its findings feed the commit body, so the why is not guesswork.",
+      "b_to_a": "Takes what changed and why from lazy-review."
+    },
+    {
+      "a": "piv-implement",
+      "b": "karpathy-code-discipline",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Follows it for scope, assumptions and success criteria.",
+      "b_to_a": "Governs the implementation step of the loop."
+    },
+    {
+      "a": "piv-implement-issue",
+      "b": "karpathy-code-discipline",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Stays inside the RCA's zone under its rules.",
+      "b_to_a": "Governs fixes made from an RCA."
+    },
+    {
+      "a": "piv-implement-issue",
+      "b": "spider-web-analyst",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Uses it when the RCA's blast radius looks wider than declared.",
+      "b_to_a": "Traces dependencies for a fix whose reach is in doubt."
+    },
+    {
+      "a": "karpathy-code-discipline",
+      "b": "spider-web-analyst",
+      "type": "chain",
+      "source": "body",
+      "a_to_b": "Sends it the proposed change scope and gets a dependency trace and surgical zone back.",
+      "b_to_a": "Returns a dependency map and weak links to the surgical principle."
+    },
+    {
+      "a": "plan-architecture",
+      "b": "spider-web-analyst",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Runs it for systems with many moving parts before settling the approach.",
+      "b_to_a": "Maps dependencies and weak strands ahead of an architecture decision."
+    },
+    {
+      "a": "prime-codebase",
+      "b": "project-x-ray",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Hands over to it for an inherited or unfamiliar project.",
+      "b_to_a": "Gives a forensic read where prime-codebase is only a quick prime."
+    },
+    {
+      "a": "karpathy-code-discipline",
+      "b": "perdita-mode",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Calls it to map structure and hidden constraints before coding.",
+      "b_to_a": "Is the structure-first lens for coding under ambiguity."
+    },
+    {
+      "a": "karpathy-code-discipline",
+      "b": "bat-indirect-inference",
+      "type": "reference",
+      "source": "body",
+      "a_to_b": "Calls it to probe hidden constraints under ambiguity.",
+      "b_to_a": "Supplies probing questions when a requirement is unclear."
     }
   ],
   "dewey": {
@@ -595,6 +739,15 @@
     "web-data-only": "005.8",
     "memory-dreaming-engine": "153.12",
     "doc-coauthoring": "808.066",
-    "deep-research": "025.52"
+    "deep-research": "025.52",
+    "worktree-copy-ignored": "005.8",
+    "skill-security-scanner": "005.848",
+    "terse-commit": "005.8",
+    "lazy-review": "005.14",
+    "karpathy-code-discipline": "005.1",
+    "spider-web-analyst": "595.44",
+    "github-project-writer": "005.15",
+    "project-x-ray": "005.1",
+    "skill-builder": "005.120"
   }
 }

@@ -64,6 +64,8 @@ cost, and that the working tree will not be touched.
 python <skill>/scripts/run_ablation.py <repo> --task-file <task.md> --dry-run
 ```
 
+A real run appends `.ablation/` to the repo's `.gitignore` if that line is missing. Tell the user, and offer to add the line first. Do not describe the working tree as untouched until that is done.
+
 The dry run also surfaces two things worth pausing on:
 
 - **A dirty working tree.** Worktrees are built from HEAD, so uncommitted edits are
@@ -89,7 +91,7 @@ to test the harder claim that skills and subagents have expired too, `--model`,
 stdin.
 
 If an arm produced nothing usable, stop. An empty arm is a broken experiment, not a
-finding. Re-run before drawing anything from it.
+finding. Re-run once. If an arm is still empty, stop, show the run log and ask the user. Do not run a third time.
 
 ## Step 5. Grade
 

@@ -34,6 +34,8 @@ Build targeted understanding of the backend codebase by analyzing its structure,
 
 Briefly summarize any external context loaded before continuing — this frames the rest of the priming.
 
+If the Atlassian tools are unavailable or a lookup fails, report which key or page id could not be loaded and carry on with the codebase analysis. Do not infer ticket content. If `git ls-files` fails or the list is huge, list the top two directory levels instead.
+
 ### 1. Locate the Backend
 
 List all tracked files to find the backend root:

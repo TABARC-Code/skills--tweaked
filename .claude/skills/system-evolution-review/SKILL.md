@@ -28,6 +28,8 @@ Perform a meta-level analysis of how well the implementation followed the plan a
 
 ## Context & Inputs
 
+If `$report` is empty, use the newest file in `.claude/execution-reports/`. If `$plan` is empty, use the "Plan file" path recorded in the report. If a skill file below is missing, search `.claude/` for `piv-plan-implementation` and `piv-implement`. If still absent, say so in the review and analyse from the plan and report alone. Do not guess their contents.
+
 You will analyze four key artifacts:
 
 **Plan Skill:**
@@ -61,10 +63,12 @@ Read the generated plan ($plan) and extract:
 
 Read the execution report ($report) and extract:
 
-- What was implemented?
-- What diverged from the plan?
-- What challenges were encountered?
-- What was skipped and why?
+- Plan file path, files added and modified, and lines changed
+- Validation Results (lint, types, unit, integration): use these to tick "Met validation requirements"
+- Each divergence with its Type (Better approach found, Plan assumption wrong, Security concern, Performance issue, Other). Treat the Type as the report's own claim and verify it.
+- Challenges, Skipped Items and their reasons
+- The report's Recommendations: confirm or reject each one
+- If the report lists no divergences, say so and score on validation and skipped items alone.
 
 ### Step 3: Classify Each Divergence
 
@@ -156,7 +160,7 @@ Based on analysis, recommend specific actions:
 - [ ] Add anti-pattern warning for [Y]
 - [ ] Clarify [technology constraint Z]
 
-**Update Plan Skill ($plan):**
+**Update Plan Skill (`.claude/skills/piv-plan-implementation/SKILL.md`):**
 
 - [ ] Add instruction for [missing step]
 - [ ] Clarify [ambiguous instruction]

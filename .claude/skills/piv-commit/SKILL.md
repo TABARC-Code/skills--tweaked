@@ -15,7 +15,7 @@ Create a new commit for all of our uncommitted changes.
 1. Run `git status && git diff HEAD && git status --porcelain` to see what files are uncommitted.
 1b. **Look before you add.** Read the untracked list. Never stage `.env` files, keys, tokens, credentials, build output, `node_modules` or large binaries. If one is untracked and not ignored, leave it out and tell the user it should go in `.gitignore`. If the changes cover two unrelated concerns, say so and offer to commit them separately, because "all uncommitted changes" and "atomic" cannot both hold for a mixed diff.
 2. Add the untracked and changed files.
-3. Write an atomic commit message with an appropriate, descriptive summary.
+3. Write an atomic commit message with an appropriate, descriptive summary. For the subject and body rules (under 50 characters, imperative, the why in the body only when the diff doesn't show it), follow `terse-commit`.
 3b. If the project has a validation skill or command and nothing has run since the last edit, say so before committing. Do not claim the work passes on the strength of an earlier run.
 4. Add a tag such as `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, etc. that reflects our work.
 
@@ -57,4 +57,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **rules-check-drift** · type: reference · source: body
   - This skill (weight 1): Named alongside rules-check-drift for rules-file changes.
   - rules-check-drift: Named alongside the commit step for rules-file changes.
+- **terse-commit** · type: reference · source: body
+  - This skill (weight 1): Follows its subject and body rules for the commit message.
+  - terse-commit: Supplies the message rules that piv-commit applies.
 <!-- relationships:end -->

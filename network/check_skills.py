@@ -9,7 +9,7 @@ Exit 1 on any failure.
 import glob, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S = os.path.join(ROOT, ".claude", "skills")
-GUARDED = ["piv-investigate-issue","piv-implement-issue","piv-review-pr","piv-plan-implementation","prime-codebase",
+GUARDED = ["skill-security-scanner","project-x-ray","github-project-writer","piv-investigate-issue","piv-implement-issue","piv-review-pr","piv-plan-implementation","prime-codebase",
            "prime-frontend","prime-backend","plan-create-stories","piv-slice-epic","plan-architecture","agent-browser","deep-research"]
 fails = []
 for f in glob.glob(os.path.join(S, "*", "SKILL.md")):

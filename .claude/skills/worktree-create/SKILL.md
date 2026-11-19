@@ -43,7 +43,7 @@ Set up a git worktree for branch: BRANCH   (assigned port: PORT, only relevant i
 Follow the checklist in .claude/skills/worktree-create/references/worktree-setup.md. Concretely:
 1. Create the worktree off the base branch:  git worktree add worktrees/BRANCH -b BRANCH
 2. Copy the gitignored config/secrets the project needs into worktrees/BRANCH
-   (the env/config files detected for this repo; verify each with `git check-ignore` before copying).
+   (the env/config files detected for this repo; verify each with `git check-ignore` before copying; copy only the files you listed, never the whole ignored set, because `.env` holds secrets and an agent in that worktree can leak them).
 3. Install dependencies with the project's detected package manager (every package, for a monorepo).
 4. Run any generate/build step the app needs to boot (skip if none).
 5. Verify: run the detected health check (start + hit the health endpoint on PORT if there is one,
@@ -64,6 +64,7 @@ Collect the reports and print a per-worktree summary (path · branch · deps · 
 If any worktree failed its health check, surface it clearly and do **not** report it ready.
 
 ## Resources
+- `worktree-copy-ignored` — when Worktrunk is installed, use it for the copy step: it picks a strategy per language (never copy a Python venv), keeps secrets out of agent worktrees and proves that copy-on-write happened. Fall back to the plain copy in the checklist when it isn't.
 
 - `references/worktree-setup.md` — the general, app-agnostic checklist of everything a fresh worktree needs, and
   how to detect each piece per project. Read it before detecting the setup.
@@ -79,4 +80,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **worktree-merge** · type: handoff · source: description
   - This skill (weight 2): The branches in these worktrees go to worktree-merge.
   - worktree-merge: Merges branches created in parallel worktrees.
+- **worktree-copy-ignored** · type: handoff · source: body
+  - This skill (weight 2): Hands the copy of gitignored files to it when Worktrunk is installed.
+  - worktree-copy-ignored: Is the preferred copy step for the worktrees that worktree-create stands up.
 <!-- relationships:end -->

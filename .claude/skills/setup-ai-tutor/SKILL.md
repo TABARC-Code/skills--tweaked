@@ -15,7 +15,7 @@ None required. Run from the repository root.
 
 ### 1. Create Environment File
 ```bash
-cp .env.example .env
+[ -f .env ] && echo ".env already exists, leaving it untouched" || cp .env.example .env
 ```
 Creates your local environment configuration from the example template.
 
@@ -27,6 +27,7 @@ Installs all Python packages defined in pyproject.toml.
 
 ### 3. Start Database
 ```bash
+# use `docker compose` if `docker-compose` is not found; if neither exists, stop and tell the user
 docker-compose up -d db
 ```
 Starts PostgreSQL in a Docker container.
@@ -39,8 +40,9 @@ Applies all pending database migrations.
 
 ### 5. Start Development Server
 ```bash
-uv run uvicorn app.main:app --reload --port 8123
+uv run uvicorn app.main:app --reload --port 8123 > /tmp/ai-tutor.log 2>&1 &
 ```
+Run it in the background and keep the log, so the validation step can run in the same shell. Before validating, poll `curl -sf http://localhost:8123/health` up to 15 times, 2 seconds apart. If it still fails, show `/tmp/ai-tutor.log` and stop.
 Starts the FastAPI server with hot-reload on port 8123.
 
 ### 6. Validate Setup
@@ -71,7 +73,7 @@ A running local AI Tutor instance.
 
 To stop services:
 ```bash
-# Stop dev server: Ctrl+C
+# Stop dev server: kill the background uvicorn process
 # Stop database: docker-compose down
 ```
 

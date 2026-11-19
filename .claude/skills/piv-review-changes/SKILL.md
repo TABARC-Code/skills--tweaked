@@ -75,6 +75,9 @@ For each changed file or new file, analyze for:
    - Logging standards
    - Testing standards
 
+## Over-engineering pass
+Run `lazy-review` over the same diff: it hunts reinvented standard library, needless dependencies and speculative abstractions, which this review otherwise skips.
+
 ## Verify Issues Are Real
 
 - Run specific tests for issues found
@@ -106,6 +109,8 @@ suggestion: [how to fix it]
 
 If no issues found: "Code review passed. No technical issues detected."
 
+Critical or high findings block the commit. Hand the file to `piv-fix-review-findings` to triage and fix; its fields (severity, file, line, issue) are the ones above.
+
 ## Important
 
 - Be specific (line numbers, not vague complaints)
@@ -124,4 +129,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **rules-check-drift** · type: reference · source: body
   - This skill (weight 1): Can be extended with the rules-drift check.
   - rules-check-drift: Can be folded into the code-review pass.
+- **lazy-review** · type: chain · source: body
+  - This skill (weight 2): Runs it over the same diff for over-engineering.
+  - lazy-review: Adds the complexity pass to a pre-commit review.
 <!-- relationships:end -->

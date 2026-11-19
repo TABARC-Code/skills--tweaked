@@ -46,7 +46,7 @@ the parallel-subagent fan-out, applied to diagnosis.)*
 ### 3. Review Recent History — when was it introduced?
 
 Check recent changes to the affected areas, and pin down when the bug entered:
-!`git log --oneline -20 -- [relevant-paths]`
+Once step 2 has named the affected files, run `git log --oneline -20 -- <affected-paths>`. If there is no history for them, say so and do not infer "long-standing".
 ```bash
 git blame -L <start>,<end> <affected-file>   # who/when introduced the suspect lines
 ```
@@ -235,6 +235,8 @@ This RCA document should be used by the `piv-implement-issue` skill.
 ```
 
 ## Post the summary to the issue
+
+Show the drafted comment and ask for confirmation. Post it only after the user agrees. If they decline, or `gh` is unavailable, print the comment text instead and skip posting.
 
 After writing the doc, post a short version as a GitHub comment — an audit trail, and so the fix can be
 triggered/tracked from the issue itself:

@@ -98,8 +98,11 @@ everything if the goal is specific.
 - Read the JSON from stdin, do the check, and:
   - to **block**: print a clear reason to `stderr` and `sys.exit(2)`;
   - to **allow**: `sys.exit(0)` (optionally print context to stdout for the injecting events).
-- **Fail open.** Wrap the body so any unexpected error exits `0` (a broken hook must never brick the user's
-  session). The only intentional non-zero exit is the deliberate `exit 2` block.
+- **Choose the failure mode per hook.** Observe or react hooks (PostToolUse, SessionStart, Notification,
+  PreCompact) fail open: any unexpected error exits `0`, so a broken hook never bricks the session. Blocking guards
+  (PreToolUse, UserPromptSubmit, Stop) fail closed on a payload they cannot parse or match: print the reason to
+  `stderr` and exit `2`. Wrap only the logic that is safe to skip, never the decision itself. Tell the user which
+  mode was chosen and why.
 - Keep it lean and readable - the user will want to tweak the matched paths/commands later.
 - If a hook already exists for that event, **extend it** rather than overwrite (add your check; keep theirs).
 - **`Stop` / `SubagentStop` only:** check `stop_hook_active` first and `sys.exit(0)` when it is true. Without
@@ -155,6 +158,10 @@ everything if the goal is specific.
 >   wrong produces a hook that always blocks, which the user will read as "hooks are broken."
 
 ### 5. Wire it into settings.json
+Before editing, copy the current `.claude/settings.json` to `.claude/settings.json.bak` (skip if absent). Show the user the exact JSON block to be merged and the script path, and get a yes before writing. If the merged file does not parse as JSON, restore the `.bak` and report.
+
+Anchor every hook path on `$CLAUDE_PROJECT_DIR` and keep it quoted, because hooks run in whatever directory the shell is in. Run `command -v uv` first. If it is missing, write the hook as a plain `python3` script with the same stdin and exit-code contract and wire it as `python3 "$CLAUDE_PROJECT_DIR/.claude/hooks/<name>.py"`.
+
 Edit `.claude/settings.json` (create it if absent). **Merge** into any existing `hooks` block - never clobber
 other events or other hooks on the same event. Shape:
 ```json
@@ -162,7 +169,7 @@ other events or other hooks on the same event. Shape:
   "hooks": {
     "PreToolUse": [
       { "matcher": "Edit|Write|Read|Bash",
-        "hooks": [ { "type": "command", "command": "uv run .claude/hooks/pre_tool_use.py" } ] }
+        "hooks": [ { "type": "command", "command": "uv run \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_tool_use.py\"" } ] }
     ]
   }
 }
@@ -200,7 +207,7 @@ Then:
 - ✅ The behavior maps to the **right event**, and a blocking goal uses a **blocking-capable** event (PreToolUse /
   Stop / UserPromptSubmit) - not PostToolUse.
 - ✅ The **matcher is scoped** to what the user actually meant (not firing on everything by accident).
-- ✅ The script **fails open** - any error exits 0; the only `exit 2` is the intended block, with a clear stderr reason.
+- ✅ Observe hooks fail open. Blocking guards fail closed on input they cannot parse, with a clear stderr reason. The user was told which applies.
 - ✅ Any **project command runs verbatim via `shell=True` in the project `cwd`**, with uv's ephemeral venv
   stripped **and the project's own venv put first on `PATH`** - never rebuilt with `sys.executable` (the hook's
   own interpreter has none of the project's dependencies, and the global one has the wrong ones).

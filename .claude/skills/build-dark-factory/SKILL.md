@@ -518,8 +518,13 @@ rule wrong breaks every marker assertion for a reason that looks like your code.
 **Start from the scaffold, then delete its assertions.**
 
 ```bash
-cp -r templates/harness <repo>/harness
+cp -r templates/harness            <repo>/harness
+cp -r templates/harness/holdout    <repo>/.factory/holdout
+cp    templates/harness/locks/floor.json <repo>/.factory/locks/floor.json
+rm -rf <repo>/harness/holdout <repo>/harness/locks
 ```
+
+Run these from the skill directory. Holdout files must never sit under `harness/`, because the builder can read that directory.
 
 `templates/harness/` is the plumbing, and only the plumbing. **It is not
 Python-only and not web-only**: every command lives in `harness.config.json`,
@@ -577,6 +582,10 @@ deploy, state machine, seven node prompts. Its `README.md` is the install order.
 ```bash
 cp -r templates/runner/factory <repo>/factory
 mkdir -p <repo>/.factory/{locks,holdout,runs}
+cp templates/runner/.gitattributes <repo>/.gitattributes
+# merge templates/runner/.gitignore into <repo>/.gitignore, then confirm:
+git check-ignore -v .env secrets.json credentials.json .factory/runs
+bash factory/init-labels.sh   # GitHub backend only, once
 ```
 
 Then three edits, and the third is the real work of this phase:
@@ -646,6 +655,8 @@ how people convince themselves a factory is running when it has never completed 
 
 ```bash
 bash factory/install-trigger.sh --status     # what is armed right now
+# Before arming the scheduler, show the user the current level, the PR cap, the budget cap and the
+# stop-button command, and wait for a yes that names this action. A Phase 1 yes does not carry over.
 bash factory/install-trigger.sh --install    # cron, systemd timer, or Task Scheduler
 bash factory/install-trigger.sh --remove
 ```
@@ -686,7 +697,7 @@ the evidence that earns it, not a ladder to stop partway up.
    both any time you hand-edit anything under `factory/`, and before re-arming a factory
    that has been idle: the runner is copied into a repo and never linked, so a fix upstream
    has not reached yours.
-3. Raise the dial to 1, then 2, watching one full cycle at each - then **raise it to 3**.
+3. Raise the dial to 1, then 2, watching one full cycle at each. Before **raising it to 3** (auto-merge and deploy to real users), show the user the current level, the PR cap, the budget cap and the stop-button command, and wait for a yes naming that action. If they decline, stop at the current level and record why in `FACTORY.md`.
    Stopping at 2 leaves a person merging every PR, which is the bottleneck the whole build
    was for. If the user chooses to stop below 3, write down in `FACTORY.md` what would
    have to be true to go further, so it is a decision with a way out of it rather than a

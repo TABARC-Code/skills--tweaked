@@ -224,4 +224,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **piv-investigate-issue** · type: reference · source: body
   - This skill (weight 1): Its indirect-signal lens is applied when a root-cause analysis stops short.
   - piv-investigate-issue: Uses the silence-and-signal lens when the evidence does not close the chain.
+- **karpathy-code-discipline** · type: reference · source: body
+  - This skill (weight 1): Supplies probing questions when a requirement is unclear.
+  - karpathy-code-discipline: Calls it to probe hidden constraints under ambiguity.
 <!-- relationships:end -->

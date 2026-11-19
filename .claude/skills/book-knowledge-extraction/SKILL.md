@@ -467,6 +467,8 @@ Kaizen signal for this change: NEG. Stale stage references and unverified claims
 
 Kaizen signal for this change: none observed yet. The change is untested. Reason: the earlier version had no check that Stage B had captured what the source contained. Keep only if a test run on a real source confirms recall and precision are measured and reported.
 
+Before handing the built skill over, run `skill-security-scanner` on it: the source text came from outside the repo.
+
 <!-- relationships:start -->
 ## Relationships
 
@@ -478,4 +480,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **deep-research** · type: reference · source: description
   - This skill (weight 1): Absorbs research packs and sources that deep-research produces.
   - deep-research: Its research pack can be absorbed and synthesised by book-knowledge-extraction.
+- **skill-security-scanner** · type: gate · source: body
+  - This skill (weight 2): Runs it on the skill built from a source before handing it over.
+  - skill-security-scanner: Is called on skills built from outside source text.
 <!-- relationships:end -->

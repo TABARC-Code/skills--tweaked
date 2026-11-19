@@ -32,6 +32,7 @@ won't be in this branch's PR.** If you're still on base, this step creates the b
 - Understand all tasks and their dependencies
 - Read the plan's **Open Questions / Assumptions** and its confidence score. If a question blocks a task and is unresolved, stop and ask before starting that task. A plan with a low confidence score gets a stated plan-risk note in the report.
 - Note the validation commands to run
+- Stay surgical: touch only what the plan names, and follow `karpathy-code-discipline` for scope, assumptions and success criteria
 - Review the testing strategy
 
 ### 2. Execute Tasks in Order
@@ -153,4 +154,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **system-evolution-review** · type: feedback · source: body
   - This skill (weight 2): Its divergences are what the evolution review classifies.
   - system-evolution-review: Recommends process changes for the implement step.
+- **karpathy-code-discipline** · type: reference · source: body
+  - This skill (weight 1): Follows it for scope, assumptions and success criteria.
+  - karpathy-code-discipline: Governs the implementation step of the loop.
 <!-- relationships:end -->

@@ -20,6 +20,8 @@ You have just finished implementing a feature. Before moving on, reflect on:
 
 Save to: `.claude/execution-reports/[feature-name].md`
 
+Take figures from commands, not memory: run `git diff --shortstat <base>` and `git status --short` for file lists and line counts, and re-run the project's lint, type-check and test commands for Validation Results. Mark any check you could not run as "not run" and say why. If `.claude/execution-reports/[feature-name].md` already exists, write `[feature-name]-2.md` instead of overwriting.
+
 ### Meta Information
 
 - Plan file: [path to plan that guided this implementation]
