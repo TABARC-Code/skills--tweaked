@@ -1,6 +1,6 @@
 ---
 name: system-evolution-review
-description: Performs a meta-level review of how well an implementation followed its plan, classifying divergences and recommending AI-Layer improvements. Use after an execution report exists to find bugs in the process, not the code.
+description: Performs a meta-level review of how well an implementation followed its plan, classifying divergences and recommending AI-Layer improvements. Use after an execution report exists, or when the user asks why the process went wrong or wants a review of how the AI worked rather than the code. It finds bugs in the process, not the code.
 argument-hint: "[plan-file] [execution-report-file]"
 arguments: [plan, report]
 ---

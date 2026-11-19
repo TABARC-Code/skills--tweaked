@@ -1,6 +1,6 @@
 ---
 name: piv-implement
-description: Executes an implementation plan task-by-task with validation at every step. Use when you have a completed feature plan and want to implement it in one pass.
+description: Executes an implementation plan task-by-task with validation at every step. Use when a completed feature plan exists and the user wants it built, says implement it, build the plan, or start coding from the plan, even if they don't name this skill. Validate after each task rather than once at the end.
 argument-hint: [path-to-plan]
 ---
 

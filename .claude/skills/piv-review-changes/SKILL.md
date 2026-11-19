@@ -1,6 +1,6 @@
 ---
 name: piv-review-changes
-description: Performs a technical code review of recently changed files for bugs, security issues, and standards compliance, then writes a report. Use before committing, as a pre-commit quality gate.
+description: Performs a technical code review of recently changed files for bugs, security issues, and standards compliance, then writes a report. Use before committing as a pre-commit quality gate, and whenever the user asks for a review, a second look at their diff, or says review my changes, even if they don't name this skill.
 ---
 
 # Code Review

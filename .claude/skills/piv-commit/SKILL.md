@@ -1,6 +1,6 @@
 ---
 name: piv-commit
-description: Creates a new git commit for all uncommitted changes with an atomic, conventionally-tagged message. Use when work is complete and ready to be committed.
+description: Creates a new git commit for all uncommitted changes with an atomic, conventionally-tagged message. Use when a task or feature is finished, when the user says commit this, save my work, make a commit, or wants a clean commit message, and whenever changes are ready to be committed even if they never name this skill.
 ---
 
 # Commit: Create a New Commit

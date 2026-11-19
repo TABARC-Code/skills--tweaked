@@ -1,6 +1,6 @@
 ---
 name: system-execution-report
-description: Generates a structured implementation report reflecting on a just-completed feature — what was done, divergences, challenges. Use right after finishing an implementation, as the input to a system review.
+description: Generates a structured implementation report reflecting on a just-completed feature, covering what was done, what diverged, and what was hard. Use right after finishing an implementation, when the user asks for a write-up of how the build went or what changed from the plan, and as the input to a system review.
 ---
 
 # Execution Report
