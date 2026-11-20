@@ -131,7 +131,7 @@ Seven rungs, cheapest at the bottom. Build them bottom-up; they compose.
 | 6 | **holdout scenarios** | written before the work, never shown to the builder |
 | 5 | **visual / screenshot judging** *(not scaffolded - you build it)* | it actually looks right on a screen |
 | 4 | **E2E as the real user** | a real browser or a real client, real data, the full path |
-| | **↑↑↑  THE INDEPENDENCE LINE  ↑↑↑** | *above it, the agent cannot see or edit* |
+| | **THE INDEPENDENCE LINE** | *above it, the agent cannot see or edit* |
 | 3 | **integration** | the pieces work together |
 | 2 | **unit** | the functions it just wrote behave |
 | 1 | **static** | types, lint, compiler |

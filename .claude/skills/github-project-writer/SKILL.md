@@ -261,11 +261,6 @@ Oxford comma: yes, always.
 Contractions: freely, where natural. This is somebody talking about their own work, not
 filing a compliance report.
 
-Em dashes: sparingly, and unspaced when used. Most of the time a full stop or a pair of
-brackets does the job better.
-
-No arrow glyphs, no decorative icons. Where a flow needs showing in prose, use `>` or `<`.
-
 Numbers: spell out to nine, numerals from 10 up. Numerals always for versions, ports,
 counts of files and anything inside a command, regardless of size.
 
@@ -345,7 +340,6 @@ Avoid:
 
 - repeated three-part rhetorical lists
 - serial headings containing one decorative sentence each
-- excessive em dashes
 - fake quotations
 - canned enthusiasm
 - overuse of bold
@@ -593,7 +587,6 @@ route to it and bring the result back.
 | Situation | Reach for | What comes back |
 |---|---|---|
 | Draft reads like generated prose | `humanizer` | Removal of inflated symbolism, negative parallelism, rule-of-three padding |
-| Dashes have crept up during editing | `em-dash-calibration` | Per-instance classification and conversions |
 | Terminology drifts across a long README | `oxford-editorial-indexer` | Consistency audit, glossary, cross-references |
 | The project is a Claude skill itself | `skill-builder` | Structural and link conventions to document accurately |
 | The repair loop needs formal structure | `kaizen` | Standardisation and error-proofing framing |
@@ -641,7 +634,6 @@ when to amend a reference file rather than the output, is in section 5 of
 - Security language describes boundaries, not guarantees.
 - Paragraph and sentence rhythm varies; no three consecutive paragraphs open the same way.
 - Cynicism is incidental, not a running gag.
-- No arrow glyphs or decorative icons.
 - README and description do different jobs; the separation test in section 8.2 passes.
 - Both files, if both are in scope, are written to disk separately.
 
