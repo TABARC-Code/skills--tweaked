@@ -52,9 +52,9 @@ Applies to every edit made through this workflow, including edits done inside th
 - the limit of the authorised edit
 
 **Classify every touched component:**
-- *Directly affected*  -  edit required to fulfil the request
-- *Indirectly affected*  -  check it, do not edit it without separate authorisation
-- *Unaffected*  -  leave it alone
+- *Directly affected* - edit required to fulfil the request
+- *Indirectly affected* - check it, do not edit it without separate authorisation
+- *Unaffected* - leave it alone
 
 **Make the smallest valid change.** No refactoring unrelated sections, no renaming working concepts, no rewriting stable text for style, no new abstractions, no fixing unrelated defects in the same pass.
 
@@ -88,8 +88,8 @@ Scope expansion: ...
 ```
 
 **Completion markers:**
-- `[VALIDATION_COMPLETE]`  -  requested behaviour works, all direct dependencies checked, nothing unrelated changed, no unresolved contradiction in scope, all fixes re-checked.
-- `[VALIDATION_BLOCKED: CASCADE_RISK]`  -  unresolved cascade risk remains; stop and report instead of continuing.
+- `[VALIDATION_COMPLETE]` - requested behaviour works, all direct dependencies checked, nothing unrelated changed, no unresolved contradiction in scope, all fixes re-checked.
+- `[VALIDATION_BLOCKED: CASCADE_RISK]` - unresolved cascade risk remains; stop and report instead of continuing.
 
 ## Expected Output
 
