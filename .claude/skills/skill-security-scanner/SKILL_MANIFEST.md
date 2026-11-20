@@ -1,4 +1,4 @@
-# Skill Manifest — skill-security-scanner
+# Skill Manifest - skill-security-scanner
 
 | File | Role |
 |------|------|

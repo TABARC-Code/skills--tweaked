@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.0] — 2026-08-05
+## [1.0.0] - 2026-08-05
 
 ### Added
 - Full rule set ported from book-to-skill's `scan_generated_skill.py` (virgiliojr94): seven injection rules (INJECT-001 through INJECT-007), one Unicode rule (UNICODE-001), one exfiltration rule (EXFIL-001) with compound AND condition, two frontmatter authority rules (AUTH-001, AUTH-002)
@@ -13,4 +13,4 @@
 - Bidirectional links to source-ingestion-forge and skill-audit-repair
 
 ### Design rationale
-Extracted from source-ingestion-forge audit-and-repair subskill as a standalone skill. Security scanning is a different discipline from quality auditing — different failure modes, different severity model, different expertise. Separation allows standalone use for vetting any skill, not just forge-generated ones.
+Extracted from source-ingestion-forge audit-and-repair subskill as a standalone skill. Security scanning is a different discipline from quality auditing - different failure modes, different severity model, different expertise. Separation allows standalone use for vetting any skill, not just forge-generated ones.

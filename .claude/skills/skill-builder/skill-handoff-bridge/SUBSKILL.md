@@ -1,4 +1,4 @@
-> **Sub-skill of `skill-builder`.** Not independently installable — read only when the router (`../SKILL.md`) directs here. Identifier: `skill-handoff-bridge`. Dewey: 003.700 (Systems translation, interface, and workflow handoff).
+> **Sub-skill of `skill-builder`.** Not independently installable - read only when the router (`../SKILL.md`) directs here. Identifier: `skill-handoff-bridge`. Dewey: 003.700 (Systems translation, interface, and workflow handoff).
 
 # Skill Handoff Bridge
 
@@ -145,17 +145,17 @@ Before final output, verify:
 
 These contracts define how this bridge sits inside the skill-builder system. They are behavioural contracts, not casual “see also” links.
 
-### Relationship Contract: Skill Handoff Bridge → Creative Exploration Engine
+### Relationship Contract: Skill Handoff Bridge > Creative Exploration Engine
 
 **Source:** Skill Handoff Bridge  
 **Target:** Creative Exploration Engine  
-**Relationship Direction:** Skill Handoff Bridge ← Creative Exploration Engine for source material; Bridge → Creative Exploration Engine when the draft is not ready  
-**Reciprocal Direction:** Creative Exploration Engine → Skill Handoff Bridge with parseable Creative Drafts  
+**Relationship Direction:** Skill Handoff Bridge < Creative Exploration Engine for source material; Bridge > Creative Exploration Engine when the draft is not ready  
+**Reciprocal Direction:** Creative Exploration Engine > Skill Handoff Bridge with parseable Creative Drafts  
 **Relationship Type:** translation  
 **Relationship Strength:** strong  
 **Strength Reason:** the bridge depends on creative drafts as its normal input, while creative work depends on the bridge to become buildable.  
 **Direct or Indirect:** direct  
-**Chain Position:** intermediary in `Creative Exploration Engine → Skill Handoff Bridge → Structured Skill Engineering System`  
+**Chain Position:** intermediary in `Creative Exploration Engine > Skill Handoff Bridge > Structured Skill Engineering System`  
 **Reason for Relationship:** the bridge turns creative material into a structured packet without pretending to evaluate it fully.  
 **Behavioural Impact:** when the source draft is too loose, this skill must return it for another creative pass rather than inventing missing structure.  
 **Source Update Requirement:** preserve source material that matters and state what was removed.  
@@ -163,12 +163,12 @@ These contracts define how this bridge sits inside the skill-builder system. The
 **Affected Files:** `skill-handoff-bridge/SUBSKILL.md`, `creative-exploration-engine/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Skill Handoff Bridge → Structured Skill Engineering System
+### Relationship Contract: Skill Handoff Bridge > Structured Skill Engineering System
 
 **Source:** Skill Handoff Bridge  
 **Target:** Structured Skill Engineering System  
-**Relationship Direction:** Skill Handoff Bridge → Structured Skill Engineering System  
-**Reciprocal Direction:** Structured Skill Engineering System ← Skill Handoff Bridge  
+**Relationship Direction:** Skill Handoff Bridge > Structured Skill Engineering System  
+**Reciprocal Direction:** Structured Skill Engineering System < Skill Handoff Bridge  
 **Relationship Type:** translation  
 **Relationship Strength:** critical  
 **Strength Reason:** the bridge is the controlled handshake that prevents raw creative noise from becoming false structure inside the engineering skill.  
@@ -181,12 +181,12 @@ These contracts define how this bridge sits inside the skill-builder system. The
 **Affected Files:** `skill-handoff-bridge/SUBSKILL.md`, `structured-skill-engineering-system/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Skill Handoff Bridge → Relationship Contract Engine
+### Relationship Contract: Skill Handoff Bridge > Relationship Contract Engine
 
 **Source:** Skill Handoff Bridge  
 **Target:** Relationship Contract Engine  
-**Relationship Direction:** Skill Handoff Bridge → Relationship Contract Engine when a handoff packet includes skills, sub-skills, or links  
-**Reciprocal Direction:** Relationship Contract Engine → Skill Handoff Bridge by defining what relationship metadata the packet should preserve  
+**Relationship Direction:** Skill Handoff Bridge > Relationship Contract Engine when a handoff packet includes skills, sub-skills, or links  
+**Reciprocal Direction:** Relationship Contract Engine > Skill Handoff Bridge by defining what relationship metadata the packet should preserve  
 **Relationship Type:** orchestration  
 **Relationship Strength:** moderate  
 **Strength Reason:** bridge packets frequently identify modules and dependencies, but the contract engine performs the real link validation.  
@@ -200,17 +200,17 @@ These contracts define how this bridge sits inside the skill-builder system. The
 **Audit Status:** verified
 
 
-### Relationship Contract: Skill Handoff Bridge → Skill Creator
+### Relationship Contract: Skill Handoff Bridge > Skill Creator
 
 **Source:** Skill Handoff Bridge  
 **Target:** Skill Creator  
-**Relationship Direction:** Skill Handoff Bridge → Skill Creator  
-**Reciprocal Direction:** Skill Creator ← Skill Handoff Bridge  
+**Relationship Direction:** Skill Handoff Bridge > Skill Creator  
+**Reciprocal Direction:** Skill Creator < Skill Handoff Bridge  
 **Relationship Type:** translation  
 **Relationship Strength:** strong  
 **Strength Reason:** Skill Creator works best when it receives a clean packet containing intent, capabilities, constraints, risks, and expected outputs rather than raw creative noise.  
 **Direct or Indirect:** direct  
-**Chain Position:** bridge-to-build transition in `Creative Exploration Engine → Skill Handoff Bridge → Structured Skill Engineering System → Skill Creator`  
+**Chain Position:** bridge-to-build transition in `Creative Exploration Engine > Skill Handoff Bridge > Structured Skill Engineering System > Skill Creator`  
 **Reason for Relationship:** handoff packets give Skill Creator enough structure to draft `SKILL.md`, create evals, and identify missing variables.  
 **Behavioural Impact:** the bridge must produce packets that are buildable; Skill Creator should preserve bridge constraints and ask only for missing information.  
 **Source Update Requirement:** include skill-building details such as trigger conditions, expected output format, risks, and test suitability.  

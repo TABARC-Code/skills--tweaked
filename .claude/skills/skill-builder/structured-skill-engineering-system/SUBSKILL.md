@@ -1,4 +1,4 @@
-> **Sub-skill of `skill-builder`.** Not independently installable — read only when the router (`../SKILL.md`) directs here. Identifier: `structured-skill-engineering-system`. Dewey: 003.100 (Systems architecture, validation, and control).
+> **Sub-skill of `skill-builder`.** Not independently installable - read only when the router (`../SKILL.md`) directs here. Identifier: `structured-skill-engineering-system`. Dewey: 003.100 (Systems architecture, validation, and control).
 
 # Structured Skill Engineering System
 
@@ -256,9 +256,9 @@ Every link must define direction:
 
 | Direction | Meaning |
 |---|---|
-| A → B | A modifies B |
-| B → A | B modifies A |
-| A ↔ B | Both modify each other |
+| A > B | A modifies B |
+| B > A | B modifies A |
+| A <> B | Both modify each other |
 | A governs B | A has priority over B |
 | A supports B | A improves B but does not override it |
 | A audits B | A checks B after output |
@@ -296,7 +296,7 @@ Do not exceed the budget unless the user explicitly accepts complexity.
 ### Mandatory Link Record Format
 
 ```markdown
-## Link: [Source Skill] → [Target Skill]
+## Link: [Source Skill] > [Target Skill]
 
 **Relationship Type:**
 [Dependency / Constraint / Enhancement / Translation / Audit / Creative Influence / Execution Layer]
@@ -450,12 +450,12 @@ Before final output:
 
 These contracts define how this structured engineering skill sits inside the skill-builder system. They are behavioural contracts, not casual “see also” links.
 
-### Relationship Contract: Structured Skill Engineering System → Skill Handoff Bridge
+### Relationship Contract: Structured Skill Engineering System > Skill Handoff Bridge
 
 **Source:** Structured Skill Engineering System  
 **Target:** Skill Handoff Bridge  
-**Relationship Direction:** Structured Skill Engineering System ← Skill Handoff Bridge for preferred input; Structured Skill Engineering System → Skill Handoff Bridge when a packet is incomplete  
-**Reciprocal Direction:** Skill Handoff Bridge → Structured Skill Engineering System with handoff packets  
+**Relationship Direction:** Structured Skill Engineering System < Skill Handoff Bridge for preferred input; Structured Skill Engineering System > Skill Handoff Bridge when a packet is incomplete  
+**Reciprocal Direction:** Skill Handoff Bridge > Structured Skill Engineering System with handoff packets  
 **Relationship Type:** translation  
 **Relationship Strength:** critical  
 **Strength Reason:** structured engineering is most reliable when the bridge supplies intent, capabilities, constraints, risks, and readiness status.  
@@ -468,11 +468,11 @@ These contracts define how this structured engineering skill sits inside the ski
 **Affected Files:** `structured-skill-engineering-system/SUBSKILL.md`, `skill-handoff-bridge/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Structured Skill Engineering System → Creative Exploration Engine
+### Relationship Contract: Structured Skill Engineering System > Creative Exploration Engine
 
 **Source:** Structured Skill Engineering System  
 **Target:** Creative Exploration Engine  
-**Relationship Direction:** Structured Skill Engineering System → Creative Exploration Engine when failures require more ideation; Creative Exploration Engine → Structured Skill Engineering System only through bridge by default  
+**Relationship Direction:** Structured Skill Engineering System > Creative Exploration Engine when failures require more ideation; Creative Exploration Engine > Structured Skill Engineering System only through bridge by default  
 **Reciprocal Direction:** Creative Exploration Engine provides upstream creative material but does not certify it  
 **Relationship Type:** audit  
 **Relationship Strength:** contextual  
@@ -486,12 +486,12 @@ These contracts define how this structured engineering skill sits inside the ski
 **Affected Files:** `structured-skill-engineering-system/SUBSKILL.md`, `creative-exploration-engine/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Structured Skill Engineering System → Relationship Contract Engine
+### Relationship Contract: Structured Skill Engineering System > Relationship Contract Engine
 
 **Source:** Structured Skill Engineering System  
 **Target:** Relationship Contract Engine  
 **Relationship Direction:** Structured Skill Engineering System governs when relationship validation is required; Relationship Contract Engine audits and applies the relationship layer  
-**Reciprocal Direction:** Relationship Contract Engine → Structured Skill Engineering System by supplying verified contracts, maps, and audit results  
+**Reciprocal Direction:** Relationship Contract Engine > Structured Skill Engineering System by supplying verified contracts, maps, and audit results  
 **Relationship Type:** audit  
 **Relationship Strength:** strong  
 **Strength Reason:** structured engineering defines when links matter, but the contract engine prevents those links from becoming vague or one-sided.  
@@ -505,12 +505,12 @@ These contracts define how this structured engineering skill sits inside the ski
 **Audit Status:** verified
 
 
-### Relationship Contract: Structured Skill Engineering System → Skill Creator
+### Relationship Contract: Structured Skill Engineering System > Skill Creator
 
 **Source:** Structured Skill Engineering System  
 **Target:** Skill Creator  
-**Relationship Direction:** Structured Skill Engineering System → Skill Creator  
-**Reciprocal Direction:** Skill Creator → Structured Skill Engineering System  
+**Relationship Direction:** Structured Skill Engineering System > Skill Creator  
+**Reciprocal Direction:** Skill Creator > Structured Skill Engineering System  
 **Relationship Type:** execution layer  
 **Relationship Strength:** critical  
 **Strength Reason:** the structured system defines reliability, hierarchy, failure logic, scale control, and evaluation standards; Skill Creator turns those standards into actual drafts, evals, iterations, description optimisation, and packages.  
