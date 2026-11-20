@@ -23,7 +23,7 @@
 
 <!-- One per decision. Blocks: list every issue waiting on it, so the cost is visible. -->
 
-- **D1** — <the question, in one sentence, as a decision rather than a topic>
+- **D1** - <the question, in one sentence, as a decision rather than a topic>
   - **Recommended:** <the factory's proposed answer, with the reasoning that produced it>
   - **Blocks:** <#4, #5, #7>
   - **Raised:** <YYYY-MM-DD> by <workflow/node>
@@ -33,7 +33,7 @@
 <!-- Never delete one. A decision with its date is why the code looks the way it does, and
      it is the first thing anybody re-litigating it needs to read. -->
 
-- **D0** — example: what does a tier-3 reward multiply by?
+- **D0** - example: what does a tier-3 reward multiply by?
   - **Answer:** 1.5
   - **Decided:** 2026-01-01 by <human>
   - **Why:** anything below 1.4 makes tier 3 net-negative and breaks MISSION invariant 3.

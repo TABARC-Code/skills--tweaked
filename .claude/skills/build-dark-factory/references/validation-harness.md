@@ -129,7 +129,7 @@ Seven rungs, cheapest at the bottom. Build them bottom-up; they compose.
 |---|---|---|
 | 7 | **deterministic gate** | green, or there is no merge. Code, never a prompt. |
 | 6 | **holdout scenarios** | written before the work, never shown to the builder |
-| 5 | **visual / screenshot judging** *(not scaffolded — you build it)* | it actually looks right on a screen |
+| 5 | **visual / screenshot judging** *(not scaffolded - you build it)* | it actually looks right on a screen |
 | 4 | **E2E as the real user** | a real browser or a real client, real data, the full path |
 | | **↑↑↑  THE INDEPENDENCE LINE  ↑↑↑** | *above it, the agent cannot see or edit* |
 | 3 | **integration** | the pieces work together |
@@ -145,7 +145,7 @@ A rendered window, a game loop, a canvas, a native UI is **none of them**. So th
 a preference about clean architecture, it is a precondition: **the rules have to live
 behind a headless, scriptable surface an E2E can drive.** Simulation apart from rendering,
 domain apart from view. If the logic only exists inside engine nodes and a render loop
-there is nothing to assert, and the factory cannot run at level 3 — not because the skill
+there is nothing to assert, and the factory cannot run at level 3 - not because the skill
 is limited but because nothing can check the work.
 
 On a **greenfield** build, say this before any code exists. It is nearly free then and it
@@ -356,7 +356,7 @@ metric               floor  observed  slack      floor  observed  slack
 playthrough_checks       9        12      3          9        12      3
 unit_tests               7         9      2          7         9      2
 feel_checks             23        24      1         23        24      1
-legibility_frames        -         -      -         60        87     27
+legibility_frames - - - 60        87     27
                               TOTAL       7                  TOTAL   33
 ```
 

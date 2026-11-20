@@ -202,7 +202,7 @@ carries on - it does not re-ask.
 - Concurrency: <1> workflow at a time. Above one, a per-target lock is mandatory - never dispatch a workflow whose (workflow, target) pair is already in flight.
 - Fix attempts per PR: <2>
 - PR size: <500> lines
-- **Dispatcher priority order:** fix a PR → validate a PR → implement an issue →
+- **Dispatcher priority order:** fix a PR > validate a PR > implement an issue >
   triage. Finish in-flight work before starting new work.
 - **Stop button:** <the mechanism>. Documented, and tested once on purpose.
 

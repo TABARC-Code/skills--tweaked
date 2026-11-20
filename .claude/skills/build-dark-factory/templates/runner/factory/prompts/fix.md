@@ -16,8 +16,8 @@
 
 Run the `piv-fix-review-findings` skill against the validator's findings:
 
-- **the verdict** — `{{findings}}`
-- **the raw validation output** — `{{gatelog}}`
+- **the verdict** - `{{findings}}`
+- **the raw validation output** - `{{gatelog}}`
 
 Read the verdict first. Read the log when a finding names a check, because the log says
 what the check actually printed and the verdict says what the judge made of it.

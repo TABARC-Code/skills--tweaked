@@ -56,7 +56,7 @@ on a schedule and record the date here.
 
 | Level | Automatic | Reached |
 |---|---|---|
-| 1 | labelled issue → PR opens | <date or blank> |
+| 1 | labelled issue > PR opens | <date or blank> |
 | 2 | validator runs and posts a verdict | <date or blank> |
 | 3 | validator auto-merges on green structural gates | <date or blank> |
 | 4 | self-triage, and a scheduled test files its own bugs | <date or blank> |
