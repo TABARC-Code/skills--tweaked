@@ -6,12 +6,12 @@ metadata:
   author_url: https://github.com/TABARC-Code/
   version: 1.1.0
   dewey_code: '006.363'
-  classification_label: AI analysis — living-systems and metabolic modelling
+  classification_label: AI analysis - living-systems and metabolic modelling
   status: production
   source_grounding:
-    - Tlalka et al. / Boddy — nutrient translocation in mycelial networks.
-    - Calcium-signalling study, Aspergillus nidulans — decentralised local stress response (PMC9991499).
-    - Fukasawa / ISME — ecological memory and relocation decisions in fungal networks.
+    - Tlalka et al. / Boddy - nutrient translocation in mycelial networks.
+    - Calcium-signalling study, Aspergillus nidulans - decentralised local stress response (PMC9991499).
+    - Fukasawa / ISME - ecological memory and relocation decisions in fungal networks.
   bidirectional_links:
     - skill: slime-mold-analysis
       this_provides: metabolism, defence, reproduction, dormancy framing
@@ -85,39 +85,39 @@ If the system has a clear controller deliberately steering it, that's spider. If
 
 Run in order. State any skipped step and why; no silent skips.
 
-### Step 1 — Separate the mushroom from the organism
+### Step 1 - Separate the mushroom from the organism
 
 What's the visible fruiting body (the symptom, the event, the complaint) and what's the hidden mycelium (the living system that produces it)? Name both. If you can't find the organism beneath the mushroom, you may have an event, not a fungus, so consider whether this is the right skill.
 
-### Step 2 — Map the substrate
+### Step 2 - Map the substrate
 
 A fungus is inseparable from what it grows in. What's the environment: the physical, social, economic, emotional, political and historical conditions the organism lives inside? Explain how the substrate makes this organism possible. Change the substrate and you change the organism.
 
-### Step 3 — Identify the nutrients
+### Step 3 - Identify the nutrients
 
 What feeds it? Money, attention, time, fear, novelty, convenience, status, secrecy, dependency, scarcity, conflict, routine, permission. Separate the essential nutrients from the incidental ones. The essential nutrient is the one that, removed, starves the organism.
 
-### Step 4 — Trace translocation
+### Step 4 - Trace translocation
 
 What moves across the system to where it's needed? Where is value, energy, or effort being carried from a rich region to a growing one? What's being equilibrated, and what imbalance would the organism move to correct?
 
-### Step 5 — Find the decomposition
+### Step 5 - Find the decomposition
 
 What is the organism breaking down and absorbing? What dead or waste material is being converted into structure? And the sharp question: what's being decomposed that shouldn't be (trust, goodwill, a person, a budget, a culture) and fed into the organism's growth?
 
-### Step 6 — Locate the defences
+### Step 6 - Locate the defences
 
 Every living system protects itself. Look for denial, bureaucracy, silence, gatekeeping, protective narratives, immune responses, the punishment of dissent, camouflage. When you threaten the organism, what propagates to defend the parts not yet under attack? The defence response is often the clearest proof you've found something alive.
 
-### Step 7 — Read the reproductive strategy
+### Step 7 - Read the reproductive strategy
 
 How does the organism replace what you remove? Copying behaviour, training new participants, embedding rituals, normalising dysfunction, replicating patterns across personnel. This is why removing the mushroom fails: the network just fruits again. Find the reproduction and you find why your fixes don't hold.
 
-### Step 8 — Detect dormancy
+### Step 8 - Detect dormancy
 
 What appears inactive but is still alive? Postponed decisions, unresolved conflict, latent demand, suppressed creativity, technical debt, social debt, institutional memory. What conditions would reactivate it? Dormant tissue is the organism's reserve; it's why systems you thought dead come back.
 
-### Step 9 — Identify the starve point and forecast
+### Step 9 - Identify the starve point and forecast
 
 Where could the organism be redirected, weakened, or transformed by changing its conditions rather than attacking its body? What's the nutrient chokepoint? Then forecast: if conditions hold, what's the next phase of growth? And what single change to the substrate or nutrient supply would force the biggest reorganisation?
 
@@ -188,12 +188,12 @@ This earns its own example because the metabolic frame is seductive. It can make
 
 ## Diagnostic questions
 
-1. Does the problem regrow after you remove it? No → probably an event, not this skill.
-2. Does it defend itself when threatened? Yes → strong mycelium signal.
-3. Is there a clear controller steering it deliberately? Yes → spider, not this.
-4. Is the useful move pruning to load-bearing paths? Yes → slime mold, not this.
-5. Can you name what feeds it and what would starve it? Yes → mycelium fits.
-6. Is something being decomposed and converted into the organism's growth? Yes → mycelium fits.
+1. Does the problem regrow after you remove it? No > probably an event, not this skill.
+2. Does it defend itself when threatened? Yes > strong mycelium signal.
+3. Is there a clear controller steering it deliberately? Yes > spider, not this.
+4. Is the useful move pruning to load-bearing paths? Yes > slime mold, not this.
+5. Can you name what feeds it and what would starve it? Yes > mycelium fits.
+6. Is something being decomposed and converted into the organism's growth? Yes > mycelium fits.
 
 ## Common mistakes
 

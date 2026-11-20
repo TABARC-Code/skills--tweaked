@@ -153,11 +153,11 @@ copy. Flag the conflict or use cautious wording.
 
 Internally classify important claims as:
 
-- **VERIFIED** — directly supported by strong evidence
-- **SUPPORTED** — credible evidence exists but has not been executed or independently verified
-- **USER-STATED** — supplied by the user and not contradicted by stronger evidence
-- **PLANNED** — future intention, roadmap item or TODO
-- **UNKNOWN** — insufficient or conflicting evidence
+- **VERIFIED** - directly supported by strong evidence
+- **SUPPORTED** - credible evidence exists but has not been executed or independently verified
+- **USER-STATED** - supplied by the user and not contradicted by stronger evidence
+- **PLANNED** - future intention, roadmap item or TODO
+- **UNKNOWN** - insufficient or conflicting evidence
 
 Do not print these labels everywhere. Use them to control wording.
 
@@ -304,7 +304,7 @@ The second sentence may be entertaining. It is also fictional unless the user su
 
 ## 5.2 Controlled cynicism
 
-Use a very small amount of dry cynicism — approximately 2% as a stylistic direction, not
+Use a very small amount of dry cynicism - approximately 2% as a stylistic direction, not
 a word-count target.
 
 It should appear as occasional understatement, dry observation or restrained aside.

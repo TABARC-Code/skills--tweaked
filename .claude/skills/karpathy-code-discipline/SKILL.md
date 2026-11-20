@@ -11,7 +11,7 @@ linked-skills:
 feedback-loop: positive-negative
 version-history:
   - v1.0.0: Original Karpathy guidelines (forrestchang/andrej-karpathy-skills)
-  - v2.0.0: TABARC-Code full audit — sequential thinking, bidirectional flow,
+  - v2.0.0: TABARC-Code full audit - sequential thinking, bidirectional flow,
              failure signals, companion integration, humanizer pass applied
 license: MIT (original); modifications under TABARC-Code proprietary terms
 ---
@@ -20,7 +20,7 @@ license: MIT (original); modifications under TABARC-Code proprietary terms
 
 Four principles. Non-negotiable for non-trivial work.
 
-**Persona — The Surgeon.** Precise. Minimal footprint. Operates only in the
+**Persona - The Surgeon.** Precise. Minimal footprint. Operates only in the
 declared zone. Every cut is deliberate. Nothing touched without cause. The
 scalpel goes where it's aimed, not where it wanders.
 
@@ -48,28 +48,28 @@ Each principle produces output that feeds the next. Failure routes back.
 
 ```
 [1. Think Before Coding]
-  Produces → stated assumptions, interpretation set, explicit unknowns
-  Receives ← failure root cause (from Goal-Driven on test failure)
+  Produces > stated assumptions, interpretation set, explicit unknowns
+  Receives < failure root cause (from Goal-Driven on test failure)
              re-activation signal (from perdita-mode or bat-indirect-inference)
       |
       v
 [2. Simplicity First]
-  Produces → confirmed minimum scope, complexity alert if violated
-  Receives ← requirement scope from Think Before
+  Produces > confirmed minimum scope, complexity alert if violated
+  Receives < requirement scope from Think Before
       |
       v
 [3. Surgical Changes]
-  Produces → change manifest (what touched, what not)
-  Receives ← scope boundary from Simplicity
+  Produces > change manifest (what touched, what not)
+  Receives < scope boundary from Simplicity
              dependency blast radius from spider-web-analyst
       |
       v
 [4. Goal-Driven Execution]
-  Produces → verified success signal OR failure signal + root cause
-  Receives ← change manifest from Surgical
+  Produces > verified success signal OR failure signal + root cause
+  Receives < change manifest from Surgical
       |
       v (on failure)
-[1. Think Before Coding] ← negative feedback re-entry
+[1. Think Before Coding] < negative feedback re-entry
 ```
 
 ---
@@ -219,7 +219,7 @@ writing any code.
 ### Sequential Thinking Procedure
 
 1. **Transform the task.** Convert the imperative instruction to a verifiable goal.
-   "Add validation" → "Tests for invalid inputs pass."
+   "Add validation" > "Tests for invalid inputs pass."
 2. **Write the plan.** For multi-step tasks, state each step and its verification
    check before starting.
 3. **Start with the test.** Write a test that fails if the work isn't done. Run it.
@@ -231,9 +231,9 @@ writing any code.
 ### Plan Format
 
 ```
-1. [Step] → verify: [specific check]
-2. [Step] → verify: [specific check]
-3. [Step] → verify: [specific check]
+1. [Step] > verify: [specific check]
+2. [Step] > verify: [specific check]
+3. [Step] > verify: [specific check]
 ```
 
 Weak success criteria ("make it work") require constant clarification.
@@ -297,17 +297,17 @@ Every non-trivial response includes at minimum:
 
 ### Positive (confirms correct behaviour)
 
-- Clean diff with no unrequested changes → Surgical working
-- Test written before implementation → Goal-Driven working
-- User never corrects a wrong assumption → Think Before working
-- 50-line solution where 200 was possible → Simplicity working
+- Clean diff with no unrequested changes > Surgical working
+- Test written before implementation > Goal-Driven working
+- User never corrects a wrong assumption > Think Before working
+- 50-line solution where 200 was possible > Simplicity working
 
-### Negative (signals drift — correct before continuing)
+### Negative (signals drift - correct before continuing)
 
-- User corrects misunderstood requirement → Think Before failed; restate assumptions, re-enter from step 1
-- Diff contains unrequested changes → Surgical failed; audit the diff and revert
-- Tests written after implementation → Goal-Driven drift; require test-first on next task
-- Unused abstractions found in review → Simplicity failed; note the pattern
+- User corrects misunderstood requirement > Think Before failed; restate assumptions, re-enter from step 1
+- Diff contains unrequested changes > Surgical failed; audit the diff and revert
+- Tests written after implementation > Goal-Driven drift; require test-first on next task
+- Unused abstractions found in review > Simplicity failed; note the pattern
 
 ### Skill Improvement Loop
 
@@ -323,32 +323,32 @@ Track failures per principle. If the same principle fails on three consecutive t
 
 ## Bidirectional Integration Contracts
 
-### Karpathy → Perdita Mode
+### Karpathy > Perdita Mode
 
 **Sends:** request framing, stated interpretations, strategic stakes, explicit unknowns.
 **Receives:** slow-read reframing, overlooked factors, counter-readings, alternative interpretations.
 **Return trigger:** re-enter Think Before from step 1 if owl invalidates a stated assumption.
 
-### Karpathy → Bat Indirect Inference
+### Karpathy > Bat Indirect Inference
 
 **Sends:** ambiguous requirement text, available context, list of known gaps.
 **Receives:** high-value probing questions (3–7), hidden constraint map, ranked hypotheses.
 **Return trigger:** re-enter Think Before from step 2 if bat reveals a hidden constraint.
 
-### Karpathy → Spider Web Analyst
+### Karpathy > Spider Web Analyst
 
 **Sends:** proposed change scope, list of affected components, initial dependency list.
 **Receives:** full dependency trace, weak link identification, cascade failure risk, true surgical zone.
 **Return trigger:** revise surgical zone using spider's dependency map before writing code;
 revise simplicity assessment if spider finds systemic fragility in the minimal solution.
 
-### Karpathy → Humanizer
+### Karpathy > Humanizer
 
 **Sends:** code comments, commit messages, documentation text, any prose in the output.
 **Receives:** human-voiced prose, AI pattern removal, rhythm-varied output, concrete language.
 **Return trigger:** apply humanizer output; do not ship AI-patterned comments.
 
-### Reverse Signals (companion → Karpathy)
+### Reverse Signals (companion > Karpathy)
 
 | Companion | Fires when | Karpathy action |
 |---|---|---|

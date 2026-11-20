@@ -21,7 +21,7 @@ Review a diff for one thing only: what can be deleted. Not correctness, not styl
 - Speculative abstraction: interface with one implementation, factory for one product, config for a constant.
 - Dead flexibility: parameters never varied, hooks never called, options never set.
 - Scaffolding "for later" that later never used.
-- `occam:` comments whose stated ceiling is visibly breached in the diff (e.g. a "single caller" shortcut now has three callers). Flag as: `path:line: occam: ceiling breached — [upgrade path from comment].`
+- `occam:` comments whose stated ceiling is visibly breached in the diff (e.g. a "single caller" shortcut now has three callers). Flag as: `path:line: occam: ceiling breached - [upgrade path from comment].`
 
 ## Output
 
@@ -36,11 +36,11 @@ Example:
 
 ## Bidirectional links
 
-**terse-review** — complementary pass. terse-review covers correctness; lazy-review covers complexity. Neither owns the other's territory. Running both on a diff gives you a complete picture in two short passes.
+**terse-review** - complementary pass. terse-review covers correctness; lazy-review covers complexity. Neither owns the other's territory. Running both on a diff gives you a complete picture in two short passes.
 
-**lazy-audit** — lazy-review operates on a diff; lazy-audit operates on a whole repo. If lazy-review finds a class of bloat (e.g. hand-rolled stdlib) appearing repeatedly, that's a signal to run lazy-audit and find every other instance. Feed the finding forward.
+**lazy-audit** - lazy-review operates on a diff; lazy-audit operates on a whole repo. If lazy-review finds a class of bloat (e.g. hand-rolled stdlib) appearing repeatedly, that's a signal to run lazy-audit and find every other instance. Feed the finding forward.
 
-**lazy-build** — feeds back. When lazy-review flags something, the fix goes through lazy-build to ensure the replacement is itself the laziest option. Don't replace a complex thing with another complex thing.
+**lazy-build** - feeds back. When lazy-review flags something, the fix goes through lazy-build to ensure the replacement is itself the laziest option. Don't replace a complex thing with another complex thing.
 
 ## Feedback loops
 
@@ -48,9 +48,9 @@ Example:
 
 **Positive:** developer deletes the flagged code, ships, nothing breaks. The complexity wasn't hiding correctness. Ceiling estimated correctly.
 
-**Negative:** a flagged deletion turns out to be load-bearing — it was handling an edge case the stdlib equivalent misses → the risk was underestimated. Note which class of stdlib substitution is risky in this codebase and flag it explicitly in future reviews.
+**Negative:** a flagged deletion turns out to be load-bearing - it was handling an edge case the stdlib equivalent misses > the risk was underestimated. Note which class of stdlib substitution is risky in this codebase and flag it explicitly in future reviews.
 
-**Negative:** "no over-engineering found" on a diff that had obvious bloat → a specific category was missed. Name it, watch for it.
+**Negative:** "no over-engineering found" on a diff that had obvious bloat > a specific category was missed. Name it, watch for it.
 
 ## Boundary
 
