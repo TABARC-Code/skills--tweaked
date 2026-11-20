@@ -1,6 +1,6 @@
 ---
 name: piv-review-pr
-description: Full pull-request review — fetch the PR, run the project's validation, review the diff with fresh eyes (dispatching the code-reviewer agent), categorize issues by severity, post the review to GitHub (approve / request-changes / comment), and save a report. The agentic gate that runs on an open PR before a human approves. Use after piv-create-pr. Dewey 005.14.
+description: Full pull-request review - fetch the PR, run the project's validation, review the diff with fresh eyes (dispatching the code-reviewer agent), categorize issues by severity, post the review to GitHub (approve / request-changes / comment), and save a report. The agentic gate that runs on an open PR before a human approves. Use after piv-create-pr. Dewey 005.14.
 argument-hint: "<pr-number | pr-url | branch> [--approve | --request-changes]"
 ---
 
@@ -8,12 +8,12 @@ argument-hint: "<pr-number | pr-url | branch> [--approve | --request-changes]"
 
 **Input**: $ARGUMENTS
 
-The point of this skill is **fresh eyes**: it reviews the PR in a clean context — *not* the context that wrote
-the code — and can hand the deep analysis to the **`code-reviewer` agent**, which is the whole reason the review
+The point of this skill is **fresh eyes**: it reviews the PR in a clean context - *not* the context that wrote
+the code - and can hand the deep analysis to the **`code-reviewer` agent**, which is the whole reason the review
 catches what the author's own context rationalizes away. It posts its verdict on the PR, then a **human** makes
 the final call.
 
-## Phase 1 — Fetch the PR
+## Phase 1 - Fetch the PR
 
 Resolve the input to a PR number (a number, a URL, or a branch via
 `gh pr list --head <branch> --json number -q '.[0].number'`). Then:
@@ -26,30 +26,30 @@ gh pr checkout {N}
 
 **Before `gh pr checkout`:** run `git status --porcelain`. If the tree is dirty, stop and ask, because the checkout can clobber or tangle local work. Prefer a throwaway worktree (`git worktree add`) so the review never touches your branch.
 
-State guard: `MERGED`/`CLOSED` → stop ("nothing to review"); `DRAFT` → review direction, don't approve/block.
+State guard: `MERGED`/`CLOSED` > stop ("nothing to review"); `DRAFT` > review direction, don't approve/block.
 
-## Phase 2 — Load the context (so you review against the right bar)
+## Phase 2 - Load the context (so you review against the right bar)
 
-- **`CLAUDE.md`** + any `.claude/references/` — the project's standards are the review rubric.
-- **The implementation report** (if `piv-implement` wrote one — `.claude/reports/*{branch}*`) + its plan: read the
-  **documented deviations**. A documented deviation is an *intentional decision*, **not** an issue — only flag
+- **`CLAUDE.md`** + any `.claude/references/` - the project's standards are the review rubric.
+- **The implementation report** (if `piv-implement` wrote one - `.claude/reports/*{branch}*`) + its plan: read the
+  **documented deviations**. A documented deviation is an *intentional decision*, **not** an issue - only flag
   *undocumented* divergences. (No report? Review normally and note its absence.)
 - The PR's own intent (title/body): what problem it claims to solve.
 
-## Phase 3 — Run validation
+## Phase 3 - Run validation
 If the PR adds or changes SKILL.md files, run `skill-security-scanner` on them before anything loads them.
 
-## Phase 3 note — untrusted code
+## Phase 3 note - untrusted code
 
 If the PR comes from a fork or an unfamiliar author, running its tests, build or install scripts executes their code on this machine. Check the diff for changes to scripts, CI files, `package.json` lifecycle hooks and test setup first, and run validation in a sandbox or skip it and say so in the report. A skipped suite is a stated limitation, not a pass.
 
 
-Run the project's real suite (the **`piv-validate`** skill, or the plan's validation commands) — tests, type-check,
+Run the project's real suite (the **`piv-validate`** skill, or the plan's validation commands) - tests, type-check,
 lint, build. Capture pass/fail + counts. A red suite is a finding in itself.
 
-## Phase 4 — Review the diff (dispatch the code-reviewer agent)
+## Phase 4 - Review the diff (dispatch the code-reviewer agent)
 
-Hand the deep pass to a **`code-reviewer` subagent** if the project has one (`.claude/agents/code-reviewer.md`); otherwise review in this session, in a clean context — it reviews against the
+Hand the deep pass to a **`code-reviewer` subagent** if the project has one (`.claude/agents/code-reviewer.md`); otherwise review in this session, in a clean context - it reviews against the
 project's standards and reports **high-confidence issues only**. Read every changed file *in full* (not just the
 diff) for context. Cover: correctness · type safety · pattern/standards compliance · security · performance ·
 tests present · maintainability.
@@ -58,21 +58,21 @@ tests present · maintainability.
 
 | Severity | Meaning |
 |----------|---------|
-| **Critical** | Blocking — security, data loss, crashes |
-| **High** | Should fix before merge — type-safety holes, missing error handling, logic errors |
+| **Critical** | Blocking - security, data loss, crashes |
+| **High** | Should fix before merge - type-safety holes, missing error handling, logic errors |
 | **Medium** | Pattern inconsistencies, missing edge cases, *undocumented* deviations |
 | **Low** | Suggestions, minor polish |
 
-Acknowledge what's done well, too — review is constructive, not just a defect list.
+Acknowledge what's done well, too - review is constructive, not just a defect list.
 
-## Phase 5 — Decide
+## Phase 5 - Decide
 
-- **Approve** — no critical/high issues, validation passes, matches intent.
-- **Request changes** — high issues, or fixable validation failures, or undocumented pattern violations.
-- **Block** (request-changes, strongly) — critical security/data issues, or wrong fundamental approach.
+- **Approve** - no critical/high issues, validation passes, matches intent.
+- **Request changes** - high issues, or fixable validation failures, or undocumented pattern violations.
+- **Block** (request-changes, strongly) - critical security/data issues, or wrong fundamental approach.
 - Honor an explicit `--approve` / `--request-changes` flag, but never approve over an unresolved critical issue.
 
-## Phase 6 — Post to GitHub + save the report
+## Phase 6 - Post to GitHub + save the report
 
 Write the report to `.claude/code-reviews/pr-{N}-review.md` (summary · issues by severity with `file:line` + fix ·
 validation table · what's good · recommendation). Then post it:
@@ -94,9 +94,9 @@ next step is **`piv-fix-review-findings`** on the report, then re-run validation
 
 ## Notes
 
-- **Fresh eyes is the whole point** — run this in a clean context (or let the `code-reviewer` agent be the clean
+- **Fresh eyes is the whole point** - run this in a clean context (or let the `code-reviewer` agent be the clean
   context). Don't review with the session that wrote the code; it rationalizes instead of scrutinizing.
-- This is the *agentic* gate; it does not replace the human — it gives the human a validated, triaged PR to
+- This is the *agentic* gate; it does not replace the human - it gives the human a validated, triaged PR to
   approve. Going deeper means multiple review agents, tuning the reviewer to your stack, and a validation
   pyramid behind it.
 

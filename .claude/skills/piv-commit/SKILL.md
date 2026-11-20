@@ -10,7 +10,7 @@ Create a new commit for all of our uncommitted changes.
 ## Process
 
 0. **Read this project's conventions.** If `.claude/references/conventions.md` exists, read its `## commit`
-   section and follow it — those rules win over the defaults below. That file is where a project's specifics
+   section and follow it - those rules win over the defaults below. That file is where a project's specifics
    live; this skill stays general.
 1. Run `git status && git diff HEAD && git status --porcelain` to see what files are uncommitted.
 1b. **Look before you add.** Read the untracked list. Never stage `.env` files, keys, tokens, credentials, build output, `node_modules` or large binaries. If one is untracked and not ignored, leave it out and tell the user it should go in `.gitignore`. If the changes cover two unrelated concerns, say so and offer to commit them separately, because "all uncommitted changes" and "atomic" cannot both hold for a mixed diff.
@@ -27,7 +27,7 @@ A single commit containing all uncommitted changes, with a conventional-commit-s
 After the commit succeeds, print two clearly labelled summaries:
 
 ### What Changed
-One short paragraph (3–6 sentences) describing the feature/fix/refactor that was committed — what problem it solves and what files were the key touch points. Write for a developer skimming the git log.
+One short paragraph (3–6 sentences) describing the feature/fix/refactor that was committed - what problem it solves and what files were the key touch points. Write for a developer skimming the git log.
 
 ### AI Layer Changes
 Only include this section if any files under `.claude/` were modified or added (CLAUDE.md, `.claude/references/`, `.claude/skills/`, `.claude/agents/`, etc.).

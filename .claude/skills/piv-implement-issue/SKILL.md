@@ -1,6 +1,6 @@
 ---
 name: piv-implement-issue
-description: Implement the fix for a GitHub issue from its RCA artifact (created by piv-investigate-issue) — drift-check the plan, branch, implement, add regression tests, and validate. Use after the investigation artifact exists and you're ready to fix the issue. Dewey 005.1.
+description: Implement the fix for a GitHub issue from its RCA artifact (created by piv-investigate-issue) - drift-check the plan, branch, implement, add regression tests, and validate. Use after the investigation artifact exists and you're ready to fix the issue. Dewey 005.1.
 argument-hint: [github-issue-id]
 allowed-tools: Read, Write, Edit, Bash(git:*), Bash(gh:*), Bash(ruff:*), Bash(mypy:*), Bash(pytest:*), Bash(npm:*), Bash(bun:*)
 ---
@@ -38,22 +38,22 @@ gh issue view $ARGUMENTS
 
 Read the **Confidence** row in the RCA. If it is **Low**, or the Root Cause section says the cause is not yet determined, **stop**. The investigation flagged this for a human before any fix, so a fix built on it is a guess. Report what is missing and ask whether to re-investigate or to proceed on the stated hypothesis. Medium is fine, but carry the stated unknowns into the report.
 
-### 2. Verify Current State — and check for drift
+### 2. Verify Current State - and check for drift
 
 Before making changes:
 - Confirm the issue still exists.
 - **Drift check:** read each file the RCA names and compare against the RCA's "current code" snippets / line refs.
-  If the code has **changed materially** since the RCA, **stop** — surface the drift and suggest re-running
+  If the code has **changed materially** since the RCA, **stop** - surface the drift and suggest re-running
   `piv-investigate-issue` for issue #$ARGUMENTS rather than implementing a stale plan.
-- Confirm the proposed fix still addresses the root cause — don't silently deviate.
+- Confirm the proposed fix still addresses the root cause - don't silently deviate.
 
 ### 2b. Get on the right branch
 
 - **In a worktree?** Use it (it was created for this work).
-- **On the base branch, clean tree?** Create a fix branch — `git checkout -b fix/issue-$ARGUMENTS-<slug>` (detect
+- **On the base branch, clean tree?** Create a fix branch - `git checkout -b fix/issue-$ARGUMENTS-<slug>` (detect
   the base with `git symbolic-ref refs/remotes/origin/HEAD`; never hardcode `main`).
 - **Already on a feature/fix branch?** Use it (warn if its name doesn't reference #$ARGUMENTS).
-- **Dirty tree on the base branch?** Stop — ask the user to commit or stash first.
+- **Dirty tree on the base branch?** Stop - ask the user to commit or stash first.
 
 ### 3. Implement the Fix
 
@@ -76,7 +76,7 @@ Following the "Proposed Fix" section of the RCA:
 - Ensure consistency across the codebase
 - Update imports if needed
 
-**Stay on plan:** implement what the RCA specifies — don't refactor unrelated code or add unplanned
+**Stay on plan:** implement what the RCA specifies - don't refactor unrelated code or add unplanned
 "improvements." If you must deviate, note what changed and why, and surface it in the report (and the PR).
 
 ### 4. Add/Update Tests
@@ -199,7 +199,7 @@ Stay inside the zone the RCA names. `karpathy-code-discipline` governs scope and
 
 ### Deviations from the RCA
 
-[None — implemented as specified | List each deviation from the RCA + why]
+[None - implemented as specified | List each deviation from the RCA + why]
 
 ### Files Summary
 
