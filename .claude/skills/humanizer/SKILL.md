@@ -1,7 +1,7 @@
 ---
 name: humanizer
 version: 2.3.0
-description: "Remove signs of AI-generated writing from text. Use when editing or reviewing\ntext to make it sound more natural and human-written. Based on Wikipedia's\ncomprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including:\ninflated symbolism, promotional language, superficial -ing analyses, vague\nattributions, em dash overuse, rule of three, AI vocabulary words, negative\nparallelisms, and excessive conjunctive phrases. Dewey 808.02."
+description: "Remove signs of AI-generated writing from text. Use when editing or reviewing\ntext to make it sound more natural and human-written. Based on Wikipedia's\ncomprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including:\ninflated symbolism, promotional language, superficial -ing analyses, vague\nattributions, repetitive punctuation, rule of three, AI vocabulary words, negative\nparallelisms, and excessive conjunctive phrases. Dewey 808.02."
 allowed-tools:
   - Read
   - Write
@@ -228,9 +228,9 @@ Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as
 
 ## STYLE PATTERNS
 
-### 13. Em Dash Overuse
+### 13. Repetitive Punctuation
 
-**Problem:** LLMs use em dashes ( - ) more than humans, mimicking "punchy" sales writing.
+**Problem:** Repeated dramatic punctuation can make otherwise plain prose sound overworked and promotional.
 
 **Before:**
 > The term is primarily promoted by Dutch institutions - not by the people themselves. You don't say "Netherlands, Europe" as an address - yet this mislabeling continues - even in official documents.
@@ -465,7 +465,7 @@ Provide:
 - Removed negative parallelism ("It's not just X; it's Y")
 - Removed rule-of-three patterns and synonym cycling ("catalyst/partner/foundation")
 - Removed false ranges ("from X to Y, from A to B")
-- Removed em dashes, emojis, boldface headers, and curly quotes
+- Reduced repetitive punctuation, emojis, unnecessary bold headings, and curly quotes
 - Removed copula avoidance ("serves as", "functions as", "stands as") in favor of "is"/"are"
 - Removed formulaic challenges section ("Despite challenges... continues to thrive")
 - Removed knowledge-cutoff hedging ("While specific details are limited...")
