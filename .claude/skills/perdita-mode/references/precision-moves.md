@@ -2,7 +2,7 @@
 
 A catalogue of move types for use after the web has been mapped. Each type names the thread it pulls, the typical effect, and the risk profile.
 
-The point of a move catalogue is not to select from a menu. It is to recognise the shape of what you're doing before you do it — so you can be precise about it.
+The point of a move catalogue is not to select from a menu. It is to recognise the shape of what you're doing before you do it - so you can be precise about it.
 
 ---
 
@@ -11,7 +11,7 @@ The point of a move catalogue is not to select from a menu. It is to recognise t
 **Purpose:** Create information before committing resources or relationships.
 
 **The right question**
-Ask the one question that, if answered honestly, would most change your understanding of the situation. Not the question you're supposed to ask — the one that would be uncomfortable to ask.
+Ask the one question that, if answered honestly, would most change your understanding of the situation. Not the question you're supposed to ask - the one that would be uncomfortable to ask.
 *Thread:* Hidden assumptions and unspoken knowledge.
 *Risk:* The question may reveal something the asker preferred not to know.
 
@@ -37,7 +37,7 @@ Find something easily observable that would change if your hypothesis about the 
 **Purpose:** Change the shape of the system rather than managing its symptoms.
 
 **The clarification**
-Formally resolve an ambiguity — who has authority, what does "done" mean, who owns this. Often releases blockages nobody realised were authority questions.
+Formally resolve an ambiguity - who has authority, what does "done" mean, who owns this. Often releases blockages nobody realised were authority questions.
 *Thread:* Governance gaps and role conflict.
 *Risk:* Clarity may force a conflict that ambiguity was papering over.
 
@@ -73,7 +73,7 @@ Share information that is currently asymmetric. Reduces suspicion; often release
 *Risk:* Information shared cannot be unshared. Consider who else will receive it by secondary transmission.
 
 **The reframe**
-Offer an interpretation of someone's behaviour that is more accurate — and often more charitable — than the current one circulating. If correct, it changes the response to that behaviour.
+Offer an interpretation of someone's behaviour that is more accurate - and often more charitable - than the current one circulating. If correct, it changes the response to that behaviour.
 *Thread:* Status competition, historical injury.
 *Risk:* If the reframe is wrong or is perceived as naive, it can damage the reframer's credibility.
 
@@ -114,14 +114,14 @@ Commit to a decision at a specified future point rather than now. Reduces curren
 
 Before recommending a move, check:
 
-**Reversibility** — Can you undo it if it's wrong? Strongly prefer reversible.
+**Reversibility** - Can you undo it if it's wrong? Strongly prefer reversible.
 
-**Information value** — Does this move create useful information, or does it only change the situation? Moves that create information are generally lower risk.
+**Information value** - Does this move create useful information, or does it only change the situation? Moves that create information are generally lower risk.
 
-**Grain alignment** — Does this work with the incentive structure or against it? Against the grain is harder, slower, and more likely to create resistance. It is sometimes necessary. Know which you're doing.
+**Grain alignment** - Does this work with the incentive structure or against it? Against the grain is harder, slower, and more likely to create resistance. It is sometimes necessary. Know which you're doing.
 
-**Second-order effects** — What does this move enable or foreclose for later? The spider checks the web before moving across it.
+**Second-order effects** - What does this move enable or foreclose for later? The spider checks the web before moving across it.
 
-**Minimum intervention** — Is there a smaller version of this move that achieves the same effect? If yes, start there.
+**Minimum intervention** - Is there a smaller version of this move that achieves the same effect? If yes, start there.
 
-**Who is doing the moving** — Some moves are only available to certain actors. The best move for the situation may not be available to the person asking. In that case, identify who could make the move and what it would take to get them there.
+**Who is doing the moving** - Some moves are only available to certain actors. The best move for the situation may not be available to the person asking. In that case, identify who could make the move and what it would take to get them there.

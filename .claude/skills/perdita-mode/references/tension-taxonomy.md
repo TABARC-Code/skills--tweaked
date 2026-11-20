@@ -1,6 +1,6 @@
 # Tension Taxonomy
 
-Tensions are the places where forces in a system pull against each other. They are the most productive places to look — they reveal what the system is actually doing rather than what it claims to be doing.
+Tensions are the places where forces in a system pull against each other. They are the most productive places to look - they reveal what the system is actually doing rather than what it claims to be doing.
 
 Tensions do not need to be resolved to be useful. Naming them accurately changes the analysis.
 
@@ -28,7 +28,7 @@ Something needs to be decided but it's unclear who has the authority to decide i
 
 **Scale mismatch**
 A process, tool, or relationship was designed for a different scale than it's now operating at. It worked fine before; it's failing now without anyone having changed it.
-*Diagnostic sign: "it always used to work" — and nobody has touched it.*
+*Diagnostic sign: "it always used to work" - and nobody has touched it.*
 
 ---
 
@@ -46,7 +46,7 @@ Actors are competing for recognition, authority, or credit in ways that distort 
 
 **Historical injury**
 Something that happened before the current situation is still shaping behaviour. Nobody refers to it directly. The effect is visible in over-sensitivity, disproportionate reactions, and unusual risk aversion from one party.
-*Diagnostic sign: a reaction that doesn't fit the current situation — look for the earlier situation it actually fits.*
+*Diagnostic sign: a reaction that doesn't fit the current situation - look for the earlier situation it actually fits.*
 
 **Communication asymmetry**
 One actor has information the other needs but hasn't shared. This may be deliberate (strategic withholding), incidental (nobody thought to mention it), or structural (different information streams reaching different people).
@@ -67,11 +67,11 @@ Time pressure is forcing premature decisions.
 *First question: who benefits from this feeling urgent? Urgency is often a negotiating tool.*
 
 **Short vs. long-term conflict**
-The move that solves the immediate problem makes the underlying problem worse. Common in debt-driven systems — technical, financial, relational.
+The move that solves the immediate problem makes the underlying problem worse. Common in debt-driven systems - technical, financial, relational.
 *Diagnostic sign: the same problem keeps returning in slightly different forms.*
 
 **Sequence lock**
-Something needs to happen before something else can, and the prerequisite is blocked or delayed. Everything downstream waits — often without knowing why.
+Something needs to happen before something else can, and the prerequisite is blocked or delayed. Everything downstream waits - often without knowing why.
 *Diagnostic sign: multiple teams feeling blocked by different things that all trace back to one unresolved upstream issue.*
 
 **Irreversibility pressure**
@@ -79,7 +79,7 @@ A decision point is approaching after which the options narrow significantly. Th
 *Diagnostic sign: unusual anxiety about a deadline; or unusual recklessness that seems out of character.*
 
 **Premature closure**
-A decision was made earlier that is now constraining the current situation — but is being treated as fixed when it could in principle be revisited.
+A decision was made earlier that is now constraining the current situation - but is being treated as fixed when it could in principle be revisited.
 *Diagnostic sign: "we decided that already" being used to close down exploration.*
 
 ---
@@ -105,7 +105,7 @@ The problem has been defined in a way that makes certain solutions invisible. Th
 *Diagnostic sign: the solution space is suspiciously narrow; alternatives that seem obvious from outside aren't being considered inside.*
 
 **Confidence miscalibration**
-People are more certain than the evidence warrants — or less certain than they should be, depending on their position. Both distort decisions.
+People are more certain than the evidence warrants - or less certain than they should be, depending on their position. Both distort decisions.
 *Diagnostic sign: certainty that isn't backed by evidence; or paralysis in the face of adequate-but-imperfect information.*
 
 ---
@@ -114,4 +114,4 @@ People are more certain than the evidence warrants — or less certain than they
 
 Tensions often cluster. A trust deficit usually accompanies communication asymmetry. Incentive misalignment produces status competition. Sequence lock generates urgency vs. quality pressure.
 
-When multiple tensions are present, identify the primary one — the tension that, if it resolved, would most reduce the others. That is often the most productive place to intervene.
+When multiple tensions are present, identify the primary one - the tension that, if it resolved, would most reduce the others. That is often the most productive place to intervene.

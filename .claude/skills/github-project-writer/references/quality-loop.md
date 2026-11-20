@@ -20,7 +20,7 @@ cannot be judged otherwise.
 
 Use this workflow for creation, major rewrites and audits.
 
-## Stage A — Intent kernel
+## Stage A - Intent kernel
 
 State internally the user's actual outcome in one sentence.
 
@@ -30,7 +30,7 @@ Example:
 
 Protect that outcome through every later stage.
 
-## Stage B — Baseline
+## Stage B - Baseline
 
 Identify the current documentation state:
 - missing
@@ -43,7 +43,7 @@ Identify the current documentation state:
 
 Do not assume a rewrite is necessary when a small repair would work.
 
-## Stage C — Evidence map
+## Stage C - Evidence map
 
 Create an internal map of the important claims and their evidence status.
 
@@ -56,13 +56,13 @@ Prioritise claims that affect:
 - compatibility
 - feature status
 
-## Stage D — Draft or targeted repair
+## Stage D - Draft or targeted repair
 
 Make the smallest change that materially improves the outcome.
 
 A complete rewrite is permitted when structure or trust is fundamentally broken.
 
-## Stage E — Independent critique
+## Stage E - Independent critique
 
 Evaluate the result as though reviewing somebody else's draft.
 
@@ -84,13 +84,13 @@ Check:
 
 The creator's preference is not a pass condition.
 
-## Stage F — Targeted repair
+## Stage F - Targeted repair
 
 Repair the failures found in Stage E.
 
 Do not rewrite unaffected sections merely to make the pass feel substantial.
 
-## Stage G — Regression check
+## Stage G - Regression check
 
 Confirm that the repair did not:
 - remove required information
@@ -101,7 +101,7 @@ Confirm that the repair did not:
 - duplicate the second document
 - increase personality at the expense of clarity
 
-## Stage H — Stop decision
+## Stage H - Stop decision
 
 Stop when all material failures are either:
 - repaired
@@ -129,52 +129,52 @@ Never loop indefinitely.
 Score internally from 0–3.
 
 ## A. Factual grounding
-0 — invented or contradicted claims
-1 — major claims weakly grounded
-2 — generally grounded with minor uncertainty problems
-3 — material claims are properly evidenced or clearly qualified
+0 - invented or contradicted claims
+1 - major claims weakly grounded
+2 - generally grounded with minor uncertainty problems
+3 - material claims are properly evidenced or clearly qualified
 
 ## B. Setup usability
-0 — cannot realistically follow it
-1 — substantial missing steps
-2 — workable for a technical reader
-3 — novice can reach a recognisable successful result
+0 - cannot realistically follow it
+1 - substantial missing steps
+2 - workable for a technical reader
+3 - novice can reach a recognisable successful result
 
 ## C. Status honesty
-0 — roadmap and current features are mixed
-1 — several ambiguous capability claims
-2 — mostly clear
-3 — implemented/experimental/planned/unknown are consistently distinct
+0 - roadmap and current features are mixed
+1 - several ambiguous capability claims
+2 - mostly clear
+3 - implemented/experimental/planned/unknown are consistently distinct
 
 ## D. Document separation
-0 — README and description substantially duplicate
-1 — heavy duplication
-2 — some overlap but different jobs
-3 — each document has a clear purpose
+0 - README and description substantially duplicate
+1 - heavy duplication
+2 - some overlap but different jobs
+3 - each document has a clear purpose
 
 ## E. Programmer voice
-0 — generic marketing/AI prose
-1 — occasional perspective but mostly generic
-2 — credible maintainer voice
-3 — specific, grounded perspective without invented autobiography
+0 - generic marketing/AI prose
+1 - occasional perspective but mostly generic
+2 - credible maintainer voice
+3 - specific, grounded perspective without invented autobiography
 
 ## F. Human cadence
-0 — visibly templated/monotone
-1 — frequent rhythmic repetition
-2 — mostly natural
-3 — varied without becoming performative
+0 - visibly templated/monotone
+1 - frequent rhythmic repetition
+2 - mostly natural
+3 - varied without becoming performative
 
 ## G. Security clarity
-0 — dangerous ambiguity or false guarantees
-1 — relevant boundaries mostly omitted
-2 — adequate
-3 — clear permissions, secrets, exposure and destructive scope
+0 - dangerous ambiguity or false guarantees
+1 - relevant boundaries mostly omitted
+2 - adequate
+3 - clear permissions, secrets, exposure and destructive scope
 
 ## H. Concision
-0 — bloated or repetitive
-1 — substantial unnecessary material
-2 — mostly efficient
-3 — every major section earns its place
+0 - bloated or repetitive
+1 - substantial unnecessary material
+2 - mostly efficient
+3 - every major section earns its place
 
 Target:
 - no category below 2

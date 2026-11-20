@@ -13,15 +13,15 @@ Directly readable in the provided files. You have seen it with your own inspecti
 
 Use when:
 - You have read the actual file and can cite line number or content
-- The folder structure itself proves something (a `migrations/` folder exists — Observed)
+- The folder structure itself proves something (a `migrations/` folder exists - Observed)
 - A dependency file explicitly lists a package
 - A config file contains the setting you are describing
 - An import statement names a module you are claiming is used
 
 Examples:
-- "Uses PostgreSQL — Observed: `psycopg2==2.9.6` in requirements.txt"
-- "JWT authentication — Observed: `PyJWT` in requirements.txt; `jwt.decode()` in auth.py:47"
-- "No test suite — Observed: no test directory, no test files, no testing framework in dependencies"
+- "Uses PostgreSQL - Observed: `psycopg2==2.9.6` in requirements.txt"
+- "JWT authentication - Observed: `PyJWT` in requirements.txt; `jwt.decode()` in auth.py:47"
+- "No test suite - Observed: no test directory, no test files, no testing framework in dependencies"
 
 ### Inferred
 
@@ -36,12 +36,12 @@ Use when:
 - Pattern-matching on naming: `tasks.py` probably contains tasks; not confirmed
 
 Examples:
-- "Likely uses Celery — Inferred: `celery` in requirements.txt and a `tasks/` folder present; actual task registration not read"
-- "API appears RESTful — Inferred: route naming in routes.py follows REST conventions; handler logic not verified"
+- "Likely uses Celery - Inferred: `celery` in requirements.txt and a `tasks/` folder present; actual task registration not read"
+- "API appears RESTful - Inferred: route naming in routes.py follows REST conventions; handler logic not verified"
 
 **Critical distinction:** Inferred is not a weaker Observed. It is a categorically different
 epistemic state. Do not upgrade an Inferred to Observed because you are confident. Confidence
-does not change the category — it changes the confidence rating within it.
+does not change the category - it changes the confidence rating within it.
 
 ### Unknown
 
@@ -54,9 +54,9 @@ Use when:
 - The question cannot be answered without running the code or seeing missing files
 
 Examples:
-- "Whether rate limiting is applied — Unknown: no middleware config visible in submitted files"
-- "Database connection pooling settings — Unknown: .env not submitted"
-- "Whether the tests pass — Unknown: test framework identified but tests not run"
+- "Whether rate limiting is applied - Unknown: no middleware config visible in submitted files"
+- "Database connection pooling settings - Unknown: .env not submitted"
+- "Whether the tests pass - Unknown: test framework identified but tests not run"
 
 Unknown is not a failure state. It is an honest statement of the report's boundary.
 
@@ -74,9 +74,9 @@ Use when:
 - Code is visibly mid-refactor: old and new patterns mixed without clear intent
 
 Examples:
-- "`send_invoice()` — Broken or incomplete: defined in billing.py:112 with body `pass`"
-- "`/admin/reports` route — Broken or incomplete: registered in routes.py:88; handler `generate_reports` not found in any submitted file"
-- "Auth module — Broken or incomplete: two implementations (`auth_v1.py` and `auth.py`) both imported in different parts of the codebase"
+- "`send_invoice()` - Broken or incomplete: defined in billing.py:112 with body `pass`"
+- "`/admin/reports` route - Broken or incomplete: registered in routes.py:88; handler `generate_reports` not found in any submitted file"
+- "Auth module - Broken or incomplete: two implementations (`auth_v1.py` and `auth.py`) both imported in different parts of the codebase"
 
 ---
 
@@ -90,7 +90,7 @@ Combine with the label. Both pieces of information are needed.
 | Medium | One solid piece of evidence, or two weak ones. Could be wrong if context is outside the submission. |
 | Low | Naming pattern or structural convention only. A hypothesis, not an assertion. |
 
-Unknown does not receive a confidence rating — you have nothing to measure confidence against.
+Unknown does not receive a confidence rating - you have nothing to measure confidence against.
 
 ---
 
@@ -101,8 +101,8 @@ Unknown does not receive a confidence rating — you have nothing to measure con
 | Observed, High | Read it, it is there, evidence is unambiguous | Package dependency, explicit config value |
 | Observed, Medium | Read it, but the meaning requires interpretation | File exists but purpose inferred from name |
 | Inferred, Medium | Reasonable structural deduction, not confirmed | Framework convention implies routing pattern |
-| Inferred, Low | Naming guess — be explicit that this is a hypothesis | Folder called `workers/` might contain workers |
-| Unknown, — | No basis for any rating | File not submitted, env var not documented |
+| Inferred, Low | Naming guess - be explicit that this is a hypothesis | Folder called `workers/` might contain workers |
+| Unknown, - | No basis for any rating | File not submitted, env var not documented |
 | Broken or incomplete, High | Clearly non-functional, evidence is direct | `pass` body, missing handler, broken import |
 | Broken or incomplete, Medium | Looks broken, but might be intentional or in progress | `TODO` in active path, partial refactor |
 
@@ -114,7 +114,7 @@ Unknown does not receive a confidence rating — you have nothing to measure con
 works like that" is not a basis for Observed. Observed means you have seen it.
 
 **Using Unknown to avoid commitment.** Unknown means you genuinely have nothing.
-If you have something weak, it is Low-confidence Inferred. The distinction matters —
+If you have something weak, it is Low-confidence Inferred. The distinction matters - 
 Unknown says "I have no basis"; Low Inferred says "I have a weak basis."
 
 **Hiding gaps.** A clearly stated gap is more useful than a confident assertion that papers over it.
