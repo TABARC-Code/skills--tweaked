@@ -49,9 +49,9 @@ lru_cache covers the actual use case (single maxsize). Removes 120 lines.
 
 ## Bidirectional links
 
-**terse-prose** — runs the session; terse-commit handles the commit artefact only. When terse-prose is active, commit messages are already covered; invoke terse-commit explicitly only when writing commits outside a terse-prose session.
+**terse-prose** - runs the session; terse-commit handles the commit artefact only. When terse-prose is active, commit messages are already covered; invoke terse-commit explicitly only when writing commits outside a terse-prose session.
 
-**lazy-review** — feeds terse-commit with what changed and why, so the body isn't guesswork. Run lazy-review on the diff first; use its output as the source for the commit body.
+**lazy-review** - feeds terse-commit with what changed and why, so the body isn't guesswork. Run lazy-review on the diff first; use its output as the source for the commit body.
 
 ## Feedback loops
 
@@ -59,9 +59,9 @@ lru_cache covers the actual use case (single maxsize). Removes 120 lines.
 
 **Positive:** reviewer reads the commit and understands the change without opening the diff. One sentence body, zero follow-up questions. Calibrated correctly.
 
-**Negative:** reviewer opens the diff to understand why → the body was omitted when it shouldn't have been, or it described the mechanism (what) instead of the reason (why). Write the why next time.
+**Negative:** reviewer opens the diff to understand why > the body was omitted when it shouldn't have been, or it described the mechanism (what) instead of the reason (why). Write the why next time.
 
-**Negative:** commit message exceeds 50 chars on the subject → "one thing" wasn't enforced. Split the commit or tighten the subject.
+**Negative:** commit message exceeds 50 chars on the subject > "one thing" wasn't enforced. Split the commit or tighten the subject.
 
 ## Boundary
 

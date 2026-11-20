@@ -6,26 +6,26 @@ argument-hint: "[branch ...]  (one or more branch names; blank = ask)"
 
 # Worktree Create
 
-Stand up **any number** of isolated git worktrees from a list of branches — each created off the right base, given
-its gitignored config, its dependencies, and a health check — by fanning out one setup subagent per worktree so
+Stand up **any number** of isolated git worktrees from a list of branches - each created off the right base, given
+its gitignored config, its dependencies, and a health check - by fanning out one setup subagent per worktree so
 they run in parallel. The per-worktree work is app-agnostic and **detected from the repo**, never hardcoded.
 
 ## Input
 
 `$ARGUMENTS` is the list of branches to create.
 
-- **None given** → ask which branches to create (or offer to derive them from the tickets in play). Don't guess.
-- **One** → set up a single worktree inline (a fan-out of one is unnecessary).
-- **Two or more** → fan out one subagent per branch, in parallel.
+- **None given** > ask which branches to create (or offer to derive them from the tickets in play). Don't guess.
+- **One** > set up a single worktree inline (a fan-out of one is unnecessary).
+- **Two or more** > fan out one subagent per branch, in parallel.
 
 ## Detect the project setup ONCE, before fanning out
 
-Read `references/worktree-setup.md` — it is the general checklist of everything a fresh worktree needs plus how to
+Read `references/worktree-setup.md` - it is the general checklist of everything a fresh worktree needs plus how to
 detect each piece. Determine from **this** repo (not from assumptions), one time:
 
-- the **install command(s)** (monorepo → one per package),
+- the **install command(s)** (monorepo > one per package),
 - the **gitignored env/config files to copy** (or the repo's `.worktreeinclude`),
-- the **verification/health-check command** (a health endpoint if the app exposes one, else a build/test smoke —
+- the **verification/health-check command** (a health endpoint if the app exposes one, else a build/test smoke - 
   prefer whatever CI runs),
 - a **base port**, only if the health check starts a service.
 
@@ -64,9 +64,9 @@ Collect the reports and print a per-worktree summary (path · branch · deps · 
 If any worktree failed its health check, surface it clearly and do **not** report it ready.
 
 ## Resources
-- `worktree-copy-ignored` — when Worktrunk is installed, use it for the copy step: it picks a strategy per language (never copy a Python venv), keeps secrets out of agent worktrees and proves that copy-on-write happened. Fall back to the plain copy in the checklist when it isn't.
+- `worktree-copy-ignored` - when Worktrunk is installed, use it for the copy step: it picks a strategy per language (never copy a Python venv), keeps secrets out of agent worktrees and proves that copy-on-write happened. Fall back to the plain copy in the checklist when it isn't.
 
-- `references/worktree-setup.md` — the general, app-agnostic checklist of everything a fresh worktree needs, and
+- `references/worktree-setup.md` - the general, app-agnostic checklist of everything a fresh worktree needs, and
   how to detect each piece per project. Read it before detecting the setup.
 
 <!-- relationships:start -->

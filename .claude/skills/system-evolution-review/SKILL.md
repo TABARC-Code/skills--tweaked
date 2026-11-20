@@ -22,9 +22,9 @@ Perform a meta-level analysis of how well the implementation followed the plan a
 
 **Philosophy:**
 
-- Good divergence reveals plan limitations → improve planning
-- Bad divergence reveals unclear requirements → improve communication
-- Repeated issues reveal missing automation → create skills
+- Good divergence reveals plan limitations > improve planning
+- Bad divergence reveals unclear requirements > improve communication
+- Repeated issues reveal missing automation > create skills
 
 ## Context & Inputs
 

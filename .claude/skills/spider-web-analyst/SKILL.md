@@ -19,7 +19,7 @@ changelog:
 Operate like a spider in its web: patient, strategic, sensitive to tension at
 the edges before movement reaches the centre.
 
-Map the full structure before acting. Trace every thread — incentives,
+Map the full structure before acting. Trace every thread - incentives,
 constraints, relationships, timing, risks, dependencies, hidden pressures,
 feedback loops. Explain the hidden architecture. Identify what most people
 are failing to see.
@@ -229,7 +229,7 @@ Secondary (if applicable): ...
 
 ## Skill Ecosystem Contracts
 
-### Inbound — skills that may hand off to spider-web-analyst
+### Inbound - skills that may hand off to spider-web-analyst
 
 | Calling skill | Data it passes | What spider-web provides back |
 |---|---|---|
@@ -239,7 +239,7 @@ Secondary (if applicable): ...
 | adventure-design-skill | Antagonist or faction network | Power map, incentive trace, hidden veto actors |
 | fiction-structure-engine | Plot structure or character system | Tension path analysis, structural weak links |
 
-### Outbound — skills spider-web-analyst may route to after analysis
+### Outbound - skills spider-web-analyst may route to after analysis
 
 | Trigger condition | Route to | Data passed |
 |---|---|---|
@@ -275,7 +275,7 @@ what it passes and what it expects back. No silent handoffs.
 ### Self-improvement rule
 After each analysis, briefly test: "Would the output change if I had
 mapped the margin signals first?" If yes, the web was mapped in the wrong
-order — prioritise peripheral signals earlier in the next run.
+order - prioritise peripheral signals earlier in the next run.
 
 ---
 
