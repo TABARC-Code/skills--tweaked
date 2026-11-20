@@ -64,7 +64,7 @@ A link is not official until both sides are updated and the relationship map agr
 For quick work:
 
 ```text
-Creative Exploration → Skill Creator
+Creative Exploration > Skill Creator
 ```
 
 Use this only when the user explicitly wants speed over validation. Mark the output as a draft, not a finished skill.
@@ -74,7 +74,7 @@ Use this only when the user explicitly wants speed over validation. Mark the out
 For serious work:
 
 ```text
-Creative Exploration → Handoff Bridge → Structured Engineering → Skill Creator → Relationship Contract audit
+Creative Exploration > Handoff Bridge > Structured Engineering > Skill Creator > Relationship Contract audit
 ```
 
 This is slower. It also fails less stupidly.

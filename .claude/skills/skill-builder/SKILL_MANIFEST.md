@@ -20,23 +20,23 @@
 
 ```text
 Creative Exploration Engine
-→ Skill Handoff Bridge
-→ Structured Skill Engineering System
-→ Skill Creator
+Next: Skill Handoff Bridge
+Next: Structured Skill Engineering System
+Next: Skill Creator
 ```
 
 ## Sidecar Governance
 
 ```text
 Any skill/sub-skill relationship change
-→ Relationship Contract Engine
-→ Updated affected files
-→ Relationship map audit
+Next: Relationship Contract Engine
+Next: Updated affected files
+Next: Relationship map audit
 
 Any skill/sub-skill identity, listing, or catalogue change
-→ Skill Classification Engine
-→ Updated metadata and classification index
-→ Manifest audit
+Next: Skill Classification Engine
+Next: Updated metadata and classification index
+Next: Manifest audit
 ```
 
 ## Change Discipline

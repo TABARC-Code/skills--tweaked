@@ -1,4 +1,4 @@
-> **Sub-skill of `skill-builder`.** Not independently installable — read only when the router (`../SKILL.md`) directs here. Identifier: `creative-exploration-engine`. Dewey: 153.350 (Psychology of conscious mental processes, applied here as creative ideation).
+> **Sub-skill of `skill-builder`.** Not independently installable - read only when the router (`../SKILL.md`) directs here. Identifier: `creative-exploration-engine`. Dewey: 153.350 (Psychology of conscious mental processes, applied here as creative ideation).
 
 # Creative Exploration Engine
 
@@ -108,8 +108,8 @@ Preferred route:
 
 ```text
 Creative Exploration Engine
-→ Skill Handoff Bridge
-→ Structured Skill Engineering System
+Next: Skill Handoff Bridge
+Next: Structured Skill Engineering System
 ```
 
 ## Failure Risks
@@ -135,17 +135,17 @@ Before final output, verify:
 
 These contracts define how this skill sits inside the skill-builder system. They are behavioural contracts, not casual “see also” links.
 
-### Relationship Contract: Creative Exploration Engine → Skill Handoff Bridge
+### Relationship Contract: Creative Exploration Engine > Skill Handoff Bridge
 
 **Source:** Creative Exploration Engine  
 **Target:** Skill Handoff Bridge  
-**Relationship Direction:** Creative Exploration Engine → Skill Handoff Bridge  
-**Reciprocal Direction:** Skill Handoff Bridge ← Creative Exploration Engine  
+**Relationship Direction:** Creative Exploration Engine > Skill Handoff Bridge  
+**Reciprocal Direction:** Skill Handoff Bridge < Creative Exploration Engine  
 **Relationship Type:** translation  
 **Relationship Strength:** strong  
 **Strength Reason:** the creative draft is the main raw input that the bridge converts into a structured handoff packet.  
 **Direct or Indirect:** direct  
-**Chain Position:** upstream start of `Creative Exploration Engine → Skill Handoff Bridge → Structured Skill Engineering System`  
+**Chain Position:** upstream start of `Creative Exploration Engine > Skill Handoff Bridge > Structured Skill Engineering System`  
 **Reason for Relationship:** creative output must be made parseable before engineering can work reliably.  
 **Behavioural Impact:** this skill must produce recoverable, labelled creative drafts rather than polished final answers.  
 **Source Update Requirement:** keep the Creative Draft format structured enough for the bridge to parse.  
@@ -153,12 +153,12 @@ These contracts define how this skill sits inside the skill-builder system. They
 **Affected Files:** `creative-exploration-engine/SUBSKILL.md`, `skill-handoff-bridge/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Creative Exploration Engine → Structured Skill Engineering System
+### Relationship Contract: Creative Exploration Engine > Structured Skill Engineering System
 
 **Source:** Creative Exploration Engine  
 **Target:** Structured Skill Engineering System  
-**Relationship Direction:** Creative Exploration Engine → Structured Skill Engineering System, through the bridge by default  
-**Reciprocal Direction:** Structured Skill Engineering System ← Creative Exploration Engine, mediated by Skill Handoff Bridge unless the user supplies a direct brief  
+**Relationship Direction:** Creative Exploration Engine > Structured Skill Engineering System, through the bridge by default  
+**Reciprocal Direction:** Structured Skill Engineering System < Creative Exploration Engine, mediated by Skill Handoff Bridge unless the user supplies a direct brief  
 **Relationship Type:** creative influence  
 **Relationship Strength:** contextual  
 **Strength Reason:** creative output shapes the engineering target, but engineering should normally receive it through the bridge to avoid noisy inputs.  
@@ -171,7 +171,7 @@ These contracts define how this skill sits inside the skill-builder system. They
 **Affected Files:** `creative-exploration-engine/SUBSKILL.md`, `structured-skill-engineering-system/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Creative Exploration Engine → Relationship Contract Engine
+### Relationship Contract: Creative Exploration Engine > Relationship Contract Engine
 
 **Source:** Creative Exploration Engine  
 **Target:** Relationship Contract Engine  

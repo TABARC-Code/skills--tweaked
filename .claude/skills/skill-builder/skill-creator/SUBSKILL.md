@@ -1,4 +1,4 @@
-> **Sub-skill of `skill-builder`.** Not independently installable — read only when the router (`../SKILL.md`) directs here. Identifier: `skill-creator`. Dewey: 005.100 (Computer programming, programs, tooling, and reusable workflow creation).
+> **Sub-skill of `skill-builder`.** Not independently installable - read only when the router (`../SKILL.md`) directs here. Identifier: `skill-creator`. Dewey: 005.100 (Computer programming, programs, tooling, and reusable workflow creation).
 
 # Skill Creator
 
@@ -7,7 +7,7 @@ Use this skill to build, test, improve, and package skills. It is the hands-on w
 This skill inherits the repository's separation of concerns:
 
 ```text
-Creative Exploration Engine → Skill Handoff Bridge → Structured Skill Engineering System → Skill Creator
+Creative Exploration Engine > Skill Handoff Bridge > Structured Skill Engineering System > Skill Creator
 ```
 
 The earlier skills help produce the idea, handoff packet, and engineering rules. This skill runs the practical creation and improvement loop.
@@ -106,7 +106,7 @@ Avoid:
 
 ## Quiet Classification During Creation
 
-When writing or updating a `SKILL.md`, also run the Skill Classification Engine quietly. Identify the skill's key purpose — for example writing, mechanics, programming, design, research, teaching, systems, or art — then choose the nearest Dewey-style code from the classification index. Add the code in two places:
+When writing or updating a `SKILL.md`, also run the Skill Classification Engine quietly. Identify the skill's key purpose - for example writing, mechanics, programming, design, research, teaching, systems, or art - then choose the nearest Dewey-style code from the classification index. Add the code in two places:
 
 1. `metadata.dewey_decimal_code` and `metadata.classification_label`
 2. a small suffix at the end of the frontmatter `description`, using this pattern: `Dewey: 005.100.`
@@ -237,7 +237,7 @@ Do not claim file edits that did not happen. Tedious, yes. Better than lying wit
 
 ## Repository Relationship Contracts
 
-### Relationship Contract: Skill Creator → Structured Skill Engineering System
+### Relationship Contract: Skill Creator > Structured Skill Engineering System
 
 **Source:** Skill Creator  
 **Target:** Structured Skill Engineering System  
@@ -247,7 +247,7 @@ Do not claim file edits that did not happen. Tedious, yes. Better than lying wit
 **Relationship Strength:** critical  
 **Strength Reason:** without the structured system, Skill Creator can build prompts but cannot reliably enforce architecture, scale control, or failure discipline. Without Skill Creator, the structured system remains mostly specification rather than executable workflow.  
 **Direct or Indirect:** direct  
-**Chain Position:** downstream execution after `Creative Exploration Engine → Skill Handoff Bridge → Structured Skill Engineering System`  
+**Chain Position:** downstream execution after `Creative Exploration Engine > Skill Handoff Bridge > Structured Skill Engineering System`  
 **Reason for Relationship:** practical creation and eval tooling must follow the engineering rules, while engineering rules need an execution loop to become real.  
 **Behavioural Impact:** Skill Creator must create, test, revise, and package skills while respecting structured evaluation, failure classification, and repository consistency.  
 **Source Update Requirement:** apply structured engineering standards during drafting, testing, and improvement.  
@@ -255,7 +255,7 @@ Do not claim file edits that did not happen. Tedious, yes. Better than lying wit
 **Affected Files:** `skill-creator/SUBSKILL.md`, `structured-skill-engineering-system/SUBSKILL.md`, `RELATIONSHIP_MAP.md`, `SKILL_MANIFEST.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Skill Creator → Skill Handoff Bridge
+### Relationship Contract: Skill Creator > Skill Handoff Bridge
 
 **Source:** Skill Creator  
 **Target:** Skill Handoff Bridge  
@@ -273,7 +273,7 @@ Do not claim file edits that did not happen. Tedious, yes. Better than lying wit
 **Affected Files:** `skill-creator/SUBSKILL.md`, `skill-handoff-bridge/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Skill Creator → Relationship Contract Engine
+### Relationship Contract: Skill Creator > Relationship Contract Engine
 
 **Source:** Skill Creator  
 **Target:** Relationship Contract Engine  

@@ -1,4 +1,4 @@
-> **Sub-skill of `skill-builder`.** Not independently installable — read only when the router (`../SKILL.md`) directs here. Identifier: `skill-classification-engine`. Dewey: 025.400 (Library operations, cataloguing, classification, and future indexing).
+> **Sub-skill of `skill-builder`.** Not independently installable - read only when the router (`../SKILL.md`) directs here. Identifier: `skill-classification-engine`. Dewey: 025.400 (Library operations, cataloguing, classification, and future indexing).
 
 # Skill Classification Engine
 
@@ -98,13 +98,13 @@ Use the key activity, not decorative language. If a skill does several things, c
 
 Use local decimals when the broad class is too chunky:
 
-- `003.100` — systems architecture and validation
-- `003.500` — relationship governance and dependency control
-- `003.700` — handoff, translation, and workflow bridging
-- `005.100` — skill creation and reusable tooling
-- `005.120` — skill-builder systems and repositories
-- `025.400` — catalogue classification and indexing
-- `153.350` — creative ideation and concept generation
+- `003.100` - systems architecture and validation
+- `003.500` - relationship governance and dependency control
+- `003.700` - handoff, translation, and workflow bridging
+- `005.100` - skill creation and reusable tooling
+- `005.120` - skill-builder systems and repositories
+- `025.400` - catalogue classification and indexing
+- `153.350` - creative ideation and concept generation
 
 These extensions are repo-local. Useful beats ceremonially pure.
 

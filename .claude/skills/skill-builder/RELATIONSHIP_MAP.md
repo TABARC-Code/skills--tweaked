@@ -10,23 +10,23 @@ No vague backlinking. A link exists only when it changes behaviour, execution, i
 
 ```text
 Creative Exploration Engine
-→ Skill Handoff Bridge
-→ Structured Skill Engineering System
-→ Skill Creator
+Next: Skill Handoff Bridge
+Next: Structured Skill Engineering System
+Next: Skill Creator
 ```
 
 The `Relationship Contract Engine` sits beside the chain and activates when skills, sub-skills, chains, or reciprocal relationships need to be created, updated, weighted, or audited.
 
 ```text
-Structured Skill Engineering System ↔ Relationship Contract Engine
-Skill Creator ↔ Relationship Contract Engine
+Structured Skill Engineering System <> Relationship Contract Engine
+Skill Creator <> Relationship Contract Engine
 ```
 
 Conditional side-links also exist:
 
 ```text
-Creative Exploration Engine → Relationship Contract Engine
-Skill Handoff Bridge → Relationship Contract Engine
+Creative Exploration Engine > Relationship Contract Engine
+Skill Handoff Bridge > Relationship Contract Engine
 ```
 
 These side-links only activate when relationship candidates or repository link updates are involved.
@@ -63,7 +63,7 @@ These side-links only activate when relationship candidates or repository link u
 
 ## Chain Propagation
 
-### Chain: Creative Exploration Engine → Skill Handoff Bridge → Structured Skill Engineering System → Skill Creator
+### Chain: Creative Exploration Engine > Skill Handoff Bridge > Structured Skill Engineering System > Skill Creator
 
 - **Creative Exploration Engine** is the upstream origin. It produces recoverable drafts but cannot certify readiness.
 - **Skill Handoff Bridge** is the intermediary. It converts creative material into engineering-ready packets.
@@ -72,11 +72,11 @@ These side-links only activate when relationship candidates or repository link u
 
 Indirect relationships:
 
-- Creative Exploration Engine → Structured Skill Engineering System is contextual and normally mediated by the bridge.
-- Creative Exploration Engine → Skill Creator is contextual and usually mediated by both bridge and engineering.
-- Skill Handoff Bridge → Skill Creator is direct when the goal is actual skill creation, because bridge packets must be buildable.
-- Structured Skill Engineering System → Skill Creator is critical because the creator applies the engineering rules in practice.
-- Skill Creator → Creative Exploration Engine is a feedback route, not a normal generation path. It activates when evals show the idea itself is weak or muddled.
+- Creative Exploration Engine > Structured Skill Engineering System is contextual and normally mediated by the bridge.
+- Creative Exploration Engine > Skill Creator is contextual and usually mediated by both bridge and engineering.
+- Skill Handoff Bridge > Skill Creator is direct when the goal is actual skill creation, because bridge packets must be buildable.
+- Structured Skill Engineering System > Skill Creator is critical because the creator applies the engineering rules in practice.
+- Skill Creator > Creative Exploration Engine is a feedback route, not a normal generation path. It activates when evals show the idea itself is weak or muddled.
 
 ## Reverse and Non-Linear Links
 
@@ -84,11 +84,11 @@ No automatic reverse links are assumed.
 
 Current explicit reverse or non-linear links:
 
-- Structured Skill Engineering System → Creative Exploration Engine: contextual audit feedback when engineering exposes a conceptual failure.
-- Skill Creator → Creative Exploration Engine: contextual feedback when tests show the concept needs another creative pass.
-- Relationship Contract Engine → Creative Exploration Engine: contextual constraint when creative work proposes repository relationships.
-- Relationship Contract Engine → Skill Handoff Bridge: moderate orchestration for preserving candidate relationship metadata.
-- Relationship Contract Engine → Skill Creator: strong audit constraint when skill creation or improvement changes relationships.
+- Structured Skill Engineering System > Creative Exploration Engine: contextual audit feedback when engineering exposes a conceptual failure.
+- Skill Creator > Creative Exploration Engine: contextual feedback when tests show the concept needs another creative pass.
+- Relationship Contract Engine > Creative Exploration Engine: contextual constraint when creative work proposes repository relationships.
+- Relationship Contract Engine > Skill Handoff Bridge: moderate orchestration for preserving candidate relationship metadata.
+- Relationship Contract Engine > Skill Creator: strong audit constraint when skill creation or improvement changes relationships.
 
 ## Sub-Skill Status
 
@@ -114,7 +114,7 @@ If future links are only thematic, decorative, loosely inspirational, or too vag
 
 ---
 
-## Relationship Contract: Skill Classification Engine → Skill Manifest
+## Relationship Contract: Skill Classification Engine > Skill Manifest
 
 **Source:** Skill Classification Engine  
 **Target:** Skill Manifest  
@@ -132,7 +132,7 @@ If future links are only thematic, decorative, loosely inspirational, or too vag
 **Affected Files:** `skill-classification-engine/SUBSKILL.md`, `SKILL_MANIFEST.md`, `CLASSIFICATION_INDEX.md`  
 **Audit Status:** verified
 
-## Relationship Contract: Skill Classification Engine → Relationship Contract Engine
+## Relationship Contract: Skill Classification Engine > Relationship Contract Engine
 
 **Source:** Skill Classification Engine  
 **Target:** Relationship Contract Engine  

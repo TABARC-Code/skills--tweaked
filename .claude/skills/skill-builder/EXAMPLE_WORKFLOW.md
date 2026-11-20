@@ -109,11 +109,11 @@ Then runs the practical loop:
 If this new scenario skill links to, say, a `historical-research` skill and a `document-formatting` skill, the relationship engine records both sides:
 
 ```text
-scenario-briefing-skill → historical-research
-historical-research ← scenario-briefing-skill
+scenario-briefing-skill > historical-research
+historical-research < scenario-briefing-skill
 
-scenario-briefing-skill → document-formatting
-document-formatting ← scenario-briefing-skill
+scenario-briefing-skill > document-formatting
+document-formatting < scenario-briefing-skill
 ```
 
 Each link gets direction, type, strength, reason, behaviour change, and audit status.

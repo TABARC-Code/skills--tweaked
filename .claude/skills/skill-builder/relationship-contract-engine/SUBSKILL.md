@@ -1,4 +1,4 @@
-> **Sub-skill of `skill-builder`.** Not independently installable — read only when the router (`../SKILL.md`) directs here. Identifier: `relationship-contract-engine`. Dewey: 003.500 (Systems relationships, dependency control, and network governance).
+> **Sub-skill of `skill-builder`.** Not independently installable - read only when the router (`../SKILL.md`) directs here. Identifier: `relationship-contract-engine`. Dewey: 003.500 (Systems relationships, dependency control, and network governance).
 
 # Relationship Contract Engine
 
@@ -26,7 +26,7 @@ Use this skill when:
 - a skill or sub-skill is created
 - an existing skill changes its purpose, trigger, output, or dependency behaviour
 - a link is added, removed, weakened, strengthened, or redirected
-- a chain such as `A → B → C` matters to execution
+- a chain such as `A > B > C` matters to execution
 - a parent skill and sub-skill relationship needs defining
 - the user asks for backlinking, cross-linking, reciprocal links, relationship maps, or skill network updates
 - repository consistency must be audited after edits
@@ -92,7 +92,7 @@ Secondary effects may be listed, but the primary type must stay singular.
 Every skill-to-skill, sub-skill-to-sub-skill, parent-to-sub-skill, or chain relationship must use this contract:
 
 ```markdown
-## Relationship Contract: [Source] → [Target]
+## Relationship Contract: [Source] > [Target]
 
 **Source:**
 [Skill or sub-skill name]
@@ -101,7 +101,7 @@ Every skill-to-skill, sub-skill-to-sub-skill, parent-to-sub-skill, or chain rela
 [Skill or sub-skill name]
 
 **Relationship Direction:**
-[A → B / B → A / A ↔ B / A governs B / A supports B / A audits B / chain position]
+[A > B / B > A / A <> B / A governs B / A supports B / A audits B / chain position]
 
 **Reciprocal Direction:**
 [How the target records the relationship back to the source]
@@ -119,7 +119,7 @@ Every skill-to-skill, sub-skill-to-sub-skill, parent-to-sub-skill, or chain rela
 [direct / indirect / chained / conditional]
 
 **Chain Position:**
-[None / upstream / downstream / intermediary / terminal / A → B → C position]
+[None / upstream / downstream / intermediary / terminal / A > B > C position]
 
 **Reason for Relationship:**
 [Concrete reason the link exists]
@@ -144,7 +144,7 @@ Do not leave placeholders in committed repository files.
 
 ## Direct Link Rule
 
-If `A → B`, then:
+If `A > B`, then:
 
 - A must record that it links forward into B
 - B must record how it is affected by A
@@ -156,7 +156,7 @@ If `A → B`, then:
 For chains such as:
 
 ```text
-A → B → C → D → E
+A > B > C > D > E
 ```
 
 record direct relationships strongly and indirect relationships only where they matter.
@@ -180,10 +180,10 @@ Only encode reverse-direction or cross-chain links when they are logically valid
 Examples:
 
 ```text
-A → B → C → D → E
-B → E
-D → A
-E → C
+A > B > C > D > E
+B > E
+D > A
+E > C
 ```
 
 Each non-linear link must be written as its own contract with its own strength, reason, behavioural impact, and reciprocal update.
@@ -268,12 +268,12 @@ Be plain about what was actually changed. The audit is there to catch fantasy, n
 
 These contracts define how this sub-skill interacts with the existing skill-builder system.
 
-### Relationship Contract: Relationship Contract Engine → Structured Skill Engineering System
+### Relationship Contract: Relationship Contract Engine > Structured Skill Engineering System
 
 **Source:** Relationship Contract Engine  
 **Target:** Structured Skill Engineering System  
-**Relationship Direction:** Relationship Contract Engine → Structured Skill Engineering System  
-**Reciprocal Direction:** Structured Skill Engineering System → Relationship Contract Engine when relationship-heavy engineering is required  
+**Relationship Direction:** Relationship Contract Engine > Structured Skill Engineering System  
+**Reciprocal Direction:** Structured Skill Engineering System > Relationship Contract Engine when relationship-heavy engineering is required  
 **Relationship Type:** audit  
 **Relationship Strength:** strong  
 **Strength Reason:** the structured system needs link validation, but the contract engine exists specifically to enforce reciprocal, weighted, chain-aware relationships.  
@@ -286,12 +286,12 @@ These contracts define how this sub-skill interacts with the existing skill-buil
 **Affected Files:** `relationship-contract-engine/SUBSKILL.md`, `structured-skill-engineering-system/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Relationship Contract Engine → Skill Handoff Bridge
+### Relationship Contract: Relationship Contract Engine > Skill Handoff Bridge
 
 **Source:** Relationship Contract Engine  
 **Target:** Skill Handoff Bridge  
-**Relationship Direction:** Relationship Contract Engine → Skill Handoff Bridge by defining what relationship metadata must survive handoff  
-**Reciprocal Direction:** Skill Handoff Bridge → Relationship Contract Engine when candidate relationships appear in a handoff packet  
+**Relationship Direction:** Relationship Contract Engine > Skill Handoff Bridge by defining what relationship metadata must survive handoff  
+**Reciprocal Direction:** Skill Handoff Bridge > Relationship Contract Engine when candidate relationships appear in a handoff packet  
 **Relationship Type:** orchestration  
 **Relationship Strength:** moderate  
 **Strength Reason:** the bridge should preserve link candidates, but this sub-skill validates and weights them.  
@@ -304,12 +304,12 @@ These contracts define how this sub-skill interacts with the existing skill-buil
 **Affected Files:** `relationship-contract-engine/SUBSKILL.md`, `skill-handoff-bridge/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Relationship Contract Engine → Creative Exploration Engine
+### Relationship Contract: Relationship Contract Engine > Creative Exploration Engine
 
 **Source:** Relationship Contract Engine  
 **Target:** Creative Exploration Engine  
 **Relationship Direction:** Relationship Contract Engine constrains Creative Exploration Engine only when creative work proposes repository links  
-**Reciprocal Direction:** Creative Exploration Engine → Relationship Contract Engine with candidate relationship ideas  
+**Reciprocal Direction:** Creative Exploration Engine > Relationship Contract Engine with candidate relationship ideas  
 **Relationship Type:** constraint  
 **Relationship Strength:** contextual  
 **Strength Reason:** creative exploration should stay loose, but relationship proposals must not become accepted links without audit.  
@@ -322,7 +322,7 @@ These contracts define how this sub-skill interacts with the existing skill-buil
 **Affected Files:** `relationship-contract-engine/SUBSKILL.md`, `creative-exploration-engine/SUBSKILL.md`, `RELATIONSHIP_MAP.md`  
 **Audit Status:** verified
 
-### Relationship Contract: Relationship Contract Engine → Skill Creator
+### Relationship Contract: Relationship Contract Engine > Skill Creator
 
 **Source:** Relationship Contract Engine  
 **Target:** Skill Creator  
