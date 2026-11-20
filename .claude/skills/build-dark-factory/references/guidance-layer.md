@@ -15,9 +15,9 @@ agent drifts, argues with its own constraints, or edits the rule that was inconv
 
 For every rule, in order:
 
-1. **Would you write this even if a human were doing the work?** → conventions file.
-2. **Does it only exist because nobody is watching?** → `FACTORY_RULES.md`.
-3. **Is it about what the product is and is not?** → `MISSION.md`.
+1. **Would you write this even if a human were doing the work?** > conventions file.
+2. **Does it only exist because nobody is watching?** > `FACTORY_RULES.md`.
+3. **Is it about what the product is and is not?** > `MISSION.md`.
 
 ### Three borderline cases, resolved
 

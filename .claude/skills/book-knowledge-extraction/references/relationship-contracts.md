@@ -137,7 +137,7 @@ The chosen strength must include a stated reason.
 For a chain: `A -> B -> C -> D -> E`
 
 Default weighting:
-- distance 1 (A-B): direct — original weight applies
+- distance 1 (A-B): direct - original weight applies
 - distance 2 (A-C): reduce one level unless behaviourally important
 - distance 3 (A-D): usually weak or contextual
 - distance 4+ (A-E): usually weak, contextual, or audit-only

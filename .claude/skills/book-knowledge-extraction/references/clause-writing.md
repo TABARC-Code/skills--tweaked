@@ -156,4 +156,4 @@ Weak:
 Stronger:
 > The source should be linked to the writing skill as a moderate upstream influence because it supplies argument patterns, example structures, and phrasing constraints that affect drafting but do not control the full writing process.
 
-If the clause cannot survive the question "what should happen differently because of this?" — rewrite it.
+If the clause cannot survive the question "what should happen differently because of this?" - rewrite it.

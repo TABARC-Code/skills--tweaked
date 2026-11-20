@@ -4,7 +4,7 @@ Eight-layer protocol for full-depth source extraction.
 
 ---
 
-## Layer 1 — Bibliographic and Context Capture
+## Layer 1 - Bibliographic and Context Capture
 
 Record:
 - title
@@ -20,7 +20,7 @@ Record:
 
 ---
 
-## Layer 2 — Structural Map
+## Layer 2 - Structural Map
 
 Extract the visible architecture:
 - table of contents
@@ -33,7 +33,7 @@ This layer answers: *How is the source built?*
 
 ---
 
-## Layer 3 — Concept Map
+## Layer 3 - Concept Map
 
 Extract the conceptual machinery:
 - key terms with definitions
@@ -49,7 +49,7 @@ This layer answers: *What are the building blocks of meaning?*
 
 ---
 
-## Layer 4 — Argument and Claim Map
+## Layer 4 - Argument and Claim Map
 
 Extract:
 - central thesis
@@ -64,7 +64,7 @@ This layer answers: *What is the source trying to prove, show, teach, or change?
 
 ---
 
-## Layer 5 — Procedure and Method Extraction
+## Layer 5 - Procedure and Method Extraction
 
 Extract anything that can become an action:
 - step-by-step methods
@@ -82,7 +82,7 @@ This layer answers: *What can someone do because of this source?*
 
 ---
 
-## Layer 6 — Skill Conversion
+## Layer 6 - Skill Conversion
 
 Convert extracted knowledge into:
 - parent skills
@@ -96,21 +96,21 @@ Convert extracted knowledge into:
 - audit tests
 
 Sub-skill relationship types to assign:
-- `inherited` — carries parent logic downward
-- `required` — parent cannot function without it
-- `optional` — parent can function without it but improves with it
-- `specialised` — handles a narrower case
-- `conditional` — activates only under defined conditions
-- `supportive` — improves parent but does not control it
-- `overriding` — can alter normal parent behaviour in specific cases
-- `downstream` — receives parent output
-- `upstream` — prepares input for the parent
+- `inherited` - carries parent logic downward
+- `required` - parent cannot function without it
+- `optional` - parent can function without it but improves with it
+- `specialised` - handles a narrower case
+- `conditional` - activates only under defined conditions
+- `supportive` - improves parent but does not control it
+- `overriding` - can alter normal parent behaviour in specific cases
+- `downstream` - receives parent output
+- `upstream` - prepares input for the parent
 
 This layer answers: *What should the system now be able to perform?*
 
 ---
 
-## Layer 7 — Relationship Mapping
+## Layer 7 - Relationship Mapping
 
 Map every meaningful relationship between extracted and existing skills:
 - dependencies
@@ -131,7 +131,7 @@ This layer answers: *How does this knowledge alter the wider skill system?*
 
 ---
 
-## Layer 8 — Compression Without Loss
+## Layer 8 - Compression Without Loss
 
 After extraction, compress without flattening the intelligence.
 
@@ -150,7 +150,7 @@ Remove:
 - unsupported claims (unless clearly labelled as claims)
 - long quotations unless necessary
 
-Check: can each retained sentence be used directly? If not — revise or cut.
+Check: can each retained sentence be used directly? If not - revise or cut.
 
 ---
 

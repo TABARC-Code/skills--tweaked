@@ -5,7 +5,7 @@ layers receive the most attention and how Phase 5 skill conversion is framed.
 
 ---
 
-## Mode A — Fiction and Craft
+## Mode A - Fiction and Craft
 
 Activate when: the source is a novel, story collection, craft guide, writing manual,
 literary criticism, or author interview.
@@ -25,7 +25,7 @@ literary criticism, or author interview.
 
 ---
 
-## Mode B — Game Design
+## Mode B - Game Design
 
 Activate when: the source is a game design book, rulebook, playtest methodology guide,
 player psychology text, or boardgame theory essay.
@@ -39,13 +39,13 @@ player psychology text, or boardgame theory essay.
 - Genre: which game genre does the content primarily address?
 
 **Phase 5 routing check:** Is this eurogame theory (`eurogames-the-elegant-design-culture-and-play-workshop`)
-or general game design (`boardgame-design-hydra`)? If both — route to the more specific first.
+or general game design (`boardgame-design-hydra`)? If both - route to the more specific first.
 
 **Clause emphasis:** conditional, evidence, audit.
 
 ---
 
-## Mode C — Technical and Academic
+## Mode C - Technical and Academic
 
 Activate when: the source is an academic paper, technical manual, research methodology
 guide, scientific text, or formal analysis.
@@ -67,7 +67,7 @@ If no domain skill exists, produce standalone skill and flag for `skill-creator`
 
 ---
 
-## Mode D — SEO, Marketing, and Persuasion
+## Mode D - SEO, Marketing, and Persuasion
 
 Activate when: the source is an SEO strategy guide, marketing framework, persuasion theory,
 consumer behaviour research, or digital marketing playbook.

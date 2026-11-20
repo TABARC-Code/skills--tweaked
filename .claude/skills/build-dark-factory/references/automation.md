@@ -75,7 +75,7 @@ Same four problems in every agent. None of them solve it for you.
 
 ## 2. The orchestrator
 
-What defines "plan → implement → review → gate → merge" as steps with dependencies.
+What defines "plan > implement > review > gate > merge" as steps with dependencies.
 The real commitment; changing it means rewriting every workflow.
 
 ### There is one in the box
@@ -152,7 +152,7 @@ GitHub labels are enough, and they have a real advantage: they are visible, edit
 by a human from a phone, and they *are* the audit trail.
 
 ```
-factory:accepted → factory:in-progress → factory:needs-review
+factory:accepted > factory:in-progress > factory:needs-review
                                         ├── factory:approved      (merge, then deploy)
                                         ├── factory:needs-fix     (back to in-progress)
                                         └── factory:needs-human   (stop; the only thing that reaches you)
