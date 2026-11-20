@@ -126,7 +126,7 @@ Overwhelming, error-prone, hard to verify
 **When reviewing code:**
 
 - Suggest incremental improvements (not rewrites)
-- Prioritize: critical → important → nice-to-have
+- Prioritize: critical > important > nice-to-have
 - Focus on highest-impact changes first
 - Accept "better than before" even if not perfect
 
