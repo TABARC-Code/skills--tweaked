@@ -210,4 +210,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **karpathy-code-discipline** · type: reference · source: body
   - This skill (weight 1): Is the structure-first lens for coding under ambiguity.
   - karpathy-code-discipline: Calls it to map structure and hidden constraints before coding.
+- **router** · type: handoff · source: body
+  - This skill (weight 2): Is one of the lens routes from the router.
+  - router: Routes hard-problem requests to the lens skills, this one first when multiple people are involved.
 <!-- relationships:end -->

@@ -745,4 +745,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **piv-fix-review-findings** · type: reference · source: body
   - This skill (weight 1): Receives repeated review-finding defects from piv-fix-review-findings.
   - piv-fix-review-findings: Adds before-and-after evidence per fix, and sends repeated defects to kaizen.
+- **router** · type: handoff · source: body
+  - This skill (weight 2): Is the route for improvement requests.
+  - router: Routes continuous-improvement requests to it.
 <!-- relationships:end -->

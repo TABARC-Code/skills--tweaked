@@ -103,4 +103,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **prime-codebase** · type: chain · source: body
   - This skill (weight 2): Starts the chain by priming the codebase.
   - prime-codebase: Runs as the first stage of piv-run-full-loop.
+- **router** · type: handoff · source: body
+  - This skill (weight 2): Is the route for requests to run the build loop end to end.
+  - router: Routes whole-loop requests to it.
 <!-- relationships:end -->

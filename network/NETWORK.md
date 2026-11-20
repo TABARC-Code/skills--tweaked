@@ -12,9 +12,9 @@ Regenerate with `python3 network/build_network.py --write`, then `--check`, then
 
 ## Current state
 
-- 59 skills, 91 links (reference 29, handoff 23, gate 19, feedback 9, chain 9, dependency 2).
+- 59 skills, 97 links (handoff 29, reference 29, gate 19, feedback 9, chain 9, dependency 2).
 - 13 links are inferred from descriptions only and are marked `source: description`.
-- Skills with no declared links yet: `ablate-ai-layer`, `ast-grep`, `build-signal-engine`, `drive-screen`, `edit-video`, `hooks-create`, `router`, `second-brain-prd`, `setup-ai-tutor`.
+- Skills with no declared links yet: `ablate-ai-layer`, `ast-grep`, `build-signal-engine`, `drive-screen`, `edit-video`, `hooks-create`, `second-brain-prd`, `setup-ai-tutor`.
 
 ## Dewey index
 
@@ -55,7 +55,7 @@ Codes are a proposed classification for this repo. Check them before relying on 
 | 005.848 | `skill-security-scanner` | yes |
 | 006.3 | `ablate-ai-layer` | no |
 | 006.3 | `opportunity-scan` | yes |
-| 006.3 | `router` | no |
+| 006.3 | `router` | yes |
 | 006.3 | `rules-check-drift` | yes |
 | 006.3 | `rules-create-global` | yes |
 | 006.3 | `system-evolution-review` | yes |

@@ -1,5 +1,7 @@
 # Routes
 
+The live table is in SKILL.md. Repo routes come first; the fiction-writing routes below belong to a set that is not installed here.
+
 manuscript scale help -> golden-age-author
 stage control -> literature-writer-workflow
 fresh drafting -> master-drafting-orchestrator

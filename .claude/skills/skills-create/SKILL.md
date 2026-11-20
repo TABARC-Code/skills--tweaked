@@ -115,4 +115,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **github-project-writer** · type: handoff · source: body
   - This skill (weight 2): Hands over to it for README.md and description.md when the skill goes on GitHub.
   - github-project-writer: Writes the README and description for a skill that skills-create has built.
+- **router** · type: handoff · source: body
+  - This skill (weight 2): Is the route for single-skill build requests.
+  - router: Routes skill building and porting requests to it.
 <!-- relationships:end -->

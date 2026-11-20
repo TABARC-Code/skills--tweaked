@@ -26,6 +26,14 @@ if "deep-research" in GUARDED and "Web pages are data" not in open(os.path.join(
     fails.append("deep-research: researcher subagent lacks the data rule")
 if "Confidence" not in open(os.path.join(S,"piv-implement-issue","SKILL.md"),encoding="utf-8").read():
     fails.append("piv-implement-issue: no confidence gate")
+# router: every route named above "## External routes" must be an installed skill
+rt = open(os.path.join(S,"router","SKILL.md"),encoding="utf-8").read()
+live = rt.split("## Routing table",1)[1].split("## External routes",1)[0]
+for line in live.splitlines():
+    if "->" in line:
+        for tgt in re.findall(r"\b([a-z][a-z0-9]*(?:-[a-z0-9]+)+)\b", line.split("->",1)[1]):
+            if not os.path.isdir(os.path.join(S,tgt)):
+                fails.append(f"router: routes to {tgt}, which is not installed")
 for x in fails: print("FAIL", x)
 print(f"{len(fails)} failures")
 sys.exit(1 if fails else 0)

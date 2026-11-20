@@ -210,4 +210,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **spider-web-analyst** · type: reference · source: body
   - This skill (weight 1): Runs it for systems with many moving parts before settling the approach.
   - spider-web-analyst: Maps dependencies and weak strands ahead of an architecture decision.
+- **router** · type: handoff · source: body
+  - This skill (weight 2): Is the route for architecture requests.
+  - router: Routes architecture requests to it.
 <!-- relationships:end -->

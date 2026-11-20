@@ -728,6 +728,54 @@
       "source": "body",
       "a_to_b": "Sends a finished draft for an AI-pattern pass before it is shared.",
       "b_to_a": "Edits co-authored documents so they read as human-written."
+    },
+    {
+      "a": "router",
+      "b": "piv-run-full-loop",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Routes whole-loop requests to it.",
+      "b_to_a": "Is the route for requests to run the build loop end to end."
+    },
+    {
+      "a": "router",
+      "b": "skills-create",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Routes skill building and porting requests to it.",
+      "b_to_a": "Is the route for single-skill build requests."
+    },
+    {
+      "a": "router",
+      "b": "skill-builder",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Routes skill systems, links and evals to it.",
+      "b_to_a": "Is the route for skill-system requests."
+    },
+    {
+      "a": "router",
+      "b": "plan-architecture",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Routes architecture requests to it.",
+      "b_to_a": "Is the route for architecture requests."
+    },
+    {
+      "a": "router",
+      "b": "kaizen",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Routes continuous-improvement requests to it.",
+      "b_to_a": "Is the route for improvement requests."
+    },
+    {
+      "a": "router",
+      "b": "perdita-mode",
+      "type": "handoff",
+      "source": "body",
+      "a_to_b": "Routes hard-problem requests to the lens skills, this one first when multiple people are involved.",
+      "b_to_a": "Is one of the lens routes from the router."
     }
   ],
   "dewey": {

@@ -127,4 +127,7 @@ Bidirectional contracts. Generated from network/edges.json, so edit there, not h
 - **skill-security-scanner** · type: gate · source: body
   - This skill (weight 2): Runs it before delivering or publishing a skill.
   - skill-security-scanner: Is called by skill-builder before delivery or publication.
+- **router** · type: handoff · source: body
+  - This skill (weight 2): Is the route for skill-system requests.
+  - router: Routes skill systems, links and evals to it.
 <!-- relationships:end -->
