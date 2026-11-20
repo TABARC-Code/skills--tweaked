@@ -58,8 +58,8 @@ Hooks from different settings files merge; they do not overwrite each other.
 
 Then pick your two edits:
 
-- `stop_tests_must_pass.py` → set `TEST_COMMAND` to your actual test command.
-- `pre_tool_use_dependencies.py` → copy `dependencies.example.json` to `.claude/hooks/dependencies.json` and
+- `stop_tests_must_pass.py` > set `TEST_COMMAND` to your actual test command.
+- `pre_tool_use_dependencies.py` > copy `dependencies.example.json` to `.claude/hooks/dependencies.json` and
   declare your own couplings. **Until that file exists this hook allows everything**, so it is safe to install
   before you have configured it.
 

@@ -24,15 +24,15 @@ argument-hint: <optional: expected args, e.g. <path> [--flag]>
 - <A non-obvious constraint the agent would otherwise get wrong.>
 
 ## Resources
-- `references/<x>.md` — <when to read it>
-- `templates/<output-format>.md` — <the required output shape>
-- `scripts/<y>.py` — <what it does; run it, don't read it>
+- `references/<x>.md` - <when to read it>
+- `templates/<output-format>.md` - <the required output shape>
+- `scripts/<y>.py` - <what it does; run it, don't read it>
 
 <!-- Authoring reminders (delete before shipping):
 - description: third person + literal trigger phrases + /name. ≤1024 chars.
-- body: imperative, lean (1,500–2,000 words). Detail → references/. Output shapes → templates/.
+- body: imperative, lean (1,500–2,000 words). Detail > references/. Output shapes > templates/.
 - match the structure to the skill TYPE; don't force a workflow shape onto a knowledge skill.
-- context can be bundled, external (a path/URL the body cites), or gathered at runtime — pick per ownership/volatility.
+- context can be bundled, external (a path/URL the body cites), or gathered at runtime - pick per ownership/volatility.
 - invocation: omit user-invocable/disable-model-invocation for an open read/plan skill; set disable-model-invocation
   for a distributed, side-effecting one.
 - wire every bundled file from Resources. No duplication body<->references. Validate with references/validation.md.

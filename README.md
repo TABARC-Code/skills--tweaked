@@ -11,7 +11,7 @@ That's the whole idea, and it's why skills scale where a 2,000-line `CLAUDE.md` 
 These skills build on the AI Layer from my [Agentic Coding course](https://dynamous.ai). They're built around one
 loop I run on nearly every ticket:
 
-**prime → plan → implement → validate → review → commit → PR**
+**prime > plan > implement > validate > review > commit > PR**
 
 Around that loop sit the pieces that feed it (PRD, architecture, epic slicing), the pieces that run it in parallel
 (worktrees), and the meta-skills that let you build more of your own AI Layer (rules, hooks, skills, opportunity
