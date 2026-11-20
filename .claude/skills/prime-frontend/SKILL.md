@@ -1,6 +1,6 @@
 ---
 name: prime-frontend
-description: Primes the agent with focused understanding of the frontend portion of the codebase — components, routing, state management, and styling — without loading unrelated backend code. Use at the start of a session when the work is scoped to UI or client-side features. Optionally pulls external task context from Jira issues and Confluence pages first. Dewey 005.1.
+description: Primes the agent with focused understanding of the frontend portion of the codebase - components, routing, state management, and styling - without loading unrelated backend code. Use at the start of a session when the work is scoped to UI or client-side features. Optionally pulls external task context from Jira issues and Confluence pages first. Dewey 005.1.
 argument-hint: "[jira-issue-keys] [confluence-page-ids]"
 ---
 
@@ -32,7 +32,7 @@ Build targeted understanding of the frontend codebase by analyzing its structure
 
 **If no arguments are provided:** Skip this step entirely and proceed to Step 1.
 
-Briefly summarize any external context loaded before continuing — this frames the rest of the priming.
+Briefly summarize any external context loaded before continuing - this frames the rest of the priming.
 
 If the Atlassian tools are unavailable or a lookup fails, report which key or page id could not be loaded and carry on with the codebase analysis. Do not infer ticket content. If `git ls-files` fails or the list is huge, list the top two directory levels instead.
 
@@ -48,7 +48,7 @@ Common frontend roots: `frontend/`, `client/`, `web/`, `src/` (when project is f
 
 - Read CLAUDE.md or similar global rules file (for project-wide conventions)
 - Read any README inside the frontend root
-- Read `.claude/references/frontend-component-best-practices.md` if it exists — it contains project-specific component conventions
+- Read `.claude/references/frontend-component-best-practices.md` if it exists - it contains project-specific component conventions
 
 ### 3. Identify Key Frontend Files
 

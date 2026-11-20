@@ -32,7 +32,7 @@ Build comprehensive understanding of the codebase by analyzing structure, docume
 
 **If no arguments are provided:** Skip this step entirely and proceed to Step 1.
 
-Briefly summarize any external context loaded before continuing — this frames the rest of the priming.
+Briefly summarize any external context loaded before continuing - this frames the rest of the priming.
 
 ### 1. Analyze Project Structure
 

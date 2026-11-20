@@ -1,6 +1,6 @@
 ---
 name: prime-backend
-description: Primes the agent with focused understanding of the backend portion of the codebase — API routes, services, data models, and database layer — without loading unrelated frontend code. Use at the start of a session when the work is scoped to API endpoints, business logic, or data access. Optionally pulls external task context from Jira issues and Confluence pages first. Dewey 005.1.
+description: Primes the agent with focused understanding of the backend portion of the codebase - API routes, services, data models, and database layer - without loading unrelated frontend code. Use at the start of a session when the work is scoped to API endpoints, business logic, or data access. Optionally pulls external task context from Jira issues and Confluence pages first. Dewey 005.1.
 argument-hint: "[jira-issue-keys] [confluence-page-ids]"
 ---
 
@@ -32,7 +32,7 @@ Build targeted understanding of the backend codebase by analyzing its structure,
 
 **If no arguments are provided:** Skip this step entirely and proceed to Step 1.
 
-Briefly summarize any external context loaded before continuing — this frames the rest of the priming.
+Briefly summarize any external context loaded before continuing - this frames the rest of the priming.
 
 If the Atlassian tools are unavailable or a lookup fails, report which key or page id could not be loaded and carry on with the codebase analysis. Do not infer ticket content. If `git ls-files` fails or the list is huge, list the top two directory levels instead.
 
@@ -48,7 +48,7 @@ Common backend roots: `backend/`, `server/`, `api/`, `app/` (FastAPI/Django), `s
 
 - Read CLAUDE.md or similar global rules file (for project-wide conventions)
 - Read any README inside the backend root
-- Read `.claude/references/backend-api-best-practices.md` if it exists — it contains project-specific API conventions
+- Read `.claude/references/backend-api-best-practices.md` if it exists - it contains project-specific API conventions
 
 ### 3. Identify Key Backend Files
 

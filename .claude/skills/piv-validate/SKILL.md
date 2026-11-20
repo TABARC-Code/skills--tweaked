@@ -1,6 +1,6 @@
 ---
 name: piv-validate
-description: Runs this project's full validation suite — tests, type checks, and linting across every part of the stack — then reports overall health. Use before committing, before opening a PR, or after finishing a chunk of work to confirm zero regressions. Dewey 005.14.
+description: Runs this project's full validation suite - tests, type checks, and linting across every part of the stack - then reports overall health. Use before committing, before opening a PR, or after finishing a chunk of work to confirm zero regressions. Dewey 005.14.
 ---
 
 # Validate
@@ -9,18 +9,18 @@ Run every check this project has and report a single PASS/FAIL verdict.
 
 > ## ⚠️ Make this yours first
 >
-> **This skill is a template. The command list below is a placeholder — replace it with the commands
+> **This skill is a template. The command list below is a placeholder - replace it with the commands
 > *your* project actually uses.** That is the entire point of a custom checker: it is the one skill
 > that cannot be generic, because it wraps your stack's CLIs.
 >
 > Find your real commands in `package.json` scripts, `pyproject.toml`, `Makefile`, `justfile`,
-> `docker-compose.yml`, your CI workflow, or the README — then delete these and paste yours in.
+> `docker-compose.yml`, your CI workflow, or the README - then delete these and paste yours in.
 >
 > **Two things to get right, because they are the usual reason a checker silently lies:**
 > 1. **Working directory.** Many tools only discover their config from the current directory. If your
 >    config lives in `backend/pyproject.toml`, the command is `cd backend && uv run pytest`, not
 >    `uv run pytest` from the repo root.
-> 2. **Cross-platform.** Avoid POSIX-only idioms if anyone on the team is on Windows — `lsof`,
+> 2. **Cross-platform.** Avoid POSIX-only idioms if anyone on the team is on Windows - `lsof`,
 >    `python3`, and background-then-`kill` are the common offenders.
 
 **Unconfigured means failed.** Before running anything, scan the command blocks below. If any still contains a placeholder such as `<your test command>` or a `REPLACE:` comment, do not report PASS. Report **Overall: NOT CONFIGURED**, list the sections still holding placeholders, and offer to detect the real commands from `package.json`, `pyproject.toml`, a `Makefile` or the CI workflow. A checker that has nothing to run must say so, because silence reads as green.
@@ -57,11 +57,11 @@ output of any command that fails.
 
 ## 4. Repeat per surface
 
-A full-stack project has more than one of each. Add a section per surface — backend tests, backend
-types, backend lint, frontend tests, frontend types, frontend lint — so a single command covers the
+A full-stack project has more than one of each. Add a section per surface - backend tests, backend
+types, backend lint, frontend tests, frontend types, frontend lint - so a single command covers the
 whole repo.
 
-## 5. Optional — live smoke test
+## 5. Optional - live smoke test
 
 Only when the change touches routing, middleware, or startup; skip it when your test suite already
 exercises the app in-process.
@@ -72,7 +72,7 @@ exercises the app in-process.
 ```
 
 Prefer starting the server in a second shell over backgrounding and killing it from inside this
-skill — the background-and-kill idiom is not portable.
+skill - the background-and-kill idiom is not portable.
 
 ## 6. Summary report
 
@@ -81,7 +81,7 @@ Report each check with a ✅ or ❌, then an overall verdict:
 - One line per check
 - **Overall: PASS or FAIL**
 
-For every ❌, include the failing command and the relevant output. Do not fix anything here —
+For every ❌, include the failing command and the relevant output. Do not fix anything here - 
 this skill reports; fixing is a separate step.
 
 ## Notes
