@@ -448,7 +448,7 @@ Round 1 - three questions decide the project, so do not let any of them slide:
 | Level | What is automatic | What you still do |
 |---|---|---|
 | 0 | workflows exist | run them by hand |
-| 1 | labelled issue → PR opens | review and merge everything |
+| 1 | labelled issue > PR opens | review and merge everything |
 | 2 | + validator runs and posts a verdict | merge everything |
 | 3 | + validator **auto-merges** when every structural gate is green | write the issues, cut releases |
 | 4 | + it triages its own issues, and a scheduled test files its own bugs | write the important issues |
@@ -496,9 +496,9 @@ useful edit this phase makes to an existing repo.
 
 The placement test, for every rule:
 
-> Would you write this even with a human doing the work? → conventions file.
-> Does it only exist because nobody is watching? → `FACTORY_RULES.md`.
-> Is it about what the product is and is not? → `MISSION.md`.
+> Would you write this even with a human doing the work? > conventions file.
+> Does it only exist because nobody is watching? > `FACTORY_RULES.md`.
+> Is it about what the product is and is not? > `MISSION.md`.
 
 **The one property that matters: the agent cannot amend the rules it is judged by.**
 All three files go on the protected list, and a PR that touches them is auto-rejected
@@ -554,8 +554,8 @@ buy you the assertions.
 
 The short version, which is not a substitute for reading it:
 
-- **Climb the ladder:** static → unit → integration → **E2E as the real user** →
-  visual judging → holdout scenarios → deterministic gate.
+- **Climb the ladder:** static > unit > integration > **E2E as the real user** >
+  visual judging > holdout scenarios > deterministic gate.
 - **Draw the independence line after integration.** Everything below it is inside the
   agent's optimization loop, so given time it will satisfy whatever you measured
   rather than the thing you meant. More tests below the line is not the fix.

@@ -24,9 +24,9 @@ As you work, if you have a to-do or task-list tool (for example TodoWrite, or Ta
 ### 1. [If necessary] Ask the user follow up questions
 
 Read the user's question and consider if there are any missing or ambiguous details that need to be clarified. Some examples include:
-- Ambiguous terminology — Acronyms, jargon, or terms with multiple meanings across different fields
-- Implicit geographic or jurisdictional context — Questions where the answer varies significantly by region but no region is specified
-- Ambiguous entities — Company names, product names, or proper nouns that refer to multiple distinct entities
+- Ambiguous terminology - Acronyms, jargon, or terms with multiple meanings across different fields
+- Implicit geographic or jurisdictional context - Questions where the answer varies significantly by region but no region is specified
+- Ambiguous entities - Company names, product names, or proper nouns that refer to multiple distinct entities
 
 In order to avoid creating unnecessary friction with the user, follow ups should only be asked when they would meaningfully impact how research is conducted.
 
@@ -36,14 +36,14 @@ If you determine that you do need to ask follow up questions, do so with the Ask
 
 First choose a title for this research. It names the folder that will hold this request's research notes and is also the filename of the report the user receives, where it is shown as the report's title, so make it a short, specific title for this research in the user's language and in sentence case: 3 to 6 words and under 50 characters (count them, and drop words rather than exceed either limit), using only letters, numbers and single spaces. Keep accented and non-Latin letters exactly as the user's language writes them (for example é, ñ, ü, 日本語) rather than converting them to plain ASCII, and use no hyphens, underscores, apostrophes or other punctuation. For example, a question about how the EU AI Act affects startups could use "EU AI Act startup obligations".
 
-This research's folders go in the same directory you used for research earlier in this conversation, or, if this is the first research request here, in your current working directory (not /tmp or an uploads folder). Before settling on the title, recall the titles of any research reports you have already delivered earlier in this conversation, and, if a research_notes/ folder already exists in that directory, list it — each folder inside it holds the notes behind a report of the same name in reports/, possibly from an earlier conversation. Then pick the case that fits:
+This research's folders go in the same directory you used for research earlier in this conversation, or, if this is the first research request here, in your current working directory (not /tmp or an uploads folder). Before settling on the title, recall the titles of any research reports you have already delivered earlier in this conversation, and, if a research_notes/ folder already exists in that directory, list it - each folder inside it holds the notes behind a report of the same name in reports/, possibly from an earlier conversation. Then pick the case that fits:
 - New topic: choose a fresh title.
 - Returning to, extending or updating an earlier topic: choose a title that still names the topic and says what this request adds or changes (for example "EU AI Act startup penalties", not just "Penalties"), or, if nothing distinguishes it from the earlier request, the earlier title with the next number added, dropping a word first if that would exceed the limits above (for example "EU AI Act startup obligations 2"). Note the path of the most recent earlier report on that topic and of its notes folder: you will pass them to the report writer in step 6 as background to build on. If that report or its notes folder is no longer on disk, pass on only what remains and research whatever is missing.
 - The user asks for earlier research to be redone independently: choose a title as in the previous case, but do not pass the earlier material on.
 
 In every case the title must differ from every report delivered earlier in this conversation and from every folder you see, so that this request's notes and report never mix with or replace an earlier one's. Never rename, move or write into an earlier request's folder.
 
-Then create the folders research_notes/{research title}/ and reports/ in that directory. Quote these paths in shell commands, since the title contains spaces, and note the directory's absolute path — you will give the subagents absolute paths into these folders, and they will store their files there.
+Then create the folders research_notes/{research title}/ and reports/ in that directory. Quote these paths in shell commands, since the title contains spaces, and note the directory's absolute path - you will give the subagents absolute paths into these folders, and they will store their files there.
 
 ### 3. Decompose the user's query to determine subagent count
 
@@ -51,11 +51,11 @@ In order to effectively spawn and task subagents, determine if and how the user'
 
 | Researchers | Decomposition Strategy | Example |
 |-------------|------------------------|---------|
-| 1 | No meaningful decomposition — single factual question | "Who won the 2024 Super Bowl?" |
-| 3 | Few natural angles or perspectives on a focused topic | "Effects of temperature on salmon migration" → (1) biological mechanisms, (2) observed population data, (3) climate projections |
-| 4 | Distinct facets or evaluation criteria | "Compare CRM platforms for small businesses" → (1) pricing models, (2) feature comparison, (3) integrations ecosystem, (4) user reviews/sentiment |
-| 5 | Multiple independent entities, regions, or domains | "AI regulation landscape" → (1) US federal, (2) EU/GDPR-AI Act, (3) China, (4) UK, (5) industry self-regulation |
-| 6+ | Large enumerable set requiring systematic coverage | "Electric vehicle adoption rates by US state" → researchers assigned to regional clusters |
+| 1 | No meaningful decomposition - single factual question | "Who won the 2024 Super Bowl?" |
+| 3 | Few natural angles or perspectives on a focused topic | "Effects of temperature on salmon migration" > (1) biological mechanisms, (2) observed population data, (3) climate projections |
+| 4 | Distinct facets or evaluation criteria | "Compare CRM platforms for small businesses" > (1) pricing models, (2) feature comparison, (3) integrations ecosystem, (4) user reviews/sentiment |
+| 5 | Multiple independent entities, regions, or domains | "AI regulation landscape" > (1) US federal, (2) EU/GDPR-AI Act, (3) China, (4) UK, (5) industry self-regulation |
+| 6+ | Large enumerable set requiring systematic coverage | "Electric vehicle adoption rates by US state" > researchers assigned to regional clusters |
 
 In the next step, you should spawn one subagent for each subtopic and independent point of view that you identified. When in doubt, 3 researchers is a reasonable default. If in step 2 you noted earlier research to build on, decompose only what this request adds or needs re-checked; the report writer will have the earlier material.
 
@@ -124,7 +124,7 @@ Based on the task summaries returned by the research subagents, determine if the
 
 ### 6. Spawn foreground report writer subagent
 
-After research is done, spawn a single report writer subagent. Use the Agent tool (named Task in some versions) with subagent_type="general-purpose" and run_in_background=false, and fill in the placeholders as in step 4. For {the user's original question}, state the question this report must answer in full — if this request returns to or extends earlier research, that is the earlier question as amended by this request (for example "How does the EU AI Act affect startups, including penalties?"), not just the follow-up message. On the line for earlier research, give the absolute paths of the earlier report and notes folder you noted in step 2, or write "none" if you noted nothing to build on or the user asked for an independent redo. Follow the exact format provided below:
+After research is done, spawn a single report writer subagent. Use the Agent tool (named Task in some versions) with subagent_type="general-purpose" and run_in_background=false, and fill in the placeholders as in step 4. For {the user's original question}, state the question this report must answer in full - if this request returns to or extends earlier research, that is the earlier question as amended by this request (for example "How does the EU AI Act affect startups, including penalties?"), not just the follow-up message. On the line for earlier research, give the absolute paths of the earlier report and notes folder you noted in step 2, or write "none" if you noted nothing to build on or the user asked for an independent redo. Follow the exact format provided below:
 
 ```
 Agent(

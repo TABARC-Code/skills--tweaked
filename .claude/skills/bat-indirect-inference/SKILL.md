@@ -6,12 +6,12 @@ metadata:
   author_url: https://github.com/TABARC-Code/
   version: 1.1.0
   dewey_code: '006.364'
-  classification_label: AI analysis — inference and signal reconstruction
+  classification_label: AI analysis - inference and signal reconstruction
   status: production
   source_grounding:
     - Echolocators separate outgoing pulse from returning echo in time to avoid masking (Springer, Echolocation review).
     - Doppler shift compensation cancels self-motion, isolating prey-wing modulation (ScienceDirect, Neurobiology of echolocation).
-    - Approach phase — pulse rate rises and duration shortens as the bat closes on target.
+    - Approach phase - pulse rate rises and duration shortens as the bat closes on target.
   bidirectional_links:
     - skill: slime-mold-analysis
       this_provides: technique for inferring hidden structure from weak signal
@@ -85,35 +85,35 @@ If you can already see the structure, you don't need to infer it; use spider. If
 
 Run in order. State any skipped step and why; no silent skips.
 
-### Step 1 — Establish what you can't see
+### Step 1 - Establish what you can't see
 
 Name the hidden structure precisely. What exactly is opaque? Intent, capability, internal state, true position, the mechanism inside the box? You can't infer well until you've said clearly what you're inferring.
 
-### Step 2 — Cancel your own motion
+### Step 2 - Cancel your own motion
 
 Before reading any signal, subtract yourself. What are your assumptions, hopes, and expectations adding to the return? What would you *prefer* to hear, and how might that be colouring your read? A bat that doesn't compensate for its own flight mistakes its speed for the target's. Do this first, every time.
 
-### Step 3 — Inventory the echoes you already have
+### Step 3 - Inventory the echoes you already have
 
 What has the system already emitted, unprompted? Past behaviour, public statements, the pattern of what it does versus what it says, how it has reacted to pressure before. Build the first rough map from existing returns before sending new ones.
 
-### Step 4 — Read the silences
+### Step 4 - Read the silences
 
 This is the step the other skills don't have. What echo should have come back and didn't? What question went unanswered, what topic gets deflected, what reaction was conspicuously absent? Map the holes. The shape of what's missing often describes the hidden structure more precisely than what's present.
 
-### Step 5 — Design probes
+### Step 5 - Design probes
 
 What signals can you send to make the system reveal structure? A question whose answer (or refusal) is diagnostic. An offer that tests a boundary. A small proposal that reveals priorities by how it's received. Design probes whose return is informative whichever way it comes back. Remember the leakage: each probe tells the system you're probing.
 
-### Step 6 — Read delay, texture, and shift
+### Step 6 - Read delay, texture, and shift
 
 For each return, read more than its content. How long did it take (delay encodes processing, reluctance, or coordination)? What's the texture (confident, hedged, rehearsed, improvised)? What shifted from what you expected (the Doppler reading, where the gap between predicted and actual is where the information concentrates)?
 
-### Step 7 — Build the map and rate confidence
+### Step 7 - Build the map and rate confidence
 
 Assemble the inferred structure from all returns and silences. Then rate your confidence in each inference; this is the step people skip. A bat's map is provisional and constantly updated. Mark what you're fairly sure of, what's a working hypothesis, and what's a guess. Inference without calibrated confidence is just assertion in the dark.
 
-### Step 8 — Identify the next probe
+### Step 8 - Identify the next probe
 
 What single probe would most reduce your remaining uncertainty? Inference is iterative. End each pass by naming the question whose answer would sharpen the map most, and whether sending it is worth the leakage.
 
@@ -169,12 +169,12 @@ This earns its own example because indirect inference feels cleverer than direct
 
 ## Diagnostic questions
 
-1. Can you observe the structure directly? Yes → use your eyes; spider or mycelium, not this.
-2. Is the information deliberately or unavoidably incomplete? Yes → bat fits.
-3. Do silences, delays, and non-responses carry meaning here? Yes → strong bat signal.
-4. Can you send probes and read the returns? Yes → bat's method applies.
-5. Are you reverse-engineering something from input-output behaviour? Yes → bat fits.
-6. Is the system alive and regenerating rather than opaque? Yes → mycelium, not this.
+1. Can you observe the structure directly? Yes > use your eyes; spider or mycelium, not this.
+2. Is the information deliberately or unavoidably incomplete? Yes > bat fits.
+3. Do silences, delays, and non-responses carry meaning here? Yes > strong bat signal.
+4. Can you send probes and read the returns? Yes > bat's method applies.
+5. Are you reverse-engineering something from input-output behaviour? Yes > bat fits.
+6. Is the system alive and regenerating rather than opaque? Yes > mycelium, not this.
 
 ## Common mistakes
 
