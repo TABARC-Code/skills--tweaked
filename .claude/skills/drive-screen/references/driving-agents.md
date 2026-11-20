@@ -131,10 +131,9 @@ Studio Code` becomes `README.md - my-repo - Visual Studio Code` the moment anoth
 tab is focused. Target the stable middle segment, the folder name, and make it long
 enough to be unique: `checkout-service-v2`, never `checkout-service`.
 
-**The separator differs by platform.** On macOS the default window title joins
-segments with an em dash; on Windows and Linux it is a plain hyphen. Match on the
-folder name alone rather than on a separator, or pin the format for everyone by
-setting `window.title` explicitly in settings.
+**The separator differs by platform.** Match on the folder name alone rather than
+on punctuation, or pin the format for everyone by setting `window.title`
+explicitly in settings.
 
 Re-resolve the window before each step. Do not cache a handle across a long run.
 

@@ -34,8 +34,7 @@ hierarchy and the same document outlines, maintained by hand in two places.
 `repo-doc-writer`'s own description admitted as much: "Keeping them in sync is manual, and
 it won't happen, so expect them to drift." It had, by the time this merge happened,
 drifted in exactly the direction you'd expect: sharper number and punctuation
-conventions, an explicit Oxford comma rule and an arrow-glyph ban that had never made it
-back into this file.
+conventions and an explicit Oxford comma rule that had never made it back into this file.
 
 Rather than keep two skills or delete the leaner one outright, `repo-doc-writer`'s actual
 reason for existing, drafting without the rubric sitting in context at all, survives here

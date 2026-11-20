@@ -100,9 +100,9 @@ identical whichever speed is running.
 ## Design decisions
 
 **Absorbing `repo-doc-writer` as a speed rather than deleting it or keeping it separate.**
-The two skills had drifted: the leaner one had picked up an explicit Oxford comma rule,
-a number-spelling convention and an arrow-glyph ban that this file never got. Deleting it
-would have thrown that away. Keeping both would have kept the manual-sync problem that
+The two skills had drifted: the leaner one had picked up an explicit Oxford comma rule
+and a number-spelling convention that this file never got. Deleting it would have
+thrown those conventions away. Keeping both would have kept the manual-sync problem that
 caused the drift in the first place. A mode inside one skill can't drift from itself.
 
 **Draft speed skips the labels, not just the rubric.** It would have been simpler to keep

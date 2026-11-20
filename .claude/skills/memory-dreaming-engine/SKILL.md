@@ -113,7 +113,6 @@ The ledger holds one JSON line per proposal: id, target, type, outcome (accepted
 
 - this to skill-security-scanner: audit, contextual. Run before trusting memory files or transcripts from outside sources.
 - this to skill-builder and skill-creator: execution layer, moderate. Skill-candidate briefs go there.
-- this to em-dash-calibration: specialisation, contextual. Style complaints found by DREAM route there for the fix.
 - this to obsidian-notes: enhancement, contextual. Owns link form and vault setup if the tree is also read in Obsidian or GitHub.
 
 ## Output rules

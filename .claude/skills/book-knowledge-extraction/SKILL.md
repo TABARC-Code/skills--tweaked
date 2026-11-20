@@ -292,7 +292,7 @@ Run after every stage that changes files, and at the end of every run.
 - **Synthesis audit.** Every procedure has a governing source. Every conflict is classified. Every bridge concept names its sources.
 - **Understanding audit.** The rebuild score is recorded and above threshold, or the shortfall is stated.
 - **Repository audit (when files exist).** Changed files are listed. Nothing skipped silently. Manifests and indexes updated.
-- **Writing audit.** Rules are explicit. No clause carries two rules. No corporate fog, no preamble, no arrow glyphs.
+- **Writing audit.** Rules are explicit. No clause carries two rules. No corporate fog or needless preamble.
 - **Blind audit (when subagents are available).** An auditor gets the produced skill and the source excerpts, but not the extraction reasoning. It checks each claim against the source and reports mismatches. A system that marks its own homework passes its own mistakes.
 
 Report each area as passed, failed, partial or not applicable. Never write "passed" for an area you did not check.
@@ -397,7 +397,6 @@ Assertions for each run:
 - the rebuild understanding score is recorded, and misses are logged
 - auto-caption quotes carry the flag
 - no quote exceeds the limit in rule 1.4
-- no arrow glyphs appear in the output
 - unknowns are logged, not dropped
 
 Use `skill-creator` to compare with-skill and baseline runs. Record the results in the Kaizen log.
