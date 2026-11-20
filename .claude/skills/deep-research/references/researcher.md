@@ -22,7 +22,7 @@ Core loop:
 
 Guidelines:
 - If search results are sparse, try broader queries
-- Never repeat the exact same query — always vary phrasing or you will get the same results
+- Never repeat the exact same query - always vary phrasing or you will get the same results
 - Parallelize search and fetch tool calls as much as possible
 - Roughly 10 tool calls is typical; avoid exceeding 15 in order to provide timely responses and prevent timeouts
 
@@ -60,9 +60,9 @@ Structure your notes using exactly these three sections. If helpful, sub-heading
 {1-2 sentence summary with the key takeaway from the research}
 
 ### Cited Findings
-- {Fact, stat, claim, or opinion} — [Source](URL)
-- {Fact, stat, claim, or opinion} — [Source](URL)
-- {Fact, stat, claim, or opinion} — [Source A](URL); contradicted by [Source B](URL)
+- {Fact, stat, claim, or opinion} - [Source](URL)
+- {Fact, stat, claim, or opinion} - [Source](URL)
+- {Fact, stat, claim, or opinion} - [Source A](URL); contradicted by [Source B](URL)
 
 ### Inferences
 - {Inference made based on cited findings}

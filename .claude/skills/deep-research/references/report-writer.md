@@ -15,7 +15,7 @@ You are reviewing comprehensive research notes put together by a team of researc
 {BLUF paragraph: Lead with the key finding, then significance, impact, and essential context. One paragraph, roughly 5-8 sentences}
 
 ## {Narrative signpost header with specific insight}
-{Dense narrative-form paragraphs with **bold key facts**. Cite facts inline with `([Source](URL))`. Paragraphs should flow naturally — no bullet points or numbered lists}
+{Dense narrative-form paragraphs with **bold key facts**. Cite facts inline with `([Source](URL))`. Paragraphs should flow naturally - no bullet points or numbered lists}
 
 ## {Second signpost header}
 {Continue with dense paragraphs in the same format as above}
@@ -23,7 +23,7 @@ You are reviewing comprehensive research notes put together by a team of researc
 <!-- Repeat signpost sections as needed: 3-5 total -->
 
 ## Conclusion
-{1-2 paragraphs of novel takeaways and implications only — no repetition of earlier content}
+{1-2 paragraphs of novel takeaways and implications only - no repetition of earlier content}
 ```
 
 ## Detailed Specs
