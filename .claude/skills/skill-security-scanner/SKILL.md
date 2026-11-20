@@ -10,7 +10,7 @@ description: "Scans generated Claude Skill packages for prompt injection pattern
 
 # Skill Security Scanner
 
-Inspects generated skill packages for security defects before they are loaded, installed, or published. Does not modify files. Advisory findings only — every finding must be reviewed in context before acting on it, because rules are intentionally broad and will match legitimate AI/LLM topic text.
+Inspects generated skill packages for security defects before they are loaded, installed, or published. Does not modify files. Advisory findings only - every finding must be reviewed in context before acting on it, because rules are intentionally broad and will match legitimate AI/LLM topic text.
 
 This skill scans what the *skill user* will load into Claude's context. The threat model is: a malicious or carelessly constructed skill file instructs Claude to override its operating constraints, exfiltrate data, or escalate its own tool authority.
 
@@ -26,15 +26,15 @@ Use this skill when:
 ## Do not use
 
 - On the forge or audit skill files themselves (internal architecture files are not generated user-facing output)
-- As a replacement for reading skill files — scan findings require human review in context
-- To assess skills you wrote yourself from scratch with full knowledge of the content — use it on generated or externally sourced output
+- As a replacement for reading skill files - scan findings require human review in context
+- To assess skills you wrote yourself from scratch with full knowledge of the content - use it on generated or externally sourced output
 
 ---
 
 ## Scan scope
 
 The scanner reads every Markdown file in the skill package:
-- `SKILL.md` (required — abort if missing or is a symlink)
+- `SKILL.md` (required - abort if missing or is a symlink)
 - `glossary.md`, `patterns.md`, `cheatsheet.md` (if present)
 - All `*.md` files in `chapters/` (if present)
 - Any other `.md` files in the skill root
@@ -54,50 +54,50 @@ Reject files that are not valid UTF-8. A file that cannot be decoded is either c
 
 ### Category: Prompt injection
 
-**INJECT-001 — Instruction override**
+**INJECT-001 - Instruction override**
 Pattern: `ignore (all|any|the)? (previous|prior) (instructions?|prompts?|rules?|messages?)`
 Flags: case-insensitive
 Message: contains an instruction-override phrase
 
-**INJECT-002 — System instruction disregard**
+**INJECT-002 - System instruction disregard**
 Pattern: `disregard (the )?(system|developer)`
 Flags: case-insensitive
 Message: contains a system-instruction override phrase
 
-**INJECT-003 — Role reassignment**
+**INJECT-003 - Role reassignment**
 Pattern: `you are now`
 Flags: case-insensitive
 Message: contains a role-reassignment phrase
 
-**INJECT-004 — Fake system prefix**
+**INJECT-004 - Fake system prefix**
 Pattern: line starts with `(- )?system:` or `(- )?developer:`
 Flags: case-insensitive, match at line start
 Message: contains a system-like message prefix
 
-**INJECT-005 — System message tag**
+**INJECT-005 - System message tag**
 Pattern: `</?system[^>]*>`
 Flags: case-insensitive
 Message: contains a system-message XML tag
 
-**INJECT-006 — Chat template delimiter**
+**INJECT-006 - Chat template delimiter**
 Pattern: `<|im_start|>` or `[INST]`
 Flags: case-insensitive
 Message: contains a model chat-template delimiter
 
-**INJECT-007 — Tool call control token**
+**INJECT-007 - Tool call control token**
 Pattern: `\btool[_ -]?call\b`
 Flags: case-insensitive
 Message: contains a tool-call control token
 
 ### Category: Unicode
 
-**UNICODE-001 — Invisible codepoints**
+**UNICODE-001 - Invisible codepoints**
 Codepoints: U+200B (zero-width space), U+200C (zero-width non-joiner), U+200D (zero-width joiner), U+2060 (word joiner), U+FEFF (zero-width no-break space, except as leading BOM), U+E0000–U+E007F (Unicode tag block)
-Message: contains invisible Unicode codepoint(s) — list each as U+XXXX
+Message: contains invisible Unicode codepoint(s) - list each as U+XXXX
 
 ### Category: Exfiltration
 
-**EXFIL-001 — Exfiltration-shaped language**
+**EXFIL-001 - Exfiltration-shaped language**
 Fires when either:
 - The word `exfiltrate/exfiltrates/exfiltrated/exfiltrating/exfiltration` appears (any tense), OR
 - An outbound action term (`curl`, `wget`, `send`, `post`, `upload`, `transmit`, any `https?://` URL) appears on the same line as a sensitive data term (`.env`, `base64`, `secrets?`, `credentials?`, `api[_ -]?keys?`)
@@ -106,11 +106,11 @@ Message: contains exfiltration-shaped tool or sensitive-data language
 
 ### Category: Frontmatter authority
 
-**AUTH-001 — Tool authority escalation**
+**AUTH-001 - Tool authority escalation**
 Pattern: frontmatter line matches `allowed-tools:` (key present in YAML block)
 Message: generated frontmatter declares or widens tool authority
 
-**AUTH-002 — Model invocation explicitly enabled**
+**AUTH-002 - Model invocation explicitly enabled**
 Pattern: frontmatter line matches `disable-model-invocation: (false|no|0)`
 Message: generated frontmatter explicitly enables model invocation
 
@@ -133,17 +133,17 @@ Files scanned: <N>
 Findings: <N total> (<N> errors, <N> warnings)
 
 FINDINGS:
-  [INJECT-001] SKILL.md:47 — contains an instruction-override phrase
-  [UNICODE-001] chapters/ch03-feedback.md:112 — contains invisible Unicode codepoint(s): U+200B
-  [EXFIL-001] patterns.md:89 — contains exfiltration-shaped tool or sensitive-data language
-  [AUTH-001] SKILL.md:4 — generated frontmatter declares or widens tool authority
+  [INJECT-001] SKILL.md:47 - contains an instruction-override phrase
+  [UNICODE-001] chapters/ch03-feedback.md:112 - contains invisible Unicode codepoint(s): U+200B
+  [EXFIL-001] patterns.md:89 - contains exfiltration-shaped tool or sensitive-data language
+  [AUTH-001] SKILL.md:4 - generated frontmatter declares or widens tool authority
 
 REVIEW NOTES:
   Rules are intentionally broad. Each finding must be reviewed in context.
   Legitimate AI/LLM topic text (discussing injection, tools, system messages) will match.
   No files were modified by this scan.
 
-VERDICT: FINDINGS PRESENT — review before loading, installing, or publishing.
+VERDICT: FINDINGS PRESENT - review before loading, installing, or publishing.
 ```
 
 If no findings:
@@ -153,7 +153,7 @@ If no findings:
 Files scanned: <N>
 Findings: 0
 
-VERDICT: CLEAN — no known injection or authority patterns found.
+VERDICT: CLEAN - no known injection or authority patterns found.
 ```
 
 ---
@@ -165,16 +165,16 @@ All findings are **advisory**. The scanner cannot determine intent. A chapter on
 Two practical severity tiers for the reviewer:
 
 **High priority for review:**
-- INJECT-003 (role reassignment) — rarely appears in legitimate skill content
-- INJECT-005 (system message tag) — almost never legitimate in a skill file
-- INJECT-006 (chat template delimiter) — no legitimate use in a skill
-- AUTH-001 / AUTH-002 — requires immediate explanation; generated skills should not self-grant authority
+- INJECT-003 (role reassignment) - rarely appears in legitimate skill content
+- INJECT-005 (system message tag) - almost never legitimate in a skill file
+- INJECT-006 (chat template delimiter) - no legitimate use in a skill
+- AUTH-001 / AUTH-002 - requires immediate explanation; generated skills should not self-grant authority
 
 **Context-dependent:**
-- INJECT-001, INJECT-002, INJECT-004 — can appear in documentation about AI safety or prompt engineering
-- INJECT-007 — appears in skills that discuss tool use
-- EXFIL-001 — appears in skills about networking, authentication, or DevOps
-- UNICODE-001 — almost always a genuine concern; invisible characters in a skill file are unusual
+- INJECT-001, INJECT-002, INJECT-004 - can appear in documentation about AI safety or prompt engineering
+- INJECT-007 - appears in skills that discuss tool use
+- EXFIL-001 - appears in skills about networking, authentication, or DevOps
+- UNICODE-001 - almost always a genuine concern; invisible characters in a skill file are unusual
 
 ---
 
@@ -193,7 +193,7 @@ Stop scanning and report an error (do not produce a findings report) if:
 ```
 === Skill Security Scan: <skill-slug> ===
 
-ERROR: scan incomplete — <reason>
+ERROR: scan incomplete - <reason>
 The skill package could not be fully inspected. Do not load, install, or publish without a complete scan.
 ```
 

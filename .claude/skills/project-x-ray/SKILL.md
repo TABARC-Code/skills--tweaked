@@ -1,6 +1,6 @@
 ---
 name: project-x-ray
-description: "Forensic interpreter for any project folder, regardless of type. Code, creative, marketing, advertising, research, business, editorial, campaign, product, event — if someone hands you a folder and says \"you're working on this\", run this skill. Explains what the bloody thing actually does at three levels of detail, maps its node structure, identifies domain flows, generates persona-adjusted outputs, and runs a human systems analysis when the signals appear. Triggers on: \"what does this do\", \"explain this project\", \"what have I inherited\", \"what is this\", \"x-ray this\", \"Project X-Ray\", \"what is this mess\", \"help me understand this folder\", \"I've just been given this project\", or any upload of files, folders, or zips where the user needs orientation before action. Separates observed facts from inferred behaviour throughout. Never invents content. A false claim is eight times worse than saying I do not know. Dewey 005.1."
+description: "Forensic interpreter for any project folder, regardless of type. Code, creative, marketing, advertising, research, business, editorial, campaign, product, event - if someone hands you a folder and says \"you're working on this\", run this skill. Explains what the bloody thing actually does at three levels of detail, maps its node structure, identifies domain flows, generates persona-adjusted outputs, and runs a human systems analysis when the signals appear. Triggers on: \"what does this do\", \"explain this project\", \"what have I inherited\", \"what is this\", \"x-ray this\", \"Project X-Ray\", \"what is this mess\", \"help me understand this folder\", \"I've just been given this project\", or any upload of files, folders, or zips where the user needs orientation before action. Separates observed facts from inferred behaviour throughout. Never invents content. A false claim is eight times worse than saying I do not know. Dewey 005.1."
 compatibility: "claude.ai, Claude Desktop, Claude Code, Cowork"
 metadata:
   author: TABARC-Code
@@ -17,7 +17,7 @@ study, a business strategy, an editorial package, or something nobody has named 
 That is fine. You are going to find out.
 
 Your job is not to judge it, improve it, or sell it. Your job is to explain what it actually
-is — with evidence, with honesty, and with enough bluntness to be useful to someone who has
+is - with evidence, with honesty, and with enough bluntness to be useful to someone who has
 been handed this thing and told to get on with it.
 
 **Core rules. No exceptions.**
@@ -25,14 +25,14 @@ been handed this thing and told to get on with it.
 - A false claim is eight times worse than saying "I do not know."
 - Do not write marketing copy about the project. You are not its publicist.
 - Do not pretend something works or is complete unless you have verified it.
-- Separate observed facts from inferred behaviour — label every major claim.
+- Separate observed facts from inferred behaviour - label every major claim.
 - Do not suggest improvements until the explanation is complete, and only then if asked.
 - If a section has no findings, say so explicitly and note whether that is expected or suspicious.
-- You are allowed to be blunt. If the project is a mess, say so — with evidence, not editorialising.
+- You are allowed to be blunt. If the project is a mess, say so - with evidence, not editorialising.
 
 ---
 
-## FILE ACCESS — HOW TO GET THE PROJECT IN FRONT OF CLAUDE
+## FILE ACCESS - HOW TO GET THE PROJECT IN FRONT OF CLAUDE
 
 Before any analysis can happen, the files need to be readable. This section covers every
 access method, what each one gives you, and where confidence degrades.
@@ -42,7 +42,7 @@ approach will give you the best analysis for your situation.
 
 ---
 
-### Method 1: Claude Desktop — Local Folder Access (Recommended for most users)
+### Method 1: Claude Desktop - Local Folder Access (Recommended for most users)
 
 Claude Desktop can read directly from your local file system when you grant it permission.
 This is the cleanest method for analysing any folder on your machine.
@@ -50,7 +50,7 @@ This is the cleanest method for analysing any folder on your machine.
 **How to set it up:**
 
 1. Open Claude Desktop
-2. Go to **Settings → Permissions** (or the equivalent in your version)
+2. Go to **Settings > Permissions** (or the equivalent in your version)
 3. Grant Claude access to the folder or drive you want to analyse
 4. In the conversation, tell Claude the path: `Analyse the project at /Users/you/Projects/my-project` or `C:\Projects\my-project`
 5. Claude reads the folder tree, file contents, and structure directly
@@ -61,15 +61,15 @@ traverse subdirectories, and build the node map from actual content rather than 
 This is High confidence territory.
 
 **Limitations:**
-- Binary files (compiled executables, PSDs, raw image data) cannot be read as text — Claude notes their existence as Unknown nodes but cannot read their content
-- Very large files may be read partially — Claude will declare this
+- Binary files (compiled executables, PSDs, raw image data) cannot be read as text - Claude notes their existence as Unknown nodes but cannot read their content
+- Very large files may be read partially - Claude will declare this
 - Symbolic links may not resolve depending on OS and permission scope
 - Empty folders are noted as structural evidence (a `tests/` folder with nothing in it is a finding)
-- Cloud-sync placeholders (OneDrive, Dropbox, iCloud) that have not been downloaded locally appear as stubs — Claude notes them as Unknown nodes and flags the sync status issue
+- Cloud-sync placeholders (OneDrive, Dropbox, iCloud) that have not been downloaded locally appear as stubs - Claude notes them as Unknown nodes and flags the sync status issue
 
 **Special folder formats:**
 - **Obsidian vaults:** Readable as standard folders. The `.obsidian/` config folder can be skipped unless vault configuration is specifically relevant. Treat `.md` notes as document nodes.
-- **Notion exports:** Usually a zip of HTML or Markdown files. Treat as document collection. The flat-file export structure does not reflect Notion's hierarchy — note this as a structural limitation.
+- **Notion exports:** Usually a zip of HTML or Markdown files. Treat as document collection. The flat-file export structure does not reflect Notion's hierarchy - note this as a structural limitation.
 - **Git repositories:** If `.git/` is present, note it but do not attempt to read git internals. The working directory files are the project. If git history would be informative, ask the user to provide a `git log` output.
 - **Windows network drives (mapped):** Work the same as local drives if accessible to the running user. UNC paths (`\\server\share`) may need explicit Desktop permission grants.
 
@@ -83,12 +83,12 @@ directory) it will not be readable without adjusting system permissions first.
 locally available (green tick, not cloud-only). Network drives work if mapped and accessible
 to the user running Claude Desktop.
 
-*Linux:* Reads anything in the granted path. Standard file permission rules apply — if the
+*Linux:* Reads anything in the granted path. Standard file permission rules apply - if the
 running user cannot read it, neither can Claude.
 
 ---
 
-### Method 2: Claude Code — Direct Project Analysis (Best for software projects)
+### Method 2: Claude Code - Direct Project Analysis (Best for software projects)
 
 Claude Code runs in your terminal with direct access to the current working directory and
 anything below it. No permission configuration needed beyond what your user account can access.
@@ -112,56 +112,56 @@ normal projects. Full folder traversal. High confidence on any complete project.
 you want to run the analysis as part of a development workflow.
 
 **Limitations:**
-- Operates in the terminal context — suited to technical users comfortable with CLI
+- Operates in the terminal context - suited to technical users comfortable with CLI
 - Binary and media assets noted but not read for content (same as Desktop)
 
 ---
 
-### Method 3: Manual Upload — Zip the Folder
+### Method 3: Manual Upload - Zip the Folder
 
 If you are using claude.ai in a browser, or Claude on mobile, the file system is not
 directly accessible. You need to bring the files to Claude.
 
 **How to do it:**
 
-1. Zip your project folder: `zip -r my-project.zip my-project/` (macOS/Linux) or right-click → Send to → Compressed folder (Windows)
+1. Zip your project folder: `zip -r my-project.zip my-project/` (macOS/Linux) or right-click > Send to > Compressed folder (Windows)
 2. Upload the zip in the Claude conversation
 3. Claude extracts and reads the contents
 
 **What this gives you:**
-Full access to whatever is in the zip. Structure, file contents, folder hierarchy — all
+Full access to whatever is in the zip. Structure, file contents, folder hierarchy - all
 readable. Confidence level depends on completeness, not the upload method itself.
 
 **Limitations:**
-- File size limits apply (varies by Claude plan — typically 10–50MB for uploads)
+- File size limits apply (varies by Claude plan - typically 10–50MB for uploads)
 - Very large projects need selective zipping: zip the most important folders rather than the whole thing, and declare what was excluded
-- Binary assets bloat the zip without adding analytical value — exclude them unless the asset structure itself is what you need to understand
+- Binary assets bloat the zip without adding analytical value - exclude them unless the asset structure itself is what you need to understand
 
 **Large project strategy:**
 If the full project is too large to zip cleanly, zip in layers:
 
 ```
-Round 1: Zip the root-level docs and config files only → get the skeleton and confidence level
+Round 1: Zip the root-level docs and config files only > get the skeleton and confidence level
 Round 2: Zip specific subdirectories based on what Round 1 flagged as important
 ```
 
-Declare to Claude what you excluded and why. The skill handles partial submissions — it just
+Declare to Claude what you excluded and why. The skill handles partial submissions - it just
 adjusts confidence accordingly.
 
 ---
 
-### Method 4: Google Drive via MCP (Partial — read limitations before using)
+### Method 4: Google Drive via MCP (Partial - read limitations before using)
 
 If you have Google Drive connected as an MCP, Claude can access Drive files. This works,
 but there are meaningful constraints you need to know about.
 
 **What works:**
-- Reading individual files from Drive — documents, spreadsheets, presentations
+- Reading individual files from Drive - documents, spreadsheets, presentations
 - Getting file content for analysis
 - Listing files in a folder if the MCP supports folder listing
 
 **What does not work cleanly:**
-- Full folder tree traversal — Drive's MCP provides file-level access, not folder-tree-level access
+- Full folder tree traversal - Drive's MCP provides file-level access, not folder-tree-level access
 - The structural scan in PHASE 1 Step 2 depends on seeing the complete hierarchy at once; Drive access is piecemeal
 - Confidence for a Drive-sourced analysis is typically Medium at best, often Low, because the structural picture is assembled from individual file reads rather than a single tree traversal
 
@@ -199,7 +199,7 @@ pasted and nothing else. The skill declares the missing context upfront.
 
 ---
 
-### Access Method → Confidence Mapping
+### Access Method > Confidence Mapping
 
 | Access method | Typical confidence | Structural scan | Full file content | Notes |
 |---|---|---|---|---|
@@ -216,11 +216,11 @@ pasted and nothing else. The skill declares the missing context upfront.
 
 These exist in the file system but are not readable as content:
 
-- Compiled executables (.exe, .dll, .so, .dylib, .app) — existence is noted, not readable
-- Raw binary image data (.raw, camera formats) — existence noted
-- Encrypted files — existence noted; contents not accessible
+- Compiled executables (.exe, .dll, .so, .dylib, .app) - existence is noted, not readable
+- Raw binary image data (.raw, camera formats) - existence noted
+- Encrypted files - existence noted; contents not accessible
 - Files requiring elevated permissions beyond the granted scope
-- Cloud-only files in sync clients (OneDrive, Dropbox) that have not been downloaded locally — they appear as placeholders; Claude notes this
+- Cloud-only files in sync clients (OneDrive, Dropbox) that have not been downloaded locally - they appear as placeholders; Claude notes this
 
 For any of the above, Claude notes the file exists, declares it unreadable, and notes the
 impact on confidence. It does not pretend the file was read.
@@ -232,29 +232,29 @@ impact on confidence. It does not pretend the file was read.
 Six entry points. Read the submission first, then pick the right one. Do not guess.
 
 **Full project folder or zip:**
-→ PHASE 1 (classify + inventory) → PHASE 2 (four-lens analysis + synthesis) → PHASE 3 (output, all sections) → Section 14 fires automatically if Lens 4 warrants it
+Next: PHASE 1 (classify + inventory) > PHASE 2 (four-lens analysis + synthesis) > PHASE 3 (output, all sections) > Section 14 fires automatically if Lens 4 warrants it
 
 **Partial upload or fragment:**
-→ PHASE 1 → Declare what is missing and how it affects confidence → Sections available at confidence level → Gap notes throughout
+Next: PHASE 1 > Declare what is missing and how it affects confidence > Sections available at confidence level > Gap notes throughout
 
 **Single document, brief, or file:**
-→ PHASE 1 (classify the file type and likely project context) → PHASE 2 Lens 1 only (structural) → Section 0 and Section 1 → Offer full analysis if more files provided
+Next: PHASE 1 (classify the file type and likely project context) > PHASE 2 Lens 1 only (structural) > Section 0 and Section 1 > Offer full analysis if more files provided
 
 **Quick summary explicitly requested:**
-→ PHASE 1 and PHASE 2 silently → Section 0 and Section 1 only → Offer to continue
+Next: PHASE 1 and PHASE 2 silently > Section 0 and Section 1 only > Offer to continue
 
 **User asks what is broken or missing:**
-→ PHASE 1 → Section 9 and Section 10 first → Section 0 for context → Offer full report
+Next: PHASE 1 > Section 9 and Section 10 first > Section 0 for context > Offer full report
 
 **User asks why the project is like this / why it got into this state:**
-→ All phases → Section 14 fires from PHASE 2 synthesis if Lens 4 identifies tensions or influence nodes
+Next: All phases > Section 14 fires from PHASE 2 synthesis if Lens 4 identifies tensions or influence nodes
 
-A seed-level submission — a folder with no README, no brief, no context doc — is not a refusal
+A seed-level submission - a folder with no README, no brief, no context doc - is not a refusal
 condition. Extract everything that can be extracted. State what is missing. Offer to receive more.
 
 ---
 
-## PHASE 1 — CLASSIFY AND INVENTORY
+## PHASE 1 - CLASSIFY AND INVENTORY
 
 Before writing a single word of output, do this in order. Do not skip steps.
 
@@ -276,29 +276,29 @@ of project this is. Do not assume it is a software project.
 | **Business / strategy** | Strategy documents, financial models, OKR trackers, roadmaps, board presentations |
 | **Product** | PRDs, specs, user research, wireframes, backlog files, roadmaps |
 | **Event / production** | Run-of-show, vendor lists, logistics docs, schedules, scripts, contact sheets |
-| **Mixed or unclear** | Multiple types present — note this explicitly and analyse each domain |
+| **Mixed or unclear** | Multiple types present - note this explicitly and analyse each domain |
 
 Declare the project type before proceeding. If it is mixed, declare all types present.
 
-→ See `references/project-type-patterns.md` for detailed signal lists and a Mixed Projects decision guide.
+Next: See `references/project-type-patterns.md` for detailed signal lists and a Mixed Projects decision guide.
 
 ### Step 2: Inventory everything
 
 The node types used for mapping live in PHASE 2 Lens 1. You do not need to apply the full
-taxonomy here — this step is a raw inventory. Note what exists, grouped by layer. The formal
+taxonomy here - this step is a raw inventory. Note what exists, grouped by layer. The formal
 node-typing happens in Lens 1.
 
 Map the full submission in this order:
 
-1. **Top-level structure** — every folder and root file, named and noted
-2. **Entry documents** — the brief, README, spec, brief, pitch deck, or "start here" equivalent
-3. **Config or settings files** — anything that controls how the project operates or is defined
-4. **Dependency or requirement files** — what the project needs to exist or run
-5. **Core content or asset layer** — the main deliverables, files, or outputs
-6. **Data or reference layer** — research, datasets, evidence, source material
-7. **Process or workflow layer** — plans, schedules, pipelines, templates
-8. **Communication or approval layer** — briefs, presentations, client-facing docs, reviews
-9. **Archive or history layer** — version folders, old drafts, "DO NOT USE" folders, backups
+1. **Top-level structure** - every folder and root file, named and noted
+2. **Entry documents** - the brief, README, spec, brief, pitch deck, or "start here" equivalent
+3. **Config or settings files** - anything that controls how the project operates or is defined
+4. **Dependency or requirement files** - what the project needs to exist or run
+5. **Core content or asset layer** - the main deliverables, files, or outputs
+6. **Data or reference layer** - research, datasets, evidence, source material
+7. **Process or workflow layer** - plans, schedules, pipelines, templates
+8. **Communication or approval layer** - briefs, presentations, client-facing docs, reviews
+9. **Archive or history layer** - version folders, old drafts, "DO NOT USE" folders, backups
 
 Declare what was found, what is missing, and what confidence level applies.
 
@@ -311,15 +311,15 @@ Declare what was found, what is missing, and what confidence level applies.
 | Fragment, single file, or stub | Low | Structural observation only; heavy inference |
 | Folder dump with no context document | Seed | State what cannot be determined; work with what exists |
 
-→ See `references/framework-fingerprints.md` for code project identification.
-→ See `references/project-type-patterns.md` for non-code project signal reading.
+Next: See `references/framework-fingerprints.md` for code project identification.
+Next: See `references/project-type-patterns.md` for non-code project signal reading.
 
 ---
 
-## PHASE 2 — PARALLEL ANALYSIS (THE FOUR LENSES)
+## PHASE 2 - PARALLEL ANALYSIS (THE FOUR LENSES)
 
 This is the analytical core. Four lenses run independently over the same material.
-They do not build on each other — they observe the same project from four different vantage points.
+They do not build on each other - they observe the same project from four different vantage points.
 Run all four before writing any output. Then synthesise.
 
 This architecture is adapted from Perdita's six operating principles, applied in parallel
@@ -329,21 +329,21 @@ any single frame from dominating.
 
 ---
 
-### Lens 1 — Structural (What exists and how it connects)
+### Lens 1 - Structural (What exists and how it connects)
 
 Ask only structural questions. Do not interpret yet.
 
 **Inventory scan:**
 - What files and folders exist?
 - What is the top-level organisation?
-- What are the entry documents — the brief, README, spec, or "start here" equivalent?
+- What are the entry documents - the brief, README, spec, or "start here" equivalent?
 - What types of nodes are present? (Use the node taxonomy below)
 - What is missing that the structure implies should exist?
 
 **Connection scan:**
 - What connects to what? Map dependencies, references, and relationships.
 - Where does information flow? What does X require from Y?
-- What are the orphaned nodes — things nothing refers to?
+- What are the orphaned nodes - things nothing refers to?
 - Where do multiple things depend on the same single node?
 
 **Node Type Taxonomy:**
@@ -376,20 +376,20 @@ Confidence: High / Medium / Low
 Label: Observed / Inferred / Unknown / Broken or incomplete
 ```
 
-→ See `references/evidence-label-guide.md` for label definitions and anti-patterns.
+Next: See `references/evidence-label-guide.md` for label definitions and anti-patterns.
 
 **Unreadable files:** Binary files, compiled executables, raw images, and encrypted files
 cannot be read for content. Map their existence as Unknown nodes: type = file, label = Unknown,
-note "binary/unreadable — existence confirmed, contents not accessible." Do not skip them.
+note "binary/unreadable - existence confirmed, contents not accessible." Do not skip them.
 Their presence in the structure is still structural information.
 
 **Structural lens output:** A node map and connection register. No interpretation yet.
 
 ---
 
-### Lens 2 — Semantic (What the project means and says about itself)
+### Lens 2 - Semantic (What the project means and says about itself)
 
-Ask only meaning questions. Do not look at structure yet — look at language, framing, and content.
+Ask only meaning questions. Do not look at structure yet - look at language, framing, and content.
 
 **What does this project say it is?**
 - What is the stated purpose? (Read any brief, README, strategy doc, or covering document)
@@ -409,7 +409,7 @@ Gaps are often more informative than statements. Look for:
 This applies to any project type, not just human communications:
 - Is the project confident or defensive in tone?
 - Does it read like it is trying to convince someone (of what, and why the need to convince)?
-- Are there signs of conflict baked into the documents — hedging, qualifications, "pending approval"?
+- Are there signs of conflict baked into the documents - hedging, qualifications, "pending approval"?
 - Does the stated audience match the apparent actual audience?
 
 **Signal classification:**
@@ -418,30 +418,30 @@ Sort everything the semantic scan finds:
 | Category | What it means here |
 |---|---|
 | **Known** | Explicitly stated and internally consistent |
-| **Assumed** | Treated as established but never stated — the most dangerous category |
+| **Assumed** | Treated as established but never stated - the most dangerous category |
 | **Implied** | Suggested by language, framing, or omission but not stated |
 | **Unknown** | Absent but clearly needed for the project to make sense |
 | **Irrelevant** | Present but peripheral to the project's actual purpose |
 
 Name every Assumed element explicitly. They are the analysis's weak points.
 
-**No documents fallback:** If the project contains no prose documents — pure asset folders,
-raw data dumps, or code with zero README or specification — the semantic lens reads structure
+**No documents fallback:** If the project contains no prose documents - pure asset folders,
+raw data dumps, or code with zero README or specification - the semantic lens reads structure
 as language. File naming conventions, folder organisation choices, version naming patterns,
 and comment styles are all semantic signals. A folder named `DO_NOT_TOUCH_LIVE` is a semantic
 statement. Treat it as such.
 
-**Semantic lens output:** A signal map — what the project says, what it implies, what it assumes, and what is notably absent.
+**Semantic lens output:** A signal map - what the project says, what it implies, what it assumes, and what is notably absent.
 
 ---
 
-### Lens 3 — Domain (What human activity this project serves)
+### Lens 3 - Domain (What human activity this project serves)
 
 Ask only domain questions. Look past the files to the real-world processes they represent.
 
 A project's domain is the human activity it serves, not its folder structure. A brief is not
-a document — it is the entry point of a commissioning process. A database schema is not a
-table definition — it is a model of how an organisation understands its own data.
+a document - it is the entry point of a commissioning process. A database schema is not a
+table definition - it is a model of how an organisation understands its own data.
 
 **Identify the domains:**
 What human activities or processes does this project serve?
@@ -449,7 +449,7 @@ What human activities or processes does this project serve?
 For each domain identified:
 
 ```
-Domain: [name — what human activity or process this serves]
+Domain: [name - what human activity or process this serves]
 Type: [business process / creative process / user journey / workflow / approval chain / delivery pipeline]
 Entry point: [where this domain starts]
 Exit point: [where this domain ends or delivers value]
@@ -487,12 +487,12 @@ key dependencies, and visible gaps.
 
 ---
 
-### Lens 4 — Human Systems (Who made this, under what pressures, and what that tells us)
+### Lens 4 - Human Systems (Who made this, under what pressures, and what that tells us)
 
 Ask only human-systems questions. Look at the project as evidence of decisions made by people
 under constraints.
 
-Perdita's core principle applied here: the code, the brief, the strategy document — these are
+Perdita's core principle applied here: the code, the brief, the strategy document - these are
 not neutral artefacts. They are the output of human choices made under time pressure, authority
 structures, incentive systems, and organisational dynamics. The gaps, inconsistencies, and
 peculiarities in the project are data.
@@ -541,12 +541,12 @@ Where are forces pulling against each other?
 Apply Perdita's tension taxonomy to the project material. Use the full list in
 `references/human-systems-analysis.md`. The most common tensions in project work:
 
-- **Governance gap** — no clear owner for a critical decision or deliverable
-- **Incentive misalignment** — the person responsible for X was measured on Y
-- **Information gap** — critical knowledge exists only in one person's head
-- **Trust deficit** — parallel work, over-documentation, careful wording
-- **Urgency vs. quality** — shipped before ready; deadlines visible in the documents
-- **Premature closure** — a decision treated as fixed that is actually revisitable
+- **Governance gap** - no clear owner for a critical decision or deliverable
+- **Incentive misalignment** - the person responsible for X was measured on Y
+- **Information gap** - critical knowledge exists only in one person's head
+- **Trust deficit** - parallel work, over-documentation, careful wording
+- **Urgency vs. quality** - shipped before ready; deadlines visible in the documents
+- **Premature closure** - a decision treated as fixed that is actually revisitable
 
 **Influence node scan:**
 Where does pressure concentrate?
@@ -559,7 +559,7 @@ In project work, these are often:
 - The decision that was never made but everyone is navigating around
 - The external dependency (client, vendor, platform) that shapes everything else
 
-→ See `references/human-systems-analysis.md` for the full tension taxonomy, move catalogue, and Section 14 output format.
+Next: See `references/human-systems-analysis.md` for the full tension taxonomy, move catalogue, and Section 14 output format.
 
 **Self-audit before completing Lens 4:**
 Before moving to synthesis, check for structural errors in this lens specifically:
@@ -567,22 +567,22 @@ Before moving to synthesis, check for structural errors in this lens specificall
 - Have you assumed something not confirmed? Name it.
 - Are you working with the project's framing rather than the actual situation?
 - Is there an actor you have not considered?
-- Does the pattern you have identified confirm what seems obvious — and is that suspicious?
+- Does the pattern you have identified confirm what seems obvious - and is that suspicious?
 - Have you named what you do not know?
 
 A web with honest gaps is more useful than a web without them.
 
 **Always run, always report.** Lens 4 runs on every full-submission analysis, not just on
-projects with visible problems. A clean, well-organised project still gets a Lens 4 pass — the
+projects with visible problems. A clean, well-organised project still gets a Lens 4 pass - the
 finding is "no significant tensions or influence nodes identified," which is itself useful. Do
 not skip Lens 4 because the project looks fine. That is the moment it is most likely to miss something.
 
-**Human systems lens output:** The web — actors visible in the project, incentives implied by
+**Human systems lens output:** The web - actors visible in the project, incentives implied by
 patterns, constraints visible in decisions, tensions identified, influence nodes named.
 
 ---
 
-### Synthesis — Combine the Four Lenses
+### Synthesis - Combine the Four Lenses
 
 After all four lenses complete, synthesise before writing any output.
 
@@ -593,25 +593,25 @@ After all four lenses complete, synthesise before writing any output.
 
 2. **Where do the four lenses agree?**
    Convergence across lenses is high-confidence. If the structural lens, semantic lens, domain
-   lens, and human systems lens all independently point to the same thing — that is a strong finding.
+   lens, and human systems lens all independently point to the same thing - that is a strong finding.
 
 3. **Where do they contradict?**
    Contradiction is a signal. If the semantic lens says the project is confident and the human
-   systems lens reads defensiveness — investigate. If the structural lens shows a complete
-   deliverable and the domain lens shows no delivery process — investigate.
+   systems lens reads defensiveness - investigate. If the structural lens shows a complete
+   deliverable and the domain lens shows no delivery process - investigate.
 
 4. **What are the highest-confidence findings?**
    (Observed by at least two lenses independently)
 
 5. **What are the significant Unknown nodes?**
-   (Absent from all lenses — the meaningful silences)
+   (Absent from all lenses - the meaningful silences)
 
 6. **Is there an influence node that, if named, would most change what a new person does first?**
    (This becomes the "best first action for someone new" field in Section 13 Final Verdict)
 
 7. **Do human-systems findings warrant Section 14?**
    If Lens 4 identified tensions, influence nodes, or incentive signals that would materially
-   change what a new person does — Section 14 fires. This is no longer conditional on late
+   change what a new person does - Section 14 fires. This is no longer conditional on late
    findings in Sections 9 and 10. It runs from the analysis if warranted.
 
 **Synthesis output:** The complete analytical picture that all output sections draw from.
@@ -619,7 +619,7 @@ No section should introduce a finding not present in the synthesis.
 
 ---
 
-## PHASE 3 — OUTPUT SECTIONS
+## PHASE 3 - OUTPUT SECTIONS
 
 Produce all sections for a full submission. For partial submissions, produce what is warranted
 at the confidence level. Always include Section 0.
@@ -639,7 +639,7 @@ Complete this before anything else.
 | Primary purpose | |
 | Apparent audience or owner | |
 | Apparent maturity | (early concept / in development / production-ready / delivered / archived / abandoned / unknown) |
-| Is it usable or actionable as provided | (yes / no / partially — explain briefly) |
+| Is it usable or actionable as provided | (yes / no / partially - explain briefly) |
 | Confidence rating | (High / Medium / Low / Seed) |
 | One-sentence verdict | |
 
@@ -665,7 +665,7 @@ say so plainly. The reader needs that information. Blunt is more useful than tac
 
 ---
 
-### Section 2: Level Two — Everyday Description
+### Section 2: Level Two - Everyday Description
 
 For a new team member, project manager, or client who needs to work with this project.
 
@@ -675,12 +675,12 @@ Cover:
 - What someone running or maintaining it needs to do
 - What it contains and what each major section does
 - External dependencies or third parties involved
-- Important workflows — the sequences that make it function
+- Important workflows - the sequences that make it function
 - What appears complete
 - What appears unfinished, draft, or placeholder
 - What appears risky or likely to cause problems
 
-Summary table — required:
+Summary table - required:
 
 | Area | What it does | Files or folders | Confidence | Notes |
 |---|---|---|---|---|
@@ -712,15 +712,15 @@ From PHASE 2 Lens 3 (domain) and the synthesis, present the full domain picture.
 For each domain identified, use the domain mapping format.
 
 Then produce a visual map using Mermaid. The shape of the diagram should match the actual
-project type — a software project gets a flow diagram; a campaign gets a funnel or journey;
+project type - a software project gets a flow diagram; a campaign gets a funnel or journey;
 a strategy document gets a decision tree or logical flow.
 
 ```mermaid
 flowchart TD
     Entry[Project Entry Point]
-    Domain1[Domain 1 — e.g. Brief / Problem]
-    Domain2[Domain 2 — e.g. Strategy / Approach]
-    Domain3[Domain 3 — e.g. Execution / Delivery]
+    Domain1[Domain 1 - e.g. Brief / Problem]
+    Domain2[Domain 2 - e.g. Strategy / Approach]
+    Domain3[Domain 3 - e.g. Execution / Delivery]
     Outcome[Intended Outcome]
 
     Entry --> Domain1
@@ -735,7 +735,7 @@ diagram. A campaign uses a funnel. A research project uses a methodology flow.
 If the project is complex enough to benefit from a colour-coded HTML crib sheet, ask before
 generating one.
 
-→ See `references/visual-guide-patterns.md` for the HTML template and colour conventions.
+Next: See `references/visual-guide-patterns.md` for the HTML template and colour conventions.
 
 ---
 
@@ -754,16 +754,16 @@ replaces / imports / calls / routes to / documents / validates / inferred relati
 ### Section 6: Guided Tour
 
 Ordered walkthroughs of the project for different audiences. Adapted from the Understand-Anything
-tour-builder concept — read in dependency order, foundations before layers that depend on them.
+tour-builder concept - read in dependency order, foundations before layers that depend on them.
 
 **Tour 1: New to this project**
 A path through the project that builds understanding layer by layer. Start with context and
 purpose, then structure, then detail. Note what to read first, second, third. Say why.
 
 ```
-Step 1 — Read [document/file]: [why this first]
-Step 2 — Then [document/file]: [what this adds]
-Step 3 — Then [document/file]: [what this adds]
+Step 1 - Read [document/file]: [why this first]
+Step 2 - Then [document/file]: [what this adds]
+Step 3 - Then [document/file]: [what this adds]
 ...
 ```
 
@@ -775,8 +775,8 @@ Focus on: how it works, what the dependencies are, what would break, what needs 
 
 If a tour has fewer than two meaningful steps, collapse it.
 
-If all three tours would collapse — the project is too thin or too narrow to warrant
-differentiated walkthroughs — replace Section 6 with a single "How to approach this project"
+If all three tours would collapse - the project is too thin or too narrow to warrant
+differentiated walkthroughs - replace Section 6 with a single "How to approach this project"
 note: one paragraph on what to read first, what to read second, and what can wait. Label it
 clearly as a simplified tour for a low-complexity submission.
 
@@ -816,12 +816,12 @@ state management, data flow, security model, error handling, performance cliffs,
 embedded in the documents, data flows between stakeholders, approval and review processes,
 version control or change management approach (if any), what happens in sequence and why.
 
-**For software projects:** Use the technical framing — architecture, modules, dependencies, etc.
+**For software projects:** Use the technical framing - architecture, modules, dependencies, etc.
 
 **For non-software projects:** Translate each item into its project-type equivalent.
 "Core logic" = the central argument, methodology, or strategic rationale.
 "Dependencies" = external inputs, approvals, or third parties the project cannot proceed without.
-"Data flow" = how information moves through the project's process (brief → strategy → creative → delivery).
+"Data flow" = how information moves through the project's process (brief > strategy > creative > delivery).
 "What breaks first" = the single dependency or assumption whose failure would halt everything.
 
 Cover each of the following. Write "not determinable from provided files" rather than omitting.
@@ -845,12 +845,12 @@ For any project type, check for:
 - Decisions referenced but not documented
 - Key people, roles, or approvers mentioned but not defined
 - Placeholders, TBDs, FPOs, draft watermarks
-- Version confusion — multiple versions of the same document with no clear "current"
+- Version confusion - multiple versions of the same document with no clear "current"
 - Missing brief or context document
 - No stated objective or success criteria
 - Audience or user not defined
 - Budget, timeline, or resource not specified (where expected)
-- Orphaned files — assets or documents that nothing refers to
+- Orphaned files - assets or documents that nothing refers to
 - Suspicious naming: old, new, temp, backup, FINAL, FINAL_v2, copy, DO_NOT_USE
 
 For each finding:
@@ -863,7 +863,7 @@ Confidence this is genuinely missing (not just outside the submission): High / M
 
 **Calibration check:** Lens 4 in PHASE 2 should have caught ownership patterns, tribal
 knowledge signals, and structural choices that suggest abandoned decisions. If this section
-surfaces something Lens 4 missed, that is a calibration failure — note it explicitly. Section 14
+surfaces something Lens 4 missed, that is a calibration failure - note it explicitly. Section 14
 should already be present in the report if the signals were visible.
 
 ---
@@ -871,7 +871,7 @@ should already be present in the report if the signals were visible.
 ### Section 10: Risk Audit
 
 Run the full checklist in `references/risk-audit-checklist.md`. Adapt categories to the
-project type — a creative project's risks are different from a software project's.
+project type - a creative project's risks are different from a software project's.
 
 | Risk | Severity | Evidence | Why it matters | Suggested fix |
 |---|---|---|---|---|
@@ -884,7 +884,7 @@ Severity: Critical / High / Medium / Low
 conflicts should have surfaced in Lens 4. If Section 10 finds material the human systems analysis
 missed, note it and explain what the Lens 4 analysis failed to catch.
 
-→ See `references/risk-audit-checklist.md` for the full checklist including non-code risks.
+Next: See `references/risk-audit-checklist.md` for the full checklist including non-code risks.
 
 ---
 
@@ -903,7 +903,7 @@ For any project type, check:
 - Do all stated team members, roles, or approvers have corresponding contact or responsibility definitions?
 - Are version numbers consistent across documents that reference each other?
 - Are all stated dependencies present or explicitly noted as external?
-- Are there orphaned nodes — files or sections that nothing references?
+- Are there orphaned nodes - files or sections that nothing references?
 
 **If the project has no internal references:** State this. "Project consists of standalone
 documents with no internal cross-referencing. Referential integrity check not applicable."
@@ -947,7 +947,7 @@ A clean block the user can copy, adapt, and pass to someone new.
 [Anything incomplete, risky, or missing that a new person should know.]
 
 ## Who to Talk To
-[If determinable from the files — names, roles, contacts. If not: "Not determinable from provided files."]
+[If determinable from the files - names, roles, contacts. If not: "Not determinable from provided files."]
 ```
 
 ---
@@ -964,21 +964,21 @@ What it is actually for:
 [One sentence on the real-world purpose or activity it serves.]
 
 Whether it is usable or actionable as provided:
-[Yes / No / Partially — one sentence on why.]
+[Yes / No / Partially - one sentence on why.]
 
 What needs fixing first:
 [The single most important problem. Not a list.]
 
 Best first action for someone new to this project:
-[Concrete. One step. Not "read the documentation" — which document, and why.]
+[Concrete. One step. Not "read the documentation" - which document, and why.]
 
 Honest confidence rating:
-[High / Medium / Low / Seed — and why.]
+[High / Medium / Low / Seed - and why.]
 ```
 
 ---
 
-## PHASE 4 — HUMAN SYSTEMS ANALYSIS (SECTION 14)
+## PHASE 4 - HUMAN SYSTEMS ANALYSIS (SECTION 14)
 
 PHASE 4 runs internally when PHASE 2 Lens 4 identifies tensions, influence nodes, or incentive
 signals that would materially change what a new person does with this project. It no longer
@@ -991,12 +991,12 @@ or incentive signals that would materially change what a new person does with th
 It also runs on direct user request: "Why is it like this?" / "Why has nobody sorted this?"
 
 If Sections 9 or 10 surface something Lens 4 missed, that is a Lens 4 calibration failure.
-Name it as such — the signal should have been visible during parallel analysis.
+Name it as such - the signal should have been visible during parallel analysis.
 
 If Lens 4 finds nothing significant, Section 14 still appears with a brief "no significant
 human systems concerns identified" note. An absent Section 14 is ambiguous.
 
-→ See `references/human-systems-analysis.md` for methodology, tension taxonomy, move catalogue,
+Next: See `references/human-systems-analysis.md` for methodology, tension taxonomy, move catalogue,
 and Section 14 output format.
 
 ---
@@ -1009,7 +1009,7 @@ provided files, and the media plan appears to have been written for a different 
 finding. Be specific. Cite files.
 
 **Any project type, same discipline.** Whether the folder is a Django app, an advertising
-pitch, a brand guidelines document, or someone's chaotic event planning spreadsheet — the
+pitch, a brand guidelines document, or someone's chaotic event planning spreadsheet - the
 same evidence rules apply. Observed means you have seen it. Inferred means you are deducing it.
 Unknown means you have nothing.
 
@@ -1033,40 +1033,40 @@ uncertain honest ones.
 ## QUICK-START PATHS
 
 **Full project folder:**
-PHASE 1 classify + inventory → PHASE 2 four-lens analysis + synthesis → PHASE 3 all sections → Section 14 if Lens 4 warrants
+PHASE 1 classify + inventory > PHASE 2 four-lens analysis + synthesis > PHASE 3 all sections > Section 14 if Lens 4 warrants
 
 **Partial or fragment:**
-PHASE 1 → Declare gaps → Sections at confidence level → Gap notes throughout
+PHASE 1 > Declare gaps > Sections at confidence level > Gap notes throughout
 
 **Single document:**
-PHASE 1 classify → PHASE 2 node map of the document → Section 0 and 1 → Offer continuation
+PHASE 1 classify > PHASE 2 node map of the document > Section 0 and 1 > Offer continuation
 
 **Quick summary:**
-PHASE 1 and 2 silently → Section 0 and 1 → "Want the full report?"
+PHASE 1 and 2 silently > Section 0 and 1 > "Want the full report?"
 
 **What's wrong / what's missing:**
-PHASE 1 → Section 9 and 10 first → Section 0 → Offer full report
+PHASE 1 > Section 9 and 10 first > Section 0 > Offer full report
 
 **Why is it like this:**
-All phases → PHASE 2 Lens 4 runs with this question as explicit frame → Section 14 always produced, even if finding is "no significant signals" → name what Lens 4 examined and what it could not determine
+All phases > PHASE 2 Lens 4 runs with this question as explicit frame > Section 14 always produced, even if finding is "no significant signals" > name what Lens 4 examined and what it could not determine
 
 **Creative or marketing project:**
-PHASE 1 (classify: advertising/campaign/creative) → PHASE 2 four lenses (structure: assets and briefs / semantic: tone and framing / domain: brief→strategy→execution→delivery / human: client pressure, approval chains) → PHASE 3 sections with adapted language throughout
+PHASE 1 (classify: advertising/campaign/creative) > PHASE 2 four lenses (structure: assets and briefs / semantic: tone and framing / domain: brief>strategy>execution>delivery / human: client pressure, approval chains) > PHASE 3 sections with adapted language throughout
 
 **Software project:**
-PHASE 1 (classify: software) → PHASE 2 four lenses (structure: nodes and deps / semantic: what docs claim / domain: technical flows / human: governance and incentive signals) → PHASE 3 sections with technical depth → `references/framework-fingerprints.md`
+PHASE 1 (classify: software) > PHASE 2 four lenses (structure: nodes and deps / semantic: what docs claim / domain: technical flows / human: governance and incentive signals) > PHASE 3 sections with technical depth > `references/framework-fingerprints.md`
 
 **Research or data project:**
-PHASE 1 (classify: research) → PHASE 2 (Lens 1: data files + methodology docs as nodes / Lens 2: what the research claims vs. what it shows / Lens 3: question→collection→analysis→findings domain / Lens 4: who commissioned it, under what constraints) → Section 8 focuses on methodology and reproducibility → Section 10 Category 16 (research risks)
+PHASE 1 (classify: research) > PHASE 2 (Lens 1: data files + methodology docs as nodes / Lens 2: what the research claims vs. what it shows / Lens 3: question>collection>analysis>findings domain / Lens 4: who commissioned it, under what constraints) > Section 8 focuses on methodology and reproducibility > Section 10 Category 16 (research risks)
 
 **GitHub repo via URL:**
-web_fetch the repo URL → read README and top-level structure → treat as partial submission (no file contents unless raw URLs available) → PHASE 1 at Medium confidence → Sections 0, 1, 2 → offer to receive a zip for full analysis
+web_fetch the repo URL > read README and top-level structure > treat as partial submission (no file contents unless raw URLs available) > PHASE 1 at Medium confidence > Sections 0, 1, 2 > offer to receive a zip for full analysis
 
 **Project appears abandoned:**
-PHASE 1 → declare abandonment signals in intake (last modified dates, incomplete state, no recent activity) → run all phases → Section 9 focuses on what was never finished → Section 13 Final Verdict leads with abandonment status → Lens 4 reads the abandonment as an incentive or governance signal
+PHASE 1 > declare abandonment signals in intake (last modified dates, incomplete state, no recent activity) > run all phases > Section 9 focuses on what was never finished > Section 13 Final Verdict leads with abandonment status > Lens 4 reads the abandonment as an incentive or governance signal
 
 **"Just tell me if this is worth inheriting":**
-PHASE 2 synthesis only → Section 0 (verdict) + Section 10 (risks) + Section 9 (gaps) → one-paragraph recommendation: inherit, fix then inherit, or walk away → offer full report if needed
+PHASE 2 synthesis only > Section 0 (verdict) + Section 10 (risks) + Section 9 (gaps) > one-paragraph recommendation: inherit, fix then inherit, or walk away > offer full report if needed
 
 ---
 
@@ -1082,7 +1082,7 @@ PHASE 2 synthesis only → Section 0 (verdict) + Section 10 (risks) + Section 9 
 | Source files include XLSX | `xlsx` | Extract spreadsheet data before PHASE 1 |
 | User wants the full report as a Word document | `docx` | Package report formally |
 | User wants the report as a slide deck | `pptx` (output mode) | Structure findings as presentation |
-| PHASE 2 Lens 4 synthesis warrants human systems output | Run PHASE 4 internally → Section 14 | See `references/human-systems-analysis.md` — this is an internal action, not an external skill |
+| PHASE 2 Lens 4 synthesis warrants human systems output | Run PHASE 4 internally > Section 14 | See `references/human-systems-analysis.md` - this is an internal action, not an external skill |
 | User wants to extract a Claude Skill from the project | `source-bound-skill-forge` | Source-bound extraction |
 | User wants the crib sheet as a polished visual | `tabarc-design-auditor` | Full design system treatment |
 | Report prose needs humanising | `humanizer` | Remove AI-typical patterns |
@@ -1105,12 +1105,12 @@ Project X-Ray sits at the **intake layer** of any project workflow. It explains.
 It does not improve, transform, or build. Other skills extend from its output.
 
 ```
-[any project folder] → project-x-ray
-                     → Section 14 (from PHASE 2 Lens 4 synthesis, if warranted)
-                     → docx / pptx (formatted output)
-                     → professional-technical-writing (documentation)
-                     → source-bound-skill-forge (skill extraction)
-                     → tabarc-design-auditor (visual crib sheet)
+[any project folder] > project-x-ray
+                     Next: Section 14 (from PHASE 2 Lens 4 synthesis, if warranted)
+                     Next: docx / pptx (formatted output)
+                     Next: professional-technical-writing (documentation)
+                     Next: source-bound-skill-forge (skill extraction)
+                     Next: tabarc-design-auditor (visual crib sheet)
 ```
 
 ---
@@ -1121,12 +1121,12 @@ Load on demand. Do not preload speculatively.
 
 | File | Load when | Used at |
 |---|---|---|
-| `references/project-type-patterns.md` | PHASE 1 step 1 — project type unclear | PHASE 1 |
-| `references/framework-fingerprints.md` | PHASE 1 — software project identified | PHASE 1, Section 8 |
-| `references/evidence-label-guide.md` | PHASE 2 — any labelling question | PHASE 2 |
-| `references/visual-guide-patterns.md` | Section 4 — HTML crib sheet needed | Section 4 |
-| `references/risk-audit-checklist.md` | Section 10 — full risk audit | Section 10 |
-| `references/human-systems-analysis.md` | PHASE 2 Lens 4 and PHASE 4 — human systems analysis | PHASE 2, PHASE 4, Section 14 |
+| `references/project-type-patterns.md` | PHASE 1 step 1 - project type unclear | PHASE 1 |
+| `references/framework-fingerprints.md` | PHASE 1 - software project identified | PHASE 1, Section 8 |
+| `references/evidence-label-guide.md` | PHASE 2 - any labelling question | PHASE 2 |
+| `references/visual-guide-patterns.md` | Section 4 - HTML crib sheet needed | Section 4 |
+| `references/risk-audit-checklist.md` | Section 10 - full risk audit | Section 10 |
+| `references/human-systems-analysis.md` | PHASE 2 Lens 4 and PHASE 4 - human systems analysis | PHASE 2, PHASE 4, Section 14 |
 
 **Exception:** `project-type-patterns.md` may be loaded at the very start of PHASE 1 if the
 project type is genuinely unclear from the top-level structure alone.

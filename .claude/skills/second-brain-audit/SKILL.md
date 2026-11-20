@@ -179,19 +179,19 @@ the two answers is the finding.
 Never bulk-convert, and never convert a page the user did not agree to. Fix the
 single worst *location*, which depends on the shape found in phase 1:
 
-- **Page per subject** → give that one page the two sections below.
-- **An index the agent loads every session** (a `MEMORY.md`, a pinned summary) → it
+- **Page per subject** > give that one page the two sections below.
+- **An index the agent loads every session** (a `MEMORY.md`, a pinned summary) > it
   is state, whatever it calls itself. Put a dated `## Current State` block at the
   TOP so it survives any truncation, key each line on the deal, and move superseded
   lines verbatim to a `## Log` at the bottom. Leave the to-do list in between.
-- **One big file** → add a `## Current State` block at the top and leave everything
+- **One big file** > add a `## Current State` block at the top and leave everything
   else beneath it. No new files, no folder structure. If the file already has a block
   that claims to be current ("Current status", "Now", "Active"), its lines move into
   the new block or into the Log by rule 2. Two sections claiming now is the bug you
   are removing, so never leave the old block in place.
-- **Daily notes only** → create **one** file holding current values, and leave every
+- **Daily notes only** > create **one** file holding current values, and leave every
   journal entry untouched. The journal was already correct.
-- **Not markdown** → do not restructure anything. Explain where the current value
+- **Not markdown** > do not restructure anything. Explain where the current value
   should live in the tool they already use, and stop there.
 
 The shape below is the page-per-subject version; adapt the same two ideas to the

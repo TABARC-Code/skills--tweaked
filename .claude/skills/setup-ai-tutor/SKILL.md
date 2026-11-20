@@ -79,7 +79,7 @@ To stop services:
 
 ## Notes
 
-- Port numbers and the exact `docker-compose` service name may differ — check `docker-compose.yml`,
+- Port numbers and the exact `docker-compose` service name may differ - check `docker-compose.yml`,
   `.env.example`, and the project README for project-specific values before running.
 
 <!-- relationships:start -->
