@@ -28,8 +28,8 @@ This is the reference architecture for a fully-featured AI Second Brain built in
 
 ### Hooks (Context Persistence)
 Three lifecycle hooks in `.claude/hooks/`, plus a background summarizer:
-- **SessionStart** (`session-start.ts`): Reads SOUL.md + USER.md + MEMORY.md + recent daily logs → injects into conversation context
-- **PreCompact** (`pre-compact-flush.ts`): Before auto-compaction, extracts conversation context → writes to temp file → spawns background `memory-flush.ts`
+- **SessionStart** (`session-start.ts`): Reads SOUL.md + USER.md + MEMORY.md + recent daily logs > injects into conversation context
+- **PreCompact** (`pre-compact-flush.ts`): Before auto-compaction, extracts conversation context > writes to temp file > spawns background `memory-flush.ts`
 - **SessionEnd** (`session-end-flush.ts`): On session end, same pattern, extracts context and spawns background flush
 - **Memory Flush** (`memory-flush.ts`): Background Agent SDK script spawned by PreCompact/SessionEnd. Reads conversation context from a temp file, uses Claude (with `tools: []` and `settingSources: []`, pure reasoning) to intelligently decide what decisions, lessons, and facts are worth saving. Writes bullet-point summary to daily log, or "FLUSH_OK" if nothing important. Has deduplication (skips if same session flushed <60s ago) and file locking for concurrency safety. This is what makes the daily logs contain *intelligent* summaries rather than mechanical transcript excerpts.
 - **Hook recursion prevention**: Every Agent SDK session (heartbeat, reflection, chat, memory flush) must set `CLAUDE_INVOKED_BY` env var to its name (e.g., `process.env.CLAUDE_INVOKED_BY = "heartbeat"`). SessionEnd and PreCompact hooks check this and skip if set, otherwise, every Agent SDK exit spawns another flush, which creates another session, which triggers another SessionEnd. Without this, you get duplicate daily log entries or infinite recursion.
@@ -37,7 +37,7 @@ Three lifecycle hooks in `.claude/hooks/`, plus a background summarizer:
 
 ### Memory Search (Hybrid RAG)
 The backup to the wiki, for the larger body of notes: daily logs, older pages, and anything the index doesn't point to.
-Pipeline: Markdown files → chunking (~400 tokens, overlapping) → transformers.js, local ONNX (all-MiniLM-L6-v2, 384-dim) → index → hybrid merge (0.7 vector + 0.3 keyword)
+Pipeline: Markdown files > chunking (~400 tokens, overlapping) > transformers.js, local ONNX (all-MiniLM-L6-v2, 384-dim) > index > hybrid merge (0.7 vector + 0.3 keyword)
 - **SQLite**: sqlite-vec for vectors, FTS5 for keywords
 - **Postgres**: pgvector for vectors, tsvector+GIN for keywords
 - Key files: `db.ts` (abstraction), `embeddings.ts`, `memory-index.ts`, `memory-search.ts`
@@ -46,7 +46,7 @@ Pipeline: Markdown files → chunking (~400 tokens, overlapping) → transformer
 
 ### Integrations (Platform Connections)
 Pattern: Each integration is a TypeScript module in `.claude/scripts/integrations/`:
-- Data model (a TypeScript interface, with zod at trust boundaries) → Auth function → Query functions → Context formatter → CLI
+- Data model (a TypeScript interface, with zod at trust boundaries) > Auth function > Query functions > Context formatter > CLI
 - Registry (`registry.ts`): Tracks available integrations, checks which are enabled
 - CLI wrapper (`query.ts`): Unified interface, `query.ts gmail list`, `query.ts github prs`
 - Auth: Google OAuth2 (shared token) or API tokens in `.env`
@@ -66,9 +66,9 @@ Modular packages at `.claude/skills/*/SKILL.md`:
 Scheduled script at `.claude/scripts/heartbeat.ts`:
 - Runs every 30 minutes during active hours
 - TypeScript gathers data from all integrations BEFORE invoking Claude
-- Claude Agent SDK reasons over pre-loaded context → decides what needs attention
+- Claude Agent SDK reasons over pre-loaded context > decides what needs attention
 - Notifications: Windows Toast / macOS osascript / Linux notify-send + Slack
-- State diffing: buildSnapshot() → diffSnapshot() → only notify on changes
+- State diffing: buildSnapshot() > diffSnapshot() > only notify on changes
 - Cost: a run where nothing changed makes no model call. A run with real work costs in proportion to the items it reasons over
 - State: `.claude/data/state/heartbeat-state.json`
 
@@ -78,7 +78,7 @@ Scheduled script at `.claude/scripts/memory-reflect.ts`:
 - Reviews yesterday's daily log
 - Promotes important items (decisions, lessons, facts) to MEMORY.md
 - **SOUL.md write-protection**: The reflection agent must have a PreToolUse hook that blocks Edit/Write on SOUL.md. If the reflection wants to suggest changes to the agent's identity or behavioral rules, it writes those suggestions to the daily log instead. This prevents "soul drift" where the agent gradually rewrites its own personality without the user's explicit approval.
-- Mirrors human memory: short-term experiences → sleep consolidation → long-term storage
+- Mirrors human memory: short-term experiences > sleep consolidation > long-term storage
 
 ### Habits Tracking
 File at `Memory/HABITS.md`:
@@ -99,7 +99,7 @@ Lifecycle system for auto-generated reply drafts:
 
 ### Chat Interface (Conversational Access)
 Located at `.claude/chat/`:
-- Slack DM or @mention → platform-agnostic message → Agent SDK conversation → response
+- Slack DM or @mention > platform-agnostic message > Agent SDK conversation > response
 - Each thread = separate persistent conversation (survives restarts)
 - PlatformAdapter interface: SlackAdapter today, extensible to Discord/Teams
 - Session store: SQLite database at `.claude/data/chat.db`
@@ -107,14 +107,14 @@ Located at `.claude/chat/`:
 
 ### Security (Four Layers)
 1. **Credential Protection** (`block-secrets.ts`): PreToolUse hook that intercepts Read, Bash, Grep, Edit, Write, and Glob tool calls. Blocks access to sensitive files (.env, .pem, .key, credentials.json, google_token.json, SSH keys, etc.). Blocks Bash commands that would expose environment variables (cat .env, printenv, echo $TOKEN, node -e process.env, etc.). Blocks *writing* scripts that would exfiltrate secrets to stdout. Recursively checks subshell content. This is the most critical security layer, without it, the LLM can accidentally read and expose every API key.
-2. **Sanitize** (`sanitize.ts`): Pattern detection → markdown escaping → XML trust boundaries for all external text
+2. **Sanitize** (`sanitize.ts`): Pattern detection > markdown escaping > XML trust boundaries for all external text
 3. **Guardrails** (`shared.ts`): Deterministic pre-check (dangerous command patterns) + LLM evaluation (pass/fail/suspicious)
 4. **API Key Isolation**: CLI wrapper handles auth, LLM only sees data, never tokens
 
 ### Infrastructure
 - **Local (Windows/Mac/Linux)**: SQLite + sqlite-vec, FTS5, OS scheduler, ~25MB model cache
 - **VPS (Linux, optional)**: Postgres + pgvector, tsvector + GIN, systemd timers, headless OAuth
-- **Vault Sync**: git-sync (2-min intervals) between local ↔ VPS
+- **Vault Sync**: git-sync (2-min intervals) between local <> VPS
 - **Cost**: Claude Max ~$100/mo + VPS $5-24/mo + Obsidian (free) ≈ $105-128/mo
 
 ### Shared Utilities (Cross-Cutting Concerns)

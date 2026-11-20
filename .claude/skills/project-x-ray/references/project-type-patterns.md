@@ -40,11 +40,11 @@ Multiple types can coexist. A product folder might contain a PRD (business), wir
 - Version control artifacts (.gitignore, CHANGELOG.md)
 
 **Ambiguous signals (could be something else):**
-- README.md alone — many non-code projects use these
-- YAML or JSON files — could be data, config, or automation
-- Scripts (.sh, .ps1) — could be deployment, admin tooling, or automation docs
+- README.md alone - many non-code projects use these
+- YAML or JSON files - could be data, config, or automation
+- Scripts (.sh, .ps1) - could be deployment, admin tooling, or automation docs
 
-→ See `references/framework-fingerprints.md` for language and framework identification.
+Next: See `references/framework-fingerprints.md` for language and framework identification.
 
 ---
 
@@ -69,18 +69,18 @@ Multiple types can coexist. A product folder might contain a PRD (business), wir
 **Common structural patterns:**
 ```
 brand-project/
-  01_brief/           ← project started here
-  02_concepts/        ← multiple routes proposed
-  03_development/     ← chosen route built out
-  04_final/           ← client-approved
-  05_production/      ← delivered or print-ready
-  assets/             ← live brand files
+  01_brief/           < project started here
+  02_concepts/        < multiple routes proposed
+  03_development/     < chosen route built out
+  04_final/           < client-approved
+  05_production/      < delivered or print-ready
+  assets/             < live brand files
 ```
 
 **Red flags for creative projects:**
-- No brief present — how was this project defined?
+- No brief present - how was this project defined?
 - Multiple "final" folders with no clear current version
-- Source files absent (only exports) — original editables missing or not shared
+- Source files absent (only exports) - original editables missing or not shared
 - No client approval document or sign-off email
 
 ---
@@ -96,20 +96,20 @@ brand-project/
 - Analytics reports or performance dashboards
 - Budget tracker or media plan
 
-**Domain signals — campaign structure:**
+**Domain signals - campaign structure:**
 A typical campaign project moves through these domains:
-- **Brief** — problem, objective, audience, budget, timeline
-- **Strategy** — insight, positioning, message hierarchy, channel plan
-- **Creative** — concepts, copy, visuals, formats
-- **Production** — assets built, reviewed, approved
-- **Activation** — launch, trafficking, going live
-- **Measurement** — tracking setup, results, reporting
+- **Brief** - problem, objective, audience, budget, timeline
+- **Strategy** - insight, positioning, message hierarchy, channel plan
+- **Creative** - concepts, copy, visuals, formats
+- **Production** - assets built, reviewed, approved
+- **Activation** - launch, trafficking, going live
+- **Measurement** - tracking setup, results, reporting
 
 If you can identify where in this chain the project currently sits, say so. That is often
 the most useful orientation information for someone new.
 
 **Common file naming red flags:**
-- `brief_v4_FINAL_amended.docx` — brief has been through four rounds, suggesting scope instability
+- `brief_v4_FINAL_amended.docx` - brief has been through four rounds, suggesting scope instability
 - Multiple audience documents with no "approved" or "current" marker
 - Campaign plan dated from six months ago with no update
 
@@ -129,12 +129,12 @@ the most useful orientation information for someone new.
 
 **Domain signals:**
 An advertising pitch typically contains:
-- **Problem** — what the brand or client needs to solve
-- **Insight** — the human truth that makes the work relevant
-- **Idea** — the core creative concept
-- **Execution** — how the idea becomes campaigns, content, or activations
-- **Production plan** — how it gets made
-- **Budget** — what it costs
+- **Problem** - what the brand or client needs to solve
+- **Insight** - the human truth that makes the work relevant
+- **Idea** - the core creative concept
+- **Execution** - how the idea becomes campaigns, content, or activations
+- **Production plan** - how it gets made
+- **Budget** - what it costs
 
 If any of these are missing from a pitch, say so. A pitch without an idea section has not
 yet been developed past the brief stage.
@@ -161,16 +161,16 @@ yet been developed past the brief stage.
 - Author bios or contributor information
 
 **Domain signals:**
-- **Commissioning** — what was asked for, by whom, for when
-- **Research** — evidence, sources, interviews, data
-- **Writing** — drafts, versions, edits
-- **Editing** — tracked changes, comments, editorial notes
-- **Fact-checking** — verified claims, contested points
-- **Legal or compliance** — cleared or not
-- **Publication** — where it goes, when, in what format
+- **Commissioning** - what was asked for, by whom, for when
+- **Research** - evidence, sources, interviews, data
+- **Writing** - drafts, versions, edits
+- **Editing** - tracked changes, comments, editorial notes
+- **Fact-checking** - verified claims, contested points
+- **Legal or compliance** - cleared or not
+- **Publication** - where it goes, when, in what format
 
 **Common problems:**
-- Drafts present but no brief — what was the editorial intent?
+- Drafts present but no brief - what was the editorial intent?
 - Multiple versions with no version labelling
 - Research files present but not linked to specific claims in the draft
 - No stated audience or publication target
@@ -190,13 +190,13 @@ yet been developed past the brief stage.
 - Ethics approval or consent forms
 
 **Domain signals:**
-- **Question** — what is being investigated
-- **Method** — how data is collected
-- **Data** — the raw evidence
-- **Analysis** — how the data is processed
-- **Findings** — what the analysis shows
-- **Interpretation** — what the findings mean
-- **Output** — the report, paper, or presentation
+- **Question** - what is being investigated
+- **Method** - how data is collected
+- **Data** - the raw evidence
+- **Analysis** - how the data is processed
+- **Findings** - what the analysis shows
+- **Interpretation** - what the findings mean
+- **Output** - the report, paper, or presentation
 
 **What to check:**
 - Is the research question stated explicitly?
@@ -221,12 +221,12 @@ yet been developed past the brief stage.
 - Risk register
 
 **Domain signals:**
-- **Context** — market, competitive landscape, current state
-- **Problem** — what needs to change and why
-- **Options** — routes considered
-- **Recommendation** — preferred path
-- **Plan** — how to execute
-- **Metrics** — how success is measured
+- **Context** - market, competitive landscape, current state
+- **Problem** - what needs to change and why
+- **Options** - routes considered
+- **Recommendation** - preferred path
+- **Plan** - how to execute
+- **Metrics** - how success is measured
 
 **Common problems:**
 - Financial model present but assumptions not documented
@@ -249,12 +249,12 @@ yet been developed past the brief stage.
 - Roadmap
 
 **Domain signals:**
-- **Discovery** — problem definition, user research
-- **Definition** — requirements, spec, acceptance criteria
-- **Design** — wireframes, mockups, prototypes
-- **Development** — technical spec, architecture, implementation
-- **Testing** — QA plan, test cases
-- **Launch** — release plan, go-to-market
+- **Discovery** - problem definition, user research
+- **Definition** - requirements, spec, acceptance criteria
+- **Design** - wireframes, mockups, prototypes
+- **Development** - technical spec, architecture, implementation
+- **Testing** - QA plan, test cases
+- **Launch** - release plan, go-to-market
 
 **What to check:**
 - Is there a stated problem the product solves?
@@ -278,12 +278,12 @@ yet been developed past the brief stage.
 - Guest list or registration management
 
 **Domain signals:**
-- **Concept** — what the event is and why
-- **Brief** — client or organisational requirements
-- **Planning** — logistics, vendors, timeline
-- **Production** — build, rehearsal, show
-- **On-the-day** — run of show, team responsibilities
-- **Post-event** — reporting, debrief, learnings
+- **Concept** - what the event is and why
+- **Brief** - client or organisational requirements
+- **Planning** - logistics, vendors, timeline
+- **Production** - build, rehearsal, show
+- **On-the-day** - run of show, team responsibilities
+- **Post-event** - reporting, debrief, learnings
 
 **Common problems:**
 - Run-of-show present but not reconciled with the script
@@ -297,25 +297,25 @@ yet been developed past the brief stage.
 
 When multiple types are present, analyse each domain separately, then address the integration.
 
-**Step 1 — Classify all types present.**
+**Step 1 - Classify all types present.**
 Do not pick one and ignore the others. A product folder with a PRD, wireframes, a technical
 spec, and a go-to-market plan is a coherent four-type mixed project. Name all four.
 
-**Step 2 — Identify the lead type.**
+**Step 2 - Identify the lead type.**
 Which type is the primary purpose? The others are supporting. A software project with a
-marketing brief attached is a software project with marketing context — not a campaign.
+marketing brief attached is a software project with marketing context - not a campaign.
 
-**Step 3 — Map the interaction points.**
+**Step 3 - Map the interaction points.**
 Where do the types connect? A campaign brief that commissions creative work that produces code
-has three handoff points: brief→creative, creative→spec, spec→code. Each handoff is a domain
-boundary. Each boundary is a risk point — information that needs to survive the transition.
+has three handoff points: brief>creative, creative>spec, spec>code. Each handoff is a domain
+boundary. Each boundary is a risk point - information that needs to survive the transition.
 
-**Step 4 — Diagnose integration quality.**
+**Step 4 - Diagnose integration quality.**
 Are the types well-integrated or siloed? Signs of siloing: documents that do not reference
 each other, inconsistent terminology across domains, deliverables in one domain that are not
 reflected in another, conflicting version dates.
 
-**Step 5 — Distinguish coherent mixed from dumped files.**
+**Step 5 - Distinguish coherent mixed from dumped files.**
 A coherent mixed project has a reason for each component and visible connections between them.
 A storage dump has files from different projects, different clients, or different time periods
 with no unifying purpose. They require different handling:
@@ -339,7 +339,7 @@ with no unifying purpose. They require different handling:
 ## Cross-reference
 
 Project type identification feeds into:
-- PHASE 2 node mapping — which node types are relevant
-- PHASE 3 domain extraction — which domain patterns apply
-- Section 8 — the "process guide" language adapts to project type
-- `references/risk-audit-checklist.md` — non-code risk categories by type
+- PHASE 2 node mapping - which node types are relevant
+- PHASE 3 domain extraction - which domain patterns apply
+- Section 8 - the "process guide" language adapts to project type
+- `references/risk-audit-checklist.md` - non-code risk categories by type

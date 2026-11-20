@@ -1,7 +1,7 @@
 # Framework Fingerprints
 
 Identifying frameworks, runtimes, and deployment patterns from file structure and dependency
-file content — without running the code, without a README, without context.
+file content - without running the code, without a README, without context.
 
 Used during PHASE 1 of Project X-Ray when framework identification is uncertain.
 
@@ -151,7 +151,7 @@ should be flagged in Section 9 as a possible unused dependency.
 
 ---
 
-## Databases — Schema and Persistence Signals
+## Databases - Schema and Persistence Signals
 
 | Signal | What it suggests | Confidence |
 |---|---|---|
@@ -198,7 +198,7 @@ should be flagged in Section 9 as a possible unused dependency.
 
 ---
 
-## Automation — n8n, Home Assistant, Node-RED, IoT
+## Automation - n8n, Home Assistant, Node-RED, IoT
 
 | Signal | What it suggests | Confidence |
 |---|---|---|
@@ -213,10 +213,10 @@ should be flagged in Section 9 as a possible unused dependency.
 
 ---
 
-## Security Signals — Flag Immediately in Section 10
+## Security Signals - Flag Immediately in Section 10
 
 These warrant a Critical or High entry in the risk audit regardless of confidence level.
-Note them during PHASE 1 — do not wait for Section 10.
+Note them during PHASE 1 - do not wait for Section 10.
 
 | Signal | Risk | Severity |
 |---|---|---|
@@ -236,7 +236,7 @@ Note them during PHASE 1 — do not wait for Section 10.
 ## Cross-reference
 
 Framework identification feeds into:
-- Section 8 (Technical Guide) — architecture pattern, known framework behaviours
-- Section 7 (Execution Flow) — framework-standard startup sequences
-- Section 9 (What Is Missing) — expected files not present for identified framework
-- Section 10 (Risk Audit) — framework-specific known vulnerability patterns
+- Section 8 (Technical Guide) - architecture pattern, known framework behaviours
+- Section 7 (Execution Flow) - framework-standard startup sequences
+- Section 9 (What Is Missing) - expected files not present for identified framework
+- Section 10 (Risk Audit) - framework-specific known vulnerability patterns

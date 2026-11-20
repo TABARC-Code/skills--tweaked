@@ -1,7 +1,7 @@
 # Risk Audit Checklist
 
 Full checklist for Section 10 of Project X-Ray.
-Run all categories. Report every finding. Do not skip categories — write "No findings"
+Run all categories. Report every finding. Do not skip categories - write "No findings"
 and note whether absence is reassuring or simply a result of limited evidence.
 
 ---
@@ -13,7 +13,7 @@ and note whether absence is reassuring or simply a result of limited evidence.
 | Critical | Data loss, credential exposure, or system compromise possible. | Flag at top of Section 10 before the table. |
 | High | Likely to cause failures, bugs, or security problems under normal use. | List prominently. |
 | Medium | May cause problems under load, edge cases, or future changes. | List with context. |
-| Low | Poor practice or technical debt — not immediately dangerous. | List; do not inflate. |
+| Low | Poor practice or technical debt - not immediately dangerous. | List; do not inflate. |
 
 **Rule:** If a Critical finding exists, call it out at the very top of Section 10 as a
 standalone warning before the table begins. Do not bury it.
@@ -23,7 +23,7 @@ standalone warning before the table begins. Do not bury it.
 ## Category 1: Secrets and Credential Exposure
 
 - [ ] API keys, tokens, or passwords hardcoded as string literals in source files
-- [ ] `.env` file committed to version control (check .gitignore — is it listed?)
+- [ ] `.env` file committed to version control (check .gitignore - is it listed?)
 - [ ] Database credentials visible in config files or source code
 - [ ] Secret keys as literals in settings (Django SECRET_KEY, Flask secret, JWT secret)
 - [ ] Private keys or certificates committed to the repo
@@ -37,7 +37,7 @@ Default severity: Critical for all items in this category.
 ## Category 2: Authentication and Authorisation
 
 - [ ] Routes that appear to require authentication have no visible auth middleware
-- [ ] Authentication present but no authorisation — authenticated users can access anything
+- [ ] Authentication present but no authorisation - authenticated users can access anything
 - [ ] Session tokens not invalidated on logout (if session code is present)
 - [ ] Weak or absent CSRF protection on state-changing endpoints
 - [ ] Password reset flow present but not time-limited or single-use
@@ -101,7 +101,7 @@ Default severity: Critical for all items in this category.
 ## Category 7: Dependencies
 
 - [ ] No lockfile present (requirements.txt without .lock, package.json without package-lock or yarn.lock)
-- [ ] Very old dependency versions — over two years without update
+- [ ] Very old dependency versions - over two years without update
 - [ ] Dependencies pinned to git branches or commit hashes rather than releases
 - [ ] Unused packages in dependency file (bloat and attack surface)
 - [ ] Known-vulnerable package versions (note if recognisably old; do not claim CVE knowledge)
@@ -125,7 +125,7 @@ Default severity: Critical for all items in this category.
 
 ## Category 9: Code Quality Risks
 
-- [ ] Dead code — functions or files defined but never referenced
+- [ ] Dead code - functions or files defined but never referenced
 - [ ] Commented-out logic blocks in active files (disabled code left in production paths)
 - [ ] TODO or FIXME comments in critical execution paths
 - [ ] Functions over ~200 lines with no clear decomposition
@@ -182,10 +182,10 @@ Apply these for any project type that is not primarily software. Adapt severity 
 
 ### Category 13: Creative and Brand Risks
 
-- [ ] No approved brief — work has proceeded without a documented starting point
+- [ ] No approved brief - work has proceeded without a documented starting point
 - [ ] Client sign-off not documented for any stage
 - [ ] Multiple "final" versions with no clear current one
-- [ ] Source files absent — only exports provided, originals missing or not shared
+- [ ] Source files absent - only exports provided, originals missing or not shared
 - [ ] No version control or naming convention for assets
 - [ ] Brand guidelines contradicted by delivered assets
 - [ ] Assets in formats incompatible with stated delivery requirements
@@ -197,7 +197,7 @@ Apply these for any project type that is not primarily software. Adapt severity 
 ### Category 14: Marketing and Campaign Risks
 
 - [ ] Campaign objective not stated or measurable
-- [ ] Audience not defined — no persona, no segmentation, no stated target
+- [ ] Audience not defined - no persona, no segmentation, no stated target
 - [ ] Brief references research or insight not present in the files
 - [ ] Campaign plan and creative brief appear to be for different campaigns
 - [ ] No measurement or tracking plan
@@ -211,13 +211,13 @@ Apply these for any project type that is not primarily software. Adapt severity 
 
 ### Category 15: Strategy and Business Document Risks
 
-- [ ] Recommendation present but options analysis absent — was there actually a choice?
+- [ ] Recommendation present but options analysis absent - was there actually a choice?
 - [ ] Financial model present but assumptions not documented
 - [ ] Roadmap with no resourcing or named ownership
 - [ ] Success metrics not defined or not measurable
-- [ ] Decision recorded but rationale absent — reasoning lost or sensitive
+- [ ] Decision recorded but rationale absent - reasoning lost or sensitive
 - [ ] Strategy document last updated when circumstances have visibly changed
-- [ ] Stakeholder alignment not documented — who has seen and approved this?
+- [ ] Stakeholder alignment not documented - who has seen and approved this?
 - [ ] Dependencies on external factors not acknowledged
 - [ ] Conflicting strategies or plans both apparently current
 
@@ -226,12 +226,12 @@ Apply these for any project type that is not primarily software. Adapt severity 
 ### Category 16: Research and Evidence Risks
 
 - [ ] Research question not stated
-- [ ] Methodology not documented — findings cannot be evaluated or replicated
-- [ ] Raw data absent — only summary or processed data provided
+- [ ] Methodology not documented - findings cannot be evaluated or replicated
+- [ ] Raw data absent - only summary or processed data provided
 - [ ] Sample size or data quality not stated
 - [ ] Findings and interpretations not clearly distinguished
 - [ ] Claims not attributed to sources
-- [ ] Analysis appears to support a predetermined conclusion — check for framing capture
+- [ ] Analysis appears to support a predetermined conclusion - check for framing capture
 - [ ] Ethics documentation absent where expected
 - [ ] Data contains PII with no anonymisation or consent documentation
 
@@ -239,7 +239,7 @@ Apply these for any project type that is not primarily software. Adapt severity 
 
 ### Category 17: Editorial and Content Risks
 
-- [ ] No editorial brief — why was this written, for whom, in what context?
+- [ ] No editorial brief - why was this written, for whom, in what context?
 - [ ] Facts asserted without visible sourcing
 - [ ] Multiple draft versions with no clear current one
 - [ ] Legal or compliance review absent for regulated topics
@@ -254,10 +254,10 @@ Apply these for any project type that is not primarily software. Adapt severity 
 
 - [ ] No named owner for the project or for critical deliverables within it
 - [ ] Approval process not documented
-- [ ] Decision log absent — decisions traceable only through file naming history
-- [ ] Key person dependency — critical knowledge held by one person, not documented
+- [ ] Decision log absent - decisions traceable only through file naming history
+- [ ] Key person dependency - critical knowledge held by one person, not documented
 - [ ] Handover documentation absent for a project clearly being handed over
-- [ ] No stated status — is this live, in progress, on hold, or abandoned?
+- [ ] No stated status - is this live, in progress, on hold, or abandoned?
 - [ ] Contacts or responsible parties not identified
 - [ ] Conflicting documents both apparently current with no deprecation notice
 - [ ] Archive and current files mixed without clear separation
@@ -273,7 +273,7 @@ For the Suggested fix column: indicate direction only. Do not write implementati
 "Parameterise the query" not a full code rewrite. "Move to environment variable" not a diff.
 
 **Calibration rule:** If a project has no Critical or High findings, say so plainly.
-An empty risk category is useful information — provided you note whether it is genuinely
+An empty risk category is useful information - provided you note whether it is genuinely
 clean or simply unverifiable from the submitted files.
 
 ---
@@ -281,9 +281,9 @@ clean or simply unverifiable from the submitted files.
 ## Cross-reference
 
 Risk findings feed into:
-- Section 13 (Final Verdict) — "What needs fixing first"
-- Section 12 (README/Handover Summary) — "Known Limitations"
-- PHASE 4 / Section 14 — if risks involve people, teams, or organisational failure modes;
+- Section 13 (Final Verdict) - "What needs fixing first"
+- Section 12 (README/Handover Summary) - "Known Limitations"
+- PHASE 4 / Section 14 - if risks involve people, teams, or organisational failure modes;
   these should already have been caught by Lens 4, but if Section 10 surfaces new signals,
   note them as a Lens 4 calibration gap
 

@@ -36,25 +36,25 @@ what a new person does with the project.
 PHASE 4 also runs on direct user request: "Why is it like this?" or equivalent.
 
 The signals that make Section 14 worth writing:
-- Governance gap — no clear owner for a critical element
-- Incentive misalignment — person responsible for X was measured on Y
-- Information gap — critical knowledge in no written form anywhere
-- Trust deficit — parallel work, over-documentation, defensive language
-- Long-standing problems nobody has fixed — an incentive signal, not just a code smell
-- Two conflicting versions with neither deprecated — authority signal
-- Accumulating placeholders — nobody felt responsible for the project's health
+- Governance gap - no clear owner for a critical element
+- Incentive misalignment - person responsible for X was measured on Y
+- Information gap - critical knowledge in no written form anywhere
+- Trust deficit - parallel work, over-documentation, defensive language
+- Long-standing problems nobody has fixed - an incentive signal, not just a code smell
+- Two conflicting versions with neither deprecated - authority signal
+- Accumulating placeholders - nobody felt responsible for the project's health
 
 ---
 
-## Step 1 — Map the Web
+## Step 1 - Map the Web
 
 Before making any claim about the human system, map what you can observe.
 
-**Actors** — who has been involved?
+**Actors** - who has been involved?
 
 Look for any evidence of human presence: authorship, style variation, version history implied
 by file naming, named contacts, team references, client references. This works for any project
-type — code commit patterns, document tracked-changes, campaign version folders, research
+type - code commit patterns, document tracked-changes, campaign version folders, research
 attribution headers.
 
 Evidence to look for:
@@ -66,7 +66,7 @@ Evidence to look for:
 
 Even without git history, you can often infer multiple actors from inconsistent patterns.
 
-**Incentives** — what did each actor appear to be optimising for?
+**Incentives** - what did each actor appear to be optimising for?
 
 Common technical incentive patterns:
 
@@ -80,7 +80,7 @@ Common technical incentive patterns:
 | Perfect code in one module, chaos in another | One person who cared, surrounded by people who didn't stay |
 | No deployment documentation | The person who knew how to deploy it left |
 
-**Constraints** — what were they working within?
+**Constraints** - what were they working within?
 
 Look for:
 - Very old dependency versions pinned with comments: suggests fear of breaking something that works
@@ -89,7 +89,7 @@ Look for:
 - Workarounds in the code that suggest the underlying thing could not be changed: authority constraint
 - Tests that are weirdly narrow: suggests the test suite was written to pass a specific audit
 
-**Dependencies** — what does the system need in order to function?
+**Dependencies** - what does the system need in order to function?
 
 Beyond technical dependencies, look for human dependencies:
 
@@ -102,7 +102,7 @@ These are not just missing docs. They are single points of human failure.
 
 ---
 
-## Step 2 — Classify the Information
+## Step 2 - Classify the Information
 
 Before drawing conclusions, sort what you have.
 
@@ -114,17 +114,17 @@ Before drawing conclusions, sort what you have.
 | **Unknown** | Cannot be determined from the submission. | Who made the architectural decision |
 | **Irrelevant** | Present but does not bear on the human system question. | Framework version used |
 
-The most dangerous category is **Assumed** — assumptions wearing the clothes of facts.
+The most dangerous category is **Assumed** - assumptions wearing the clothes of facts.
 Name them explicitly. Do not let them drive conclusions silently.
 
 ---
 
-## Step 3 — Identify the Tensions
+## Step 3 - Identify the Tensions
 
 Find where forces are pulling against each other. This is where things broke down, and
 where small interventions have large effects.
 
-### Tension Types — Any Project
+### Tension Types - Any Project
 
 **Governance gap**
 No clear owner for a critical component. Both teams think it's the other's responsibility.
@@ -173,32 +173,32 @@ everything and do nothing; tests that exist only to pass a deadline review.*
 
 ---
 
-## Step 4 — Find the Influence Nodes
+## Step 4 - Find the Influence Nodes
 
 Every system has points where pressure concentrates. In any project, influence nodes are not always the
 most complex components. Look for:
 
-**The component everything imports** — often not the most sophisticated code in the repo,
+**The component everything imports** - often not the most sophisticated code in the repo,
 but the one where a change ripples everywhere. Whoever controls or understands this has
 disproportionate influence.
 
-**The person whose knowledge is not written down** — identifiable by: the setup process
+**The person whose knowledge is not written down** - identifiable by: the setup process
 that requires finding them; the comment that says "ask [name]"; the module with no
 documentation and no tests that clearly works but nobody knows why.
 
-**The missing decision** — a fork in the architecture that was never resolved, so both
+**The missing decision** - a fork in the architecture that was never resolved, so both
 paths are still present. Every new developer has to navigate this informally.
 
-**The bottleneck process** — the deployment step, the review requirement, the sign-off
+**The bottleneck process** - the deployment step, the review requirement, the sign-off
 process that slows everything else down and shapes every decision upstream of it.
 
-**The unspoken constraint** — a technical, political, or organisational constraint that
+**The unspoken constraint** - a technical, political, or organisational constraint that
 nobody mentions in documentation but that is clearly shaping every architectural choice.
 Often visible as: a workaround that is too elaborate to be accidental.
 
 ---
 
-## Step 5 — Recommend a Precision Move
+## Step 5 - Recommend a Precision Move
 
 After mapping, identify the smallest intervention that would most improve the situation.
 
@@ -208,32 +208,32 @@ Prefer:
 - Moves that clarify authority (name the owner, write the decision record) over moves that assume authority is already clear
 - Reversible moves over irreversible ones
 
-### Move Types — Any Project
+### Move Types - Any Project
 
-**The right question** — identify the one thing, if answered, that would most change what
+**The right question** - identify the one thing, if answered, that would most change what
 to do next. Often this is: "who is responsible for X?" or "why was this decision made?"
 Do not document until you know the answer.
 
-**The small test** — write a minimal test for the suspicious function before deciding
+**The small test** - write a minimal test for the suspicious function before deciding
 whether it works. Do not assume.
 
-**The assumption check** — read the actual config file rather than inferring from the code
+**The assumption check** - read the actual config file rather than inferring from the code
 what the config probably contains.
 
-**The written record** — the missing README, the missing .env.example, the missing
+**The written record** - the missing README, the missing .env.example, the missing
 architecture decision record. Turns tribal knowledge into shared knowledge. Often the
 highest-value single action in any inherited project.
 
-**The ownership statement** — name explicitly who is responsible for what module or service.
+**The ownership statement** - name explicitly who is responsible for what module or service.
 Even a one-line comment or a CODEOWNERS file creates accountability where none existed.
 
-**The boundary statement** — document what this component does and does not do. Prevents
+**The boundary statement** - document what this component does and does not do. Prevents
 the next person from adding to a monolith "because it's already here."
 
-**The urgency check** — is the pressure to fix this immediately real, or manufactured?
+**The urgency check** - is the pressure to fix this immediately real, or manufactured?
 Trace the deadline. Often the original pressure has passed.
 
-**The staged decision** — instead of "fix all of this," decide now on the smallest thing
+**The staged decision** - instead of "fix all of this," decide now on the smallest thing
 that reduces the most risk, then decide what to do next after that.
 
 ---
@@ -246,7 +246,7 @@ When PHASE 4 runs, add a Section 14 to the report.
 
 **What triggered this section:** [name the specific signal from Section 5, 9, or 10]
 
-**Web map** — the actors, incentives, constraints, and dependencies visible in the code:
+**Web map** - the actors, incentives, constraints, and dependencies visible in the code:
 [Write this as prose, not a table. Name what you can observe. Label what you are inferring.]
 
 **Tensions identified:**
@@ -273,12 +273,12 @@ Not every project has governance gaps, incentive misalignment, or a two-year-old
 fixed. Clean, well-owned, well-documented projects exist.
 
 If Lens 4 finds no significant tensions, no influence node concentration, no incentive signals
-worth naming — say so explicitly. "No significant human systems concerns identified from the
+worth naming - say so explicitly. "No significant human systems concerns identified from the
 available material." That is a valid and useful finding. Do not manufacture tensions to fill
 Section 14.
 
 Section 14 still appears in the report in this case, with a brief note on what Lens 4
-examined and what it did not find. An absent Section 14 is ambiguous — a reader cannot tell
+examined and what it did not find. An absent Section 14 is ambiguous - a reader cannot tell
 whether no analysis was run or whether the analysis found nothing. A short "clean" Section 14
 is unambiguous.
 
@@ -286,7 +286,7 @@ is unambiguous.
 
 ## Calibration Note
 
-This analysis works with incomplete information. A project folder is not the full record of human decisions — it is what survived. Be appropriately uncertain about causes. The project can show you what happened. It often cannot show you why, or who decided it, or whether the decision
+This analysis works with incomplete information. A project folder is not the full record of human decisions - it is what survived. Be appropriately uncertain about causes. The project can show you what happened. It often cannot show you why, or who decided it, or whether the decision
 was conscious.
 
 Name what you are inferring. Name what you cannot know.
